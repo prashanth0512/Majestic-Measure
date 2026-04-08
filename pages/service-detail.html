@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Detail | Maison De Tailleur</title>
+    <meta name="description" content="Explore our bespoke tailoring services at Maison De Tailleur.">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/service-detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/fixes.css">
+</head>
+<body class="service-detail-page">
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <div id="header-placeholder"></div>
+
+    <main id="service-main">
+        
+        <section class="service-detail-hero">
+            <img class="service-detail-hero__bg" id="sd-hero-img" src="" alt="">
+            <div class="service-detail-hero__overlay"></div>
+            <div class="container service-detail-hero__content">
+                <div class="service-badge" id="sd-badge"></div>
+                <h1 id="sd-title"></h1>
+                <p class="tagline" id="sd-tagline"></p>
+                <div class="hero-meta" id="sd-meta"></div>
+            </div>
+        </section>
+
+        
+        <div class="breadcrumb container">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li id="sd-breadcrumb"></li>
+            </ul>
+        </div>
+
+        
+        <section class="service-overview">
+            <div class="container service-overview-grid">
+                <div class="service-overview-text reveal">
+                    <h2 id="sd-overview-h2"></h2>
+                    <div id="sd-overview-body"></div>
+                    <a href="./contact.html" class="btn btn-primary" style="margin-top:20px;display:inline-block;">Book a Consultation</a>
+                </div>
+                <div class="service-overview-image reveal">
+                    <img id="sd-overview-img" src="" alt="">
+                    <div class="image-accent"></div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="service-process">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle reveal" id="sd-process-label">THE JOURNEY</span>
+                    <h2 class="reveal" id="sd-process-h2"></h2>
+                </div>
+                <div class="process-steps" id="sd-steps"></div>
+            </div>
+        </section>
+
+        
+        <section class="service-includes">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle reveal">WHAT'S INCLUDED</span>
+                    <h2 class="reveal" id="sd-includes-h2"></h2>
+                </div>
+                <div class="includes-grid" id="sd-includes"></div>
+            </div>
+        </section>
+
+        
+        <section class="service-cta">
+            <div class="container">
+                <h2 id="sd-cta-h2"></h2>
+                <p id="sd-cta-p"></p>
+                <div class="cta-actions">
+                    <a href="#" class="btn btn-primary" id="sd-cta-btn">Book a Consultation</a>
+                    <a href="services.html" class="btn btn-secondary">View All Services</a>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="related-services">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle reveal">EXPLORE MORE</span>
+                    <h2 class="reveal">Related Services</h2>
+                </div>
+                <div class="related-grid" id="sd-related"></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/service-detail.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard | Majestic Measure</title>
+    <meta name="description" content="Majestic Measure client portal – manage appointments, track orders, and select fabrics.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/fixes.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23d4a373'>▲</text></svg>">
+</head>
+<body>
+
+<aside class="sidebar closed" id="sidebar">
+    <div class="sidebar-header">
+        <div class="brand">
+            <span class="brand-icon">▲</span>
+            <div class="brand-text">
+                <span class="brand-main">MAJESTIC</span>
+                <span class="brand-sub">MEASURE</span>
+            </div>
+        </div>
+        <button class="close-sidebar" id="closeSidebar"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <nav class="sidebar-nav">
+        <a href="#" class="nav-item active" data-section="overview">
+            <i class="fa-solid fa-house-chimney"></i>
+            <span>Overview</span>
+        </a>
+        <a href="#" class="nav-item" data-section="appointments">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Appointments</span>
+        </a>
+        <a href="#" class="nav-item" data-section="measurements">
+            <i class="fa-solid fa-ruler-combined"></i>
+            <span>Measurements</span>
+        </a>
+        <a href="#" class="nav-item" data-section="fabrics">
+            <i class="fa-solid fa-swatchbook"></i>
+            <span>Fabric Selection</span>
+        </a>
+        <a href="#" class="nav-item" data-section="progress">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Garment Progress</span>
+        </a>
+        <a href="#" class="nav-item" data-section="orders">
+            <i class="fa-solid fa-box"></i>
+            <span>Orders</span>
+        </a>
+        <a href="#" class="nav-item" data-section="messages">
+            <i class="fa-solid fa-comments"></i>
+            <span>Messages</span>
+            <span class="nav-badge">2</span>
+        </a>
+        <a href="#" class="nav-item" data-section="notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span>Notifications</span>
+            <span class="nav-badge">3</span>
+        </a>
+        <a href="#" class="nav-item" data-section="profile">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+        <a href="../index.html" class="sidebar-logout">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <span>Back to Site</span>
+        </a>
+    </div>
+</aside>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<div class="main-wrapper expanded" id="mainWrapper">
+    <header class="top-bar">
+        <div class="top-bar-left">
+            <button class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="welcome-text">
+                Welcome back, <strong class="user-name">Yashrub Unnisa</strong>
+            </div>
+        </div>
+        <div class="top-bar-right">
+            <div class="notif-btn" id="notifBtn">
+                <i class="fa-solid fa-bell"></i>
+                <span class="dot-badge"></span>
+            </div>
+            <div class="profile-btn" id="profileBtn">
+                <img src="https://ui-avatars.com/api/?name=Yashrub+Unnisa&background=C8A96A&color=111&size=80" alt="Profile" class="avatar">
+                <span class="profile-name">Yashrub U.</span>
+                <i class="fa-solid fa-chevron-down profile-chevron"></i>
+            </div>
+
+            <div class="profile-dropdown" id="profileDropdown">
+                <div class="dropdown-header">
+                    <img src="https://ui-avatars.com/api/?name=Yashrub+Unnisa&background=C8A96A&color=111&size=80" alt="Profile">
+                    <div>
+                        <strong>Yashrub Unnisa</strong>
+                        <small>Gold Member</small>
+                    </div>
+                </div>
+                <a href="#" class="dropdown-item" data-section="profile"><i class="fa-regular fa-user"></i> View Profile</a>
+                <a href="#" class="dropdown-item" data-section="orders"><i class="fa-solid fa-box"></i> My Orders</a>
+                <a href="#" class="dropdown-item" data-section="messages"><i class="fa-regular fa-comment"></i> Messages</a>
+                <hr class="dropdown-divider">
+                <a href="../index.html" class="dropdown-item danger"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="content-area" id="contentArea">
+    </div>
+</div>
+
+<template id="tpl-overview">
+<div class="section">
+    <div class="section-title">
+        <h1>Dashboard <span class="gold">Overview</span></h1>
+        <p>Welcome back! Here's your tailoring journey at a glance.</p>
+    </div>
+
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <div class="kpi-icon"><i class="fa-solid fa-box"></i></div>
+            <div class="kpi-info">
+                <span class="kpi-label">Total Orders</span>
+                <span class="kpi-value">12</span>
+            </div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-icon green"><i class="fa-solid fa-spinner"></i></div>
+            <div class="kpi-info">
+                <span class="kpi-label">Active Orders</span>
+                <span class="kpi-value">3</span>
+            </div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-icon amber"><i class="fa-solid fa-ruler-combined"></i></div>
+            <div class="kpi-info">
+                <span class="kpi-label">Pending Measurements</span>
+                <span class="kpi-value">1</span>
+            </div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-icon blue"><i class="fa-solid fa-calendar"></i></div>
+            <div class="kpi-info">
+                <span class="kpi-label">Upcoming Appointments</span>
+                <span class="kpi-value">2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Overview Content -->
+    <div class="featured-stat card" style="margin-bottom: 28px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h3>Ongoing Project Progress</h3>
+            <span class="badge in-progress">Bespoke Navy Tuxedo</span>
+        </div>
+        <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" style="width: 72%"></div>
+            <span class="progress-pct">72%</span>
+        </div>
+        <div style="display: flex; gap: 40px; margin-top: 15px;">
+            <div class="mini-stat"><strong>Apr 12</strong><span>EST. COMPLETION</span></div>
+            <div class="mini-stat"><strong>Stitching</strong><span>CURRENT STAGE</span></div>
+            <div class="mini-stat"><strong>2</strong><span>FITTINGS REMAINING</span></div>
+        </div>
+    </div>
+
+    <div class="overview-bottom">
+        <div class="chart-box card">
+            <div class="card-head">
+                <h3>Order Analytics</h3>
+            </div>
+            <div class="charts-container">
+                <div class="chart-wrap">
+                    <canvas id="ordersChart"></canvas>
+                </div>
+                <div class="chart-wrap pie-chart-wrap">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="activity-box">
+            <div class="card activity-card">
+                <h3 class="card-head-inline">Recent Activity</h3>
+                <div class="act-item">
+                    <span class="act-dot gold-dot"></span>
+                    <div>
+                        <p><strong>Stitching started</strong> on Navy Bespoke Suit</p>
+                        <small>2 hours ago</small>
+                    </div>
+                </div>
+                <div class="act-item">
+                    <span class="act-dot"></span>
+                    <div>
+                        <p><strong>Fabric approved</strong> — Loro Piana Cashmere</p>
+                        <small>Yesterday</small>
+                    </div>
+                </div>
+                <div class="act-item">
+                    <span class="act-dot"></span>
+                    <div>
+                        <p><strong>Appointment confirmed</strong> for Mar 28</p>
+                        <small>2 days ago</small>
+                    </div>
+                </div>
+                <div class="act-item">
+                    <span class="act-dot"></span>
+                    <div>
+                        <p><strong>Order #MM-2025-089</strong> marked as delivered.</p>
+                        <small>Dec 20, 2025</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card next-apt-card">
+                <h3 class="card-head-inline">Next Appointment</h3>
+                <div class="apt-mini">
+                    <div class="apt-mini-date">
+                        <span>MAR</span>
+                        <strong>28</strong>
+                    </div>
+                    <div>
+                        <p><strong>First Fitting</strong></p>
+                        <small><i class="fa-solid fa-clock"></i> 11:00 AM – 12:00 PM</small>
+                        <span class="badge confirmed">Confirmed</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card loyalty-card">
+                <h3 class="card-head-inline">Loyalty Status</h3>
+                <div class="loyalty-wrap">
+                    <div class="tier-info">
+                        <span class="tier gold-tier">Gold Member</span>
+                        <p class="points"><strong>4,250</strong> / 5,000 pts to Platinum</p>
+                    </div>
+                    <div class="progress-bar-wrap mini">
+                        <div class="progress-bar-fill" style="width: 85%"></div>
+                    </div>
+                    <p class="loyalty-benefit">750 more points to unlock **Complimentary Shirt**!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</template>
+<template id="tpl-appointments">
+<div class="section">
+    <div class="section-title">
+        <h1>My <span class="gold">Appointments</span></h1>
+        <button class="btn-gold">+ Schedule New</button>
+    </div>
+    <div class="apt-list-grid">
+        <div class="card apt-card">
+            <div class="apt-date-col">
+                <span class="apt-month">MAR</span>
+                <strong class="apt-day">28</strong>
+            </div>
+            <div class="apt-details">
+                <h4>First Fitting – Bespoke Tuxedo</h4>
+                <p><i class="fa-solid fa-clock"></i> 11:00 AM – 12:00 PM</p>
+                <p><i class="fa-solid fa-location-dot"></i> Majestic Measure Atelier, Hyderabad</p>
+            </div>
+            <span class="badge confirmed">Confirmed</span>
+        </div>
+        <div class="card apt-card">
+            <div class="apt-date-col">
+                <span class="apt-month">APR</span>
+                <strong class="apt-day">05</strong>
+            </div>
+            <div class="apt-details">
+                <h4>Measurement Session – Linen Suit</h4>
+                <p><i class="fa-solid fa-clock"></i> 10:00 AM – 10:30 AM</p>
+                <p><i class="fa-solid fa-location-dot"></i> Majestic Measure Atelier, Hyderabad</p>
+            </div>
+            <span class="badge pending">Pending</span>
+        </div>
+        <div class="card apt-card">
+            <div class="apt-date-col">
+                <span class="apt-month">APR</span>
+                <strong class="apt-day">18</strong>
+            </div>
+            <div class="apt-details">
+                <h4>Final Fitting – Wedding Suit</h4>
+                <p><i class="fa-solid fa-clock"></i> 2:00 PM – 3:00 PM</p>
+                <p><i class="fa-solid fa-location-dot"></i> Majestic Measure Atelier, Hyderabad</p>
+            </div>
+            <span class="badge in-progress">In Review</span>
+        </div>
+    </div>
+</div>
+</template>
+
+<template id="tpl-measurements">
+<div class="section">
+    <div class="section-title">
+        <h1>My <span class="gold">Measurements</span></h1>
+        <button class="btn-gold" id="saveMeasurementsBtn">Save Changes</button>
+    </div>
+    <div class="meas-layout">
+        <div class="card meas-form-card">
+            <h3 class="card-head-inline">Body Measurements (cm)</h3>
+            <div class="meas-grid">
+                <div class="meas-field"><label>Chest</label><input type="number" value="102" step="0.5"></div>
+                <div class="meas-field"><label>Waist</label><input type="number" value="88" step="0.5"></div>
+                <div class="meas-field"><label>Hip</label><input type="number" value="98" step="0.5"></div>
+                <div class="meas-field"><label>Shoulder Width</label><input type="number" value="48" step="0.5"></div>
+                <div class="meas-field"><label>Sleeve Length</label><input type="number" value="64" step="0.5"></div>
+                <div class="meas-field"><label>Neck</label><input type="number" value="41" step="0.5"></div>
+                <div class="meas-field"><label>Inseam</label><input type="number" value="80" step="0.5"></div>
+                <div class="meas-field"><label>Back Length</label><input type="number" value="70" step="0.5"></div>
+            </div>
+            <p class="meas-note"><i class="fa-solid fa-info-circle"></i> Last updated: March 15, 2026</p>
+        </div>
+        <div class="card meas-guide-card">
+            <h3 class="card-head-inline">Measurement Guide</h3>
+            <img src="../images/measurement-guide.png" alt="Guide" class="guide-img">
+            <p class="meas-note" style="margin-top:15px;"><i class="fa-solid fa-circle-check"></i> Use a soft measuring tape. Keep it snug, not tight.</p>
+        </div>
+    </div>
+</div>
+</template>
+<template id="tpl-fabrics">
+<div class="section">
+    <div class="section-title">
+        <h1>Fabric <span class="gold">Selection</span></h1>
+    </div>
+
+    <div class="fabric-filters">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">Wedding</button>
+        <button class="filter-btn">Formal</button>
+        <button class="filter-btn">Casual</button>
+        <button class="filter-btn">Premium</button>
+    </div>
+
+    <div class="fabric-grid">
+        <div class="fabric-card card">
+            <div class="fabric-img-wrap"><img src="../images/fabric-1.png" alt="Navy Wool" onerror="this.src='https://placehold.co/280x200/111/C8A96A?text=Navy+Wool'"></div>
+            <div class="fabric-body">
+                <span class="fabric-cat">Formal</span>
+                <h4>Navy Midnight Wool</h4>
+                <p class="fabric-mill">Holland & Sherry</p>
+                <div class="fabric-footer">
+                    <span class="fabric-price">$200/m</span>
+                    <button class="btn-select">Select</button>
+                </div>
+            </div>
+        </div>
+        <div class="fabric-card card">
+            <div class="fabric-img-wrap"><img src="../images/fabric-2.png" alt="Pinstripe" onerror="this.src='https://placehold.co/280x200/111/C8A96A?text=Grey+Pinstripe'"></div>
+            <div class="fabric-body">
+                <span class="fabric-cat">Formal</span>
+                <h4>Classic Grey Pinstripe</h4>
+                <p class="fabric-mill">Scabal Milano</p>
+                <div class="fabric-footer">
+                    <span class="fabric-price">$185/m</span>
+                    <button class="btn-select">Select</button>
+                </div>
+            </div>
+        </div>
+        <div class="fabric-card card selected">
+            <div class="fabric-img-wrap">
+                <img src="../images/fabric-3.png" alt="Cashmere" onerror="this.src='https://placehold.co/280x200/111/C8A96A?text=Charcoal+Cashmere'">
+                <span class="selected-ribbon"><i class="fa-solid fa-check"></i> Selected</span>
+            </div>
+            <div class="fabric-body">
+                <span class="fabric-cat">Premium</span>
+                <h4>Charcoal Silk Cashmere</h4>
+                <p class="fabric-mill">Loro Piana</p>
+                <div class="fabric-footer">
+                    <span class="fabric-price">$310/m</span>
+                    <button class="btn-select selected">Selected</button>
+                </div>
+            </div>
+        </div>
+        <div class="fabric-card card">
+            <div class="fabric-img-wrap"><img src="../images/fabric-4.png" alt="Tweed" onerror="this.src='https://placehold.co/280x200/111/C8A96A?text=Harris+Tweed'"></div>
+            <div class="fabric-body">
+                <span class="fabric-cat">Casual</span>
+                <h4>Light Grey Tweed</h4>
+                <p class="fabric-mill">Harris Tweed Authority</p>
+                <div class="fabric-footer">
+                    <span class="fabric-price">$160/m</span>
+                    <button class="btn-select">Select</button>
+                </div>
+            </div>
+        </div>
+        <div class="fabric-card card">
+            <div class="fabric-img-wrap"><img src="../images/fabric-5.png" alt="Camel" onerror="this.src='https://placehold.co/280x200/111/C8A96A?text=Camel+Hair'"></div>
+            <div class="fabric-body">
+                <span class="fabric-cat">Premium</span>
+                <h4>Tan Camel Hair</h4>
+                <p class="fabric-mill">Zegna Couture</p>
+                <div class="fabric-footer">
+                    <span class="fabric-price">$275/m</span>
+                    <button class="btn-select">Select</button>
+                </div>
+            </div>
+        </div>
+        <div class="fabric-card card">
+            <div class="fabric-img-wrap"><img src="../images/fabric-6.png" alt="Puppytooth" onerror="this.src='https://placehold.co/280x200/111/C8A96A?text=Puppytooth'"></div>
+            <div class="fabric-body">
+                <span class="fabric-cat">Wedding</span>
+                <h4>Deep Brown Puppytooth</h4>
+                <p class="fabric-mill">Holland & Sherry</p>
+                <div class="fabric-footer">
+                    <span class="fabric-price">$220/m</span>
+                    <button class="btn-select">Select</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</template>
+<template id="tpl-progress">
+<div class="section">
+    <div class="section-title">
+        <h1>Garment <span class="gold">Progress</span></h1>
+    </div>
+
+    <div class="garment-block card">
+        <div class="garment-top">
+            <div>
+                <h3>Order #MM-2026-001</h3>
+                <p class="garment-sub">Three-Piece Bespoke Navy Suit</p>
+            </div>
+            <span class="badge in-progress">In Progress</span>
+        </div>
+
+        <div class="progress-track">
+            <div class="track-step done">
+                <div class="track-dot"><i class="fa-solid fa-check"></i></div>
+                <div class="track-label">Design</div>
+            </div>
+            <div class="track-connector done"></div>
+            <div class="track-step done">
+                <div class="track-dot"><i class="fa-solid fa-check"></i></div>
+                <div class="track-label">Cutting</div>
+            </div>
+            <div class="track-connector active"></div>
+            <div class="track-step active">
+                <div class="track-dot">3</div>
+                <div class="track-label">Stitching</div>
+            </div>
+            <div class="track-connector"></div>
+            <div class="track-step">
+                <div class="track-dot">4</div>
+                <div class="track-label">Finishing</div>
+            </div>
+            <div class="track-connector"></div>
+            <div class="track-step">
+                <div class="track-dot">5</div>
+                <div class="track-label">Delivery</div>
+            </div>
+        </div>
+
+        <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" style="width:52%"></div>
+            <span class="progress-pct">52% Complete</span>
+        </div>
+
+        <p class="garment-note"><i class="fa-solid fa-info-circle"></i> Master tailors are currently hand-stitching the interior lining and lapels. Estimated delivery: <strong>April 15, 2026</strong></p>
+    </div>
+</div>
+</template>
+
+<template id="tpl-orders">
+<div class="section">
+    <div class="section-title">
+        <h1>My <span class="gold">Orders</span></h1>
+    </div>
+
+    <div class="card table-card">
+        <div class="table-scroll">
+            <table class="orders-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Garment</th>
+                        <th>Customer</th>
+                        <th>Status</th>
+                        <th>Delivery Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#MM-2026-001</td>
+                        <td>Three-Piece Bespoke Navy Suit</td>
+                        <td>James Ashworth</td>
+                        <td><span class="badge in-progress">In Progress</span></td>
+                        <td>Apr 15, 2026</td>
+                        <td><button class="btn-table">Details</button></td>
+                    </tr>
+                    <tr>
+                        <td>#MM-2025-089</td>
+                        <td>Linen Wedding Blazer</td>
+                        <td>James Ashworth</td>
+                        <td><span class="badge confirmed">Completed</span></td>
+                        <td>Dec 20, 2025</td>
+                        <td><button class="btn-table">Invoice</button></td>
+                    </tr>
+                    <tr>
+                        <td>#MM-2026-002</td>
+                        <td>Casual Tweed Jacket</td>
+                        <td>James Ashworth</td>
+                        <td><span class="badge pending">Pending</span></td>
+                        <td>May 02, 2026</td>
+                        <td><button class="btn-table">Details</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</template>
+
+<template id="tpl-messages">
+<div class="section msgs-section">
+    <div class="section-title">
+        <h1>Your <span class="gold">Messages</span></h1>
+    </div>
+    <div class="chat-layout card">
+        <div class="contacts-col">
+            <div class="contacts-search"><i class="fa-solid fa-search"></i><input type="text" placeholder="Search…"></div>
+            <div class="contact-item active">
+                <div class="contact-avatar">E</div>
+                <div class="contact-info">
+                    <strong>Edward Maison</strong>
+                    <small>Your suit is progressing well…</small>
+                </div>
+                <span class="contact-time">10m</span>
+            </div>
+            <div class="contact-item">
+                <div class="contact-avatar">S</div>
+                <div class="contact-info">
+                    <strong>Sophia Laurent</strong>
+                    <small>Fabric has been sourced!</small>
+                </div>
+                <span class="contact-time">2h</span>
+            </div>
+            <div class="contact-item">
+                <div class="contact-avatar">W</div>
+                <div class="contact-info">
+                    <strong>William Cross</strong>
+                    <small>Fitting confirmed for Mar 28</small>
+                </div>
+                <span class="contact-time">1d</span>
+            </div>
+        </div>
+        <div class="chat-col">
+            <div class="chat-header">
+                <strong>Edward Maison</strong>
+                <small>Master Tailor & Founder</small>
+            </div>
+            <div class="messages-list">
+                <div class="msg-row them">
+                    <div class="msg-bubble">Good afternoon, Mr. Ashworth. Your Navy suit is progressing beautifully.</div>
+                    <span class="msg-time">10:30 AM</span>
+                </div>
+                <div class="msg-row me">
+                    <div class="msg-bubble">Wonderful! When can I come for the first fitting?</div>
+                    <span class="msg-time">10:32 AM</span>
+                </div>
+                <div class="msg-row them">
+                    <div class="msg-bubble">We have availability on March 28 at 11 AM. Shall I confirm that?</div>
+                    <span class="msg-time">10:35 AM</span>
+                </div>
+                <div class="msg-row me">
+                    <div class="msg-bubble">Perfect, please confirm!</div>
+                    <span class="msg-time">10:36 AM</span>
+                </div>
+            </div>
+            <div class="chat-input-row">
+                <input type="text" placeholder="Type your message…" class="chat-input">
+                <button class="btn-send"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+</template>
+
+<template id="tpl-notifications">
+<div class="section">
+    <div class="section-title">
+        <h1>Your <span class="gold">Notifications</span></h1>
+    </div>
+    <div class="card notif-card">
+        <div class="notif-item unread">
+            <div class="notif-ico gold-ico"><i class="fa-solid fa-scissors"></i></div>
+            <div class="notif-body">
+                <p>Your bespoke Navy Suit has moved to the <strong>Stitching</strong> phase.</p>
+                <small>Today, 10:45 AM</small>
+            </div>
+        </div>
+        <div class="notif-item unread">
+            <div class="notif-ico gold-ico"><i class="fa-solid fa-calendar-check"></i></div>
+            <div class="notif-body">
+                <p>Appointment confirmed for <strong>First Fitting</strong> on March 28, 2026.</p>
+                <small>Yesterday, 3:12 PM</small>
+            </div>
+        </div>
+        <div class="notif-item">
+            <div class="notif-ico"><i class="fa-solid fa-swatchbook"></i></div>
+            <div class="notif-body">
+                <p>Loro Piana fabric has been <strong>approved</strong> for your order.</p>
+                <small>March 24, 2026</small>
+            </div>
+        </div>
+        <div class="notif-item">
+            <div class="notif-ico"><i class="fa-solid fa-circle-check"></i></div>
+            <div class="notif-body">
+                <p>Payment received for <strong>Order #MM-2026-001</strong>.</p>
+                <small>February 10, 2026</small>
+            </div>
+        </div>
+    </div>
+</div>
+</template>
+<template id="tpl-profile">
+<div class="section">
+    <div class="section-title">
+        <h1>My <span class="gold">Profile</span></h1>
+        <button class="btn-gold">Edit Profile</button>
+    </div>
+    <div class="profile-layout">
+        <div class="card profile-main-card">
+            <div class="profile-avatar-section">
+                <img src="https://ui-avatars.com/api/?name=Yashrub+Unnisa&background=C8A96A&color=111&size=200" alt="Profile" class="profile-avatar-lg">
+                <div class="profile-id">
+                    <h2>Yashrub Unnisa</h2>
+                    <span class="loyalty-badge"><i class="fa-solid fa-star"></i> Gold Member</span>
+                </div>
+            </div>
+            <div class="profile-details">
+                <div class="profile-field"><i class="fa-solid fa-envelope"></i><span>yashrub.unnisa@example.com</span></div>
+                <div class="profile-field"><i class="fa-solid fa-phone"></i><span>+44 7700 900077</span></div>
+                <div class="profile-field"><i class="fa-solid fa-location-dot"></i><span>Mayfair, London</span></div>
+                <div class="profile-field"><i class="fa-solid fa-calendar"></i><span>Client since September 2024</span></div>
+            </div>
+        </div>
+        <div class="profile-side">
+            <div class="card stats-card">
+                <h3 class="card-head-inline">Account Summary</h3>
+                <div class="account-stats">
+                    <div class="a-stat"><strong>12</strong><span>Total Orders</span></div>
+                    <div class="a-stat"><strong>$4,500</strong><span>Total Spent</span></div>
+                    <div class="a-stat"><strong>Gold</strong><span>Tier Status</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</template>
+<script src="../js/dashboard.js"></script>
+</body>
+</html>
