@@ -390,9 +390,69 @@ body.light-mode .blog-hero-text h1 {
     line-height: 1.8;
 }
 
-.newsletter-form button:hover {
-    background-color: #D4AF37;
-    transform: scale(1.03);
+
+@media (max-width: 1024px) {
+    .blog-hero-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .blog-hero-text {
+        max-width: 800px;
+    }
+    .blog-hero-image {
+        width: 100%;
+        height: 500px;
+    }
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .featured-card {
+        flex-direction: column;
+    }
+    .featured-image {
+        min-height: 300px;
+    }
+}
+
+
+@media (max-width: 640px) {
+    .blog-hero {
+        padding: 120px 0 60px;
+    }
+    .blog-hero-text h1 {
+        font-size: 40px;
+    }
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    .blog-hero-image {
+        height: 350px;
+    }
+    .featured-content {
+        padding: 30px 20px;
+    }
+    .featured-content h2 {
+        font-size: 24px;
+    }
+    
+    
+    .btn, a, button {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    
+    .faq-accordion {
+        margin-top: 20px;
+    }
 }
 
 

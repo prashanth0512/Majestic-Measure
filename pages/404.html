@@ -4,151 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Page Not Found | Majestic Measure</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23d4a373'>▲</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/index.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--bg-primary);
-            overflow: hidden;
-            font-family: 'Inter', sans-serif;
-            transition: background-color 0.5s ease;
-        }
-
-        .error-container {
-            text-align: center;
-            position: relative;
-            z-index: 10;
-            padding: 40px;
-            max-width: 600px;
-            animation: fadeIn 1.5s ease-out;
-        }
-
-        .error-code {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 180px;
-            line-height: 1;
-            color: var(--primary-color);
-            margin: 0;
-            font-weight: 300;
-            letter-spacing: -5px;
-            position: relative;
-            display: inline-block;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .error-code::after {
-            content: '404';
-            position: absolute;
-            top: 0;
-            left: 0;
-            color: rgba(200, 169, 106, 0.1);
-            transform: translate(10px, 10px);
-            z-index: -1;
-        }
-
-        h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 42px;
-            margin: 20px 0;
-            font-weight: 400;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        p {
-            color: var(--text-secondary);
-            font-size: 16px;
-            margin-bottom: 40px;
-            line-height: 1.8;
-            letter-spacing: 0.5px;
-        }
-
-        .back-home {
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            padding: 16px 40px;
-            background-color: var(--primary-color);
-            color: var(--bg-dark);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            letter-spacing: 2px;
-            transition: var(--transition-smooth);
-            border: 1px solid var(--primary-color);
-        }
-
-        .back-home:hover {
-            background-color: transparent;
-            color: var(--primary-color);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(200, 169, 106, 0.1);
-        }
-
-        .theme-float {
-            position: fixed;
-            top: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: var(--card-bg);
-            border: 1px solid var(--card-border);
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 100;
-            font-size: 20px;
-            transition: var(--transition-smooth);
-            box-shadow: var(--shadow-premium);
-        }
-
-        .theme-float:hover {
-            transform: rotate(30deg) scale(1.1);
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-        }
-
-        .bg-element {
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(200, 169, 106, 0.03) 0%, transparent 70%);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .bg-element-1 { top: -100px; left: -100px; }
-        .bg-element-2 { bottom: -100px; right: -100px; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @media (max-width: 768px) {
-            .error-code { font-size: 120px; }
-            h1 { font-size: 32px; }
-            p { font-size: 14px; padding: 0 20px; }
-            .theme-float { top: 20px; right: 20px; width: 40px; height: 40px; font-size: 16px; }
-        }
-    </style>
+    <link rel="stylesheet" href="../css/404.css">
 </head>
 <body>
     <button class="theme-float" id="theme-toggle" title="Toggle Theme">
@@ -166,29 +28,6 @@
             <i class="fa-solid fa-arrow-left"></i> BACK TO HOME
         </a>
     </div>
-
-    <script>
-        const themeBtn = document.getElementById('theme-toggle');
-        const icon = themeBtn.querySelector('i');
-        
-        const applyTheme = (theme) => {
-            if (theme === 'light') {
-                document.body.classList.add('light-mode');
-                icon.className = 'fa-regular fa-moon';
-            } else {
-                document.body.classList.remove('light-mode');
-                icon.className = 'fa-regular fa-sun';
-            }
-            localStorage.setItem('maison_theme', theme);
-        };
-
-        const savedTheme = localStorage.getItem('maison_theme') || 'dark';
-        applyTheme(savedTheme);
-
-        themeBtn.addEventListener('click', () => {
-            const isLight = document.body.classList.contains('light-mode');
-            applyTheme(isLight ? 'dark' : 'light');
-        });
-    </script>
+    <script src="../js/404.js"></script>
 </body>
 </html>

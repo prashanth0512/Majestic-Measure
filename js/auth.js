@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
     
-    const currentTheme = localStorage.getItem('theme') || 'dark';
+    const currentTheme = localStorage.getItem('maison_theme') || 'dark';
     if (currentTheme === 'light') {
         document.body.classList.add('light-mode');
         if (themeIcon) {
@@ -12,10 +12,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    const rtlToggles = document.querySelectorAll('.rtl-toggle');
     const savedDir = localStorage.getItem('maison_dir') || 'ltr';
-    if (savedDir === 'rtl') {
-        document.documentElement.setAttribute('dir', 'rtl');
-    }
+    
+    const applyDir = (dir) => {
+        document.documentElement.setAttribute('dir', dir);
+        localStorage.setItem('maison_dir', dir);
+        rtlToggles.forEach(btn => {
+            btn.textContent = dir === 'ltr' ? 'RTL' : 'LTR';
+        });
+    };
+
+    applyDir(savedDir);
+
+    rtlToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
+            applyDir(currentDir === 'ltr' ? 'rtl' : 'ltr');
+        });
+    });
 
     if (themeToggleBtn && themeIcon) {
         themeToggleBtn.addEventListener('click', () => {
@@ -24,11 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isLightMode) {
                 themeIcon.classList.remove('fa-moon');
                 themeIcon.classList.add('fa-sun');
-                localStorage.setItem('theme', 'light');
+                localStorage.setItem('maison_theme', 'light');
             } else {
                 themeIcon.classList.remove('fa-sun');
                 themeIcon.classList.add('fa-moon');
-                localStorage.setItem('theme', 'dark');
+                localStorage.setItem('maison_theme', 'dark');
             }
         });
     }

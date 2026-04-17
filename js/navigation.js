@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <a href="ROOT_PATHpages/services.html" class="nav-item-services">SERVICES</a>
                 <a href="ROOT_PATHpages/blogs.html" class="nav-item-journal">JOURNAL</a>
                 <a href="ROOT_PATHpages/contact.html" class="nav-item-contact">CONTACT</a>
+                <a href="ROOT_PATHpages/dashboard.html" class="nav-item-dashboard">DASHBOARD</a>
                 <div class="mobile-auth">
                     <a href="ROOT_PATHpages/signup.html" class="icon-btn" aria-label="Account">
                         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -32,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             <circle cx="12" cy="7" r="4"></circle>
                         </svg>
                     </a>
-                    <a href="ROOT_PATHpages/dashboard.html" class="btn btn-primary">DASHBOARD</a>
                 </div>
             </nav>
 
@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         </svg>
                     </a>
                 <button class="rtl-toggle">LTR</button>
-                <a href="ROOT_PATHpages/dashboard.html" class="btn btn-primary">DASHBOARD</a>
                 <button class="hamburger" id="mobile-toggle">
                     <span></span>
                     <span></span>

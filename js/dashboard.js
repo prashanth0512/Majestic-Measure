@@ -1,10 +1,46 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    const rtlToggles = document.querySelectorAll('.rtl-toggle');
     const savedDir = localStorage.getItem('maison_dir') || 'ltr';
-    if (savedDir === 'rtl') {
-        document.documentElement.setAttribute('dir', 'rtl');
-    }
+    
+    const applyDir = (dir) => {
+        document.documentElement.setAttribute('dir', dir);
+        localStorage.setItem('maison_dir', dir);
+        rtlToggles.forEach(btn => {
+            btn.textContent = dir === 'ltr' ? 'RTL' : 'LTR';
+        });
+    };
+    applyDir(savedDir);
+
+    rtlToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
+            applyDir(currentDir === 'ltr' ? 'rtl' : 'ltr');
+        });
+    });
+
+    const themeToggles = document.querySelectorAll('.theme-toggle');
+    const savedTheme = localStorage.getItem('maison_theme') || 'light';
+
+    const applyTheme = (theme) => {
+        if (theme === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeToggles.forEach(btn => btn.innerHTML = '<i class="fa-solid fa-sun"></i>');
+        } else {
+            document.body.classList.remove('dark-mode');
+            themeToggles.forEach(btn => btn.innerHTML = '<i class="fa-solid fa-moon"></i>');
+        }
+        localStorage.setItem('maison_theme', theme);
+    };
+    applyTheme(savedTheme);
+
+    themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const isDark = document.body.classList.contains('dark-mode');
+            applyTheme(isDark ? 'light' : 'dark');
+        });
+    });
 
     const sidebar        = document.getElementById('sidebar');
     const mainWrapper    = document.getElementById('mainWrapper');
