@@ -44,8 +44,9 @@ section {
     z-index: 1;
 }
 
+/* Issue 14 – Light Mode: keep dark overlay so text stays visible over video */
 body.light-mode .about-hero-overlay {
-    background: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,255,255,0.85) 50%, rgba(255,255,255,0.95));
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.8));
 }
 
 .about-hero-content {
@@ -64,22 +65,27 @@ body.light-mode .about-hero-overlay {
     margin-top: 20px;
 }
 
+/* Issue 14 – Force white text in light mode too since overlay is always dark */
 body.light-mode .about-hero h1 {
-    color: #111111;
-    text-shadow: 0 0 40px rgba(255,255,255,0.8);
+    color: #FFFFFF;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.about-hero .section-subtitle {
+    color: var(--primary-color);
 }
 
 .about-hero p {
     font-size: 20px;
     max-width: 800px;
     margin: 0 auto;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.85);
     line-height: 1.8;
 }
 
 body.light-mode .about-hero p {
-    color: #333333;
-    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+    font-weight: 400;
 }
 
 .our-story {
@@ -161,6 +167,10 @@ body.light-mode .mission-vision {
     perspective: 1000px;
     transition: var(--transition-smooth);
     color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: left;
 }
 
 body.light-mode .mission-card {
@@ -180,6 +190,7 @@ body.light-mode .mission-card {
     font-size: 32px;
     margin-bottom: 30px;
     margin-top: 15px;
+    text-align: left;
 }
 
 .mission-card p {
@@ -187,18 +198,22 @@ body.light-mode .mission-card {
     color: var(--text-secondary);
     margin-bottom: 20px;
     line-height: 1.7;
+    text-align: left;
 }
 
 .quote-block {
-    margin-top: 40px;
+    margin-top: auto;
     padding-top: 40px;
     border-top: 1px solid var(--card-border);
+    text-align: left;
 }
 
 .quote-block p {
     font-style: italic;
     color: var(--primary-color) !important;
     font-size: 18px !important;
+    text-align: left;
+    margin-bottom: 10px;
 }
 
 .quote-block span {
@@ -206,6 +221,9 @@ body.light-mode .mission-card {
     letter-spacing: 2px;
     color: var(--text-secondary);
     opacity: 0.6;
+    display: block;
+    text-align: left;
+    margin-top: 8px;
 }
 
 
@@ -243,7 +261,11 @@ body.light-mode .team-card {
 }
 
 .team-img {
-    height: 300px;
+    height: 350px;
+    background-color: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
@@ -255,7 +277,7 @@ body.light-mode .team-card {
 }
 
 .team-card:hover .team-img img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .team-info {
@@ -335,9 +357,30 @@ body.light-mode .testimonial-card {
     color: var(--text-secondary);
 }
 
+.section-lead {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-style: italic;
+    color: var(--primary-color);
+    margin-top: -20px;
+    margin-bottom: 30px;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.section-subheading {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 650px;
+    margin: 15px auto 0;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
 .cta-container {
     margin-top: 80px;
 }
+
 
 @media (max-width: 1280px) {
     .about-hero h1 { font-size: 60px; }

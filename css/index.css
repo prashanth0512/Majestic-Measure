@@ -144,7 +144,21 @@ h1, h2, h3, h4, .est-text, .logo-text, .italic {
 }
 
 body.light-mode .hero-overlay {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(255,245,247,0.15) 50%, rgba(255,245,247,0.5));
+    background: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.75));
+}
+
+body.light-mode .hero .btn-secondary {
+    border-color: rgba(255, 255, 255, 0.8) !important;
+    color: #ffffff !important;
+}
+
+body.light-mode .hero .btn-secondary:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+body.light-mode .hero p {
+    color: rgba(255, 255, 255, 0.85) !important;
 }
 
 .hero-content {
@@ -415,6 +429,23 @@ body.light-mode .stat-label {
     background-color: var(--secondary-color);
 }
 
+/* Issue 17 – Light Mode: "What We Offer" / services section contrast */
+body.light-mode .services {
+    background-color: #FFF5F7;
+}
+
+body.light-mode .services .section-header h2 {
+    color: #111111 !important;
+}
+
+body.light-mode .services .section-header p {
+    color: #444444 !important;
+}
+
+body.light-mode .services .section-subtitle {
+    color: var(--primary-color) !important;
+}
+
 .section-header {
     text-align: center;
     max-width: 700px;
@@ -427,7 +458,7 @@ body.light-mode .stat-label {
 }
 
 .section-header p {
-    color: rgba(255,255,255,0.6);
+    color: var(--text-secondary);
 }
 
 .services-grid {
@@ -444,6 +475,14 @@ body.light-mode .stat-label {
     overflow: hidden;
     height: 100%;
     color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+}
+
+body.light-mode .service-card {
+    background-color: #ffffff;
+    border-color: rgba(212, 163, 115, 0.25);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
 }
 
 .service-card:hover {
@@ -453,15 +492,31 @@ body.light-mode .stat-label {
     border-color: var(--primary-color);
 }
 
+body.light-mode .service-card:hover {
+    background-color: #fffaf8;
+    box-shadow: 0 20px 50px rgba(212, 163, 115, 0.2);
+}
+
 .card-img {
     height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-secondary);
+    padding: 24px;
     overflow: hidden;
 }
 
+body.light-mode .card-img {
+    background-color: #f5ede8;
+}
+
 .card-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
     transition: var(--transition-smooth);
 }
 
@@ -472,6 +527,9 @@ body.light-mode .stat-label {
 .card-content {
     padding: 40px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .card-icon {
@@ -486,9 +544,19 @@ body.light-mode .stat-label {
     font-weight: 400;
 }
 
+body.light-mode .card-content h3 {
+    color: #111111 !important;
+}
+
 .card-content p {
     color: var(--text-secondary);
     font-size: 15px;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+body.light-mode .card-content p {
+    color: #444444 !important;
 }
 
 .card-footer {
@@ -500,6 +568,10 @@ body.light-mode .stat-label {
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 
+body.light-mode .card-footer {
+    border-top-color: rgba(0,0,0,0.08);
+}
+
 .price {
     font-size: 14px;
     color: var(--primary-color);
@@ -509,6 +581,10 @@ body.light-mode .stat-label {
 .arrow-btn {
     color: var(--text-white);
     transition: var(--transition-smooth);
+}
+
+body.light-mode .arrow-btn {
+    color: #555555;
 }
 
 .service-card:hover .arrow-btn {
@@ -537,7 +613,9 @@ body.light-mode .stat-label {
 .service-card-link {
     text-decoration: none;
     color: inherit;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     cursor: pointer;
     transition: var(--transition-smooth);
 }
@@ -555,13 +633,27 @@ body.light-mode .stat-label {
     background-attachment: fixed;
 }
 
+.journey .step-content {
+    background: #1a1a1a !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    color: #ffffff !important;
+}
+
+.journey .step-content h3 {
+    color: var(--primary-color) !important;
+}
+
+.journey .step-content p {
+    color: #a1a1a1 !important;
+}
+
 body.light-mode .journey {
-    background-image: linear-gradient(rgba(252, 252, 252, 0.633), rgba(228, 224, 224, 0.474)), url('../images/hero-bg.png');
+    background-image: linear-gradient(rgba(18, 18, 18, 0.92), rgba(18, 18, 18, 0.92)), url('../images/hero-bg.png');
 }
 
 body.light-mode .section-header.white h2,
 body.light-mode .section-header.white p {
-    color: #111111;
+    color: #ffffff;
 }
 
 .journey-timeline {
@@ -650,7 +742,7 @@ body.light-mode .section-header.white p {
 
 body.light-mode .step-content:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-hover);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
     border: 1px solid var(--primary-color);
 }
 
@@ -667,8 +759,8 @@ body.light-mode .step-content:hover {
 }
 
 body.light-mode .step-number {
-    color: #2d1616;
-    opacity: 0.9;
+    color: var(--primary-color);
+    opacity: 0.8;
 }
 
 @media (max-width: 768px) {
@@ -980,7 +1072,17 @@ body.light-mode .final-cta p {
 }
 
 body.light-mode .cta-overlay {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.75);
+}
+
+body.light-mode .final-cta .btn-secondary {
+    border-color: rgba(255, 255, 255, 0.8) !important;
+    color: #ffffff !important;
+}
+
+body.light-mode .final-cta .btn-secondary:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
 }
 
 .final-cta p {

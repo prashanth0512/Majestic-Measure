@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="logo">
                     <a href="ROOT_PATHindex.html">
                         <div class="logo-icon">▲</div>
-                        <div class="logo-text">Majestic<span>Measure</span></div>
+                        <div class="logo-text">MAJESTIC<span style="font-weight: 100;">MEASURE</span></div>
                     </a>
                 </div>
                 <p>Crafting bespoke garments of distinction since 2015. Where tradition meets precision, and every stitch tells your story.</p>

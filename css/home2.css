@@ -53,10 +53,47 @@
     margin-top: 0;
 }
 
+/* Fix: hero always has dark overlay, so btn-secondary must stay white in both modes */
+.home2-hero .btn-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.85) !important;
+    color: #ffffff !important;
+    background: transparent !important;
+}
+
+.home2-hero .btn-secondary:hover {
+    background-color: #ffffff !important;
+    color: #111111 !important;
+    border-color: #ffffff !important;
+    transform: translateY(-3px);
+}
+
+body.light-mode .home2-hero .btn-secondary {
+    border-color: rgba(255, 255, 255, 0.9) !important;
+    color: #ffffff !important;
+}
+
+body.light-mode .home2-hero .btn-secondary:hover {
+    background-color: #ffffff !important;
+    color: #111111 !important;
+}
+
 
 .categories {
     padding: 120px 0;
     background-color: var(--bg-primary);
+}
+
+/* Global Light Mode: Categories section header */
+body.light-mode .categories {
+    background-color: #FFFBFC;
+}
+
+body.light-mode .categories .section-header h2 {
+    color: #111111 !important;
+}
+
+body.light-mode .categories .section-header p {
+    color: #444444 !important;
 }
 
 .categories-grid {
@@ -94,7 +131,7 @@
     left: 0;
     width: 100%;
     padding: 40px;
-    background: linear-gradient(to top, rgba(252, 252, 248, 0.604), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
     z-index: 10;
 }
 
@@ -122,11 +159,12 @@ body.light-mode .tag {
 .category-content h3 {
     font-size: 28px;
     margin-bottom: 15px;
+    color: #FFFFFF;
 }
 
 .category-content p {
     font-size: 14px;
-    color: #FFFFFF !important; 
+    color: rgba(255, 255, 255, 0.85) !important; 
     line-height: 1.6;
     max-width: 90%;
 }
@@ -135,6 +173,24 @@ body.light-mode .tag {
 .difference {
     padding: 120px 0;
     background-color: var(--bg-secondary);
+}
+
+/* Issue 13 – Maison Difference: Light mode section header contrast */
+body.light-mode .difference {
+    background-color: #f5ede8;
+}
+
+body.light-mode .difference .section-header .section-subtitle {
+    color: var(--primary-color) !important;
+}
+
+body.light-mode .difference .section-header h2 {
+    color: #111111 !important;
+}
+
+body.light-mode .difference .section-header p {
+    color: #333333 !important;
+    font-weight: 500;
 }
 
 .difference-grid {
@@ -153,10 +209,20 @@ body.light-mode .tag {
     overflow: hidden;
 }
 
+body.light-mode .diff-item {
+    background: #ffffff;
+    border-color: rgba(212, 163, 115, 0.25);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
 .diff-item:hover {
     transform: translateY(-10px);
     border-color: var(--primary-color);
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+body.light-mode .diff-item:hover {
+    box-shadow: 0 20px 40px rgba(212, 163, 115, 0.25);
 }
 
 .diff-item i {
@@ -173,15 +239,32 @@ body.light-mode .tag {
     font-weight: 500;
 }
 
+body.light-mode .diff-item h3 {
+    color: #111111 !important;
+}
+
 .diff-item p {
     font-size: 15px;
     color: var(--text-secondary);
     line-height: 1.8;
 }
 
+body.light-mode .diff-item p {
+    color: #444444 !important;
+}
+
 
 .selected-works {
     padding: 120px 0;
+}
+
+/* Global Light Mode: Selected Works section */
+body.light-mode .selected-works {
+    background-color: #FFFBFC;
+}
+
+body.light-mode .selected-works .section-header h2 {
+    color: #111111 !important;
 }
 
 .case-studies-list {
@@ -270,40 +353,47 @@ body.light-mode .tag {
     font-family: 'Cormorant Garamond', serif;
 }
 
+body.light-mode .case-study-text h3 {
+    color: #111111 !important;
+}
+
+body.light-mode .btn-link {
+    color: #111111 !important;
+}
+
 
 .ready-to-begin {
+    position: relative;
     padding: 150px 0;
-    background-color: var(--primary-color); 
+    background: url('../images/home2_cta_bg.png') no-repeat center center/cover;
     text-align: center;
+}
+
+.ready-to-begin::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 1;
+}
+
+.ready-to-begin .container {
+    position: relative;
+    z-index: 2;
 }
 
 .ready-to-begin h2 {
     font-size: 56px;
-    color: var(--bg-primary); 
+    color: #ffffff !important; 
     margin-bottom: 30px;
 }
 
 .ready-to-begin p {
     font-size: 18px;
-    color: #111111 !important; 
+    color: rgba(255, 255, 255, 0.9) !important; 
     max-width: 600px;
     margin: 0 auto 50px;
     line-height: 1.8;
-}
-
-body.light-mode .ready-to-begin h2,
-body.light-mode .ready-to-begin p {
-    color: #111111 !important;
-}
-
-body.light-mode .btn-white {
-    background-color: #111111;
-    color: var(--primary-color);
-}
-
-body.light-mode .btn-outline-white {
-    border-color: #111111;
-    color: #111111;
 }
 
 .cta-actions {
@@ -313,8 +403,8 @@ body.light-mode .btn-outline-white {
 }
 
 .btn-white {
-    background-color: var(--bg-primary);
-    color: var(--primary-color);
+    background-color: #ffffff !important;
+    color: #111111 !important;
     padding: 18px 40px;
     border-radius: 0;
     font-weight: 600;
@@ -322,29 +412,36 @@ body.light-mode .btn-outline-white {
     transition: var(--transition-smooth);
     text-decoration: none;
     font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-white:hover {
-    background-color: var(--primary-color);
-    color: #fff;
+    background-color: var(--primary-color) !important;
+    color: #ffffff !important;
     transform: translateY(-5px);
 }
 
 .btn-outline-white {
-    border: 1px solid var(--bg-primary);
-    color: var(--bg-primary);
+    border: 1px solid #ffffff !important;
+    color: #ffffff !important;
     padding: 18px 40px;
     border-radius: 0;
     letter-spacing: 2px;
     transition: var(--transition-smooth);
     text-decoration: none;
     font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent !important;
 }
 
 .btn-outline-white:hover {
-    background-color: var(--bg-primary);
-    color: var(--primary-color);
-    border-color: var(--primary-color);
+    background-color: #ffffff !important;
+    color: #111111 !important;
+    border-color: #ffffff !important;
 }
 
 

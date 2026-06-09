@@ -44,8 +44,9 @@ section {
     z-index: 1;
 }
 
+/* Issue 14 – Light Mode: keep dark overlay so hero text always visible over video */
 body.light-mode .services-hero-overlay {
-    background: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,255,255,0.85) 50%, rgba(255,255,255,0.95));
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.8));
 }
 
 .services-hero-content {
@@ -64,23 +65,29 @@ body.light-mode .services-hero-overlay {
     margin-top: 20px;
 }
 
+/* Issue 14 – White text in light mode since overlay is always dark */
 body.light-mode .services-hero h1 {
-    color: #111111;
-    text-shadow: 0 4px 30px rgba(255,255,255,0.6);
+    color: #FFFFFF;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.services-hero .section-subtitle {
+    color: var(--primary-color);
 }
 
 .services-hero p {
     font-size: 20px;
     max-width: 800px;
     margin: 0 auto;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.85);
     line-height: 1.8;
 }
 
 body.light-mode .services-hero p {
-    color: #333333;
-    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+    font-weight: 400;
 }
+
 
 
 .what-we-offer {
@@ -235,8 +242,12 @@ body.light-mode .investment {
 .subtitle-p {
     max-width: 600px;
     margin: 20px auto 60px;
-    color: var(--text-secondary);
+    color: #CCCCCC;
     line-height: 1.6;
+}
+
+body.light-mode .subtitle-p {
+    color: #333333 !important;
 }
 
 .pricing-grid {
@@ -317,12 +328,16 @@ body.light-mode .pricing-card {
 
 .pricing-features li {
     font-size: 13px;
-    color: var(--text-secondary);
+    color: #CCCCCC;
     margin-bottom: 10px;
     display: flex;
     align-items: flex-start;
     gap: 8px;
     line-height: 1.4;
+}
+
+body.light-mode .pricing-features li {
+    color: #333333 !important;
 }
 
 .pricing-features li::before {
@@ -345,9 +360,13 @@ body.light-mode .pricing-card {
 
 .pricing-card .time {
     font-size: 12px;
-    color: var(--text-secondary);
+    color: #CCCCCC;
     letter-spacing: 1px;
     margin-bottom: 25px;
+}
+
+body.light-mode .pricing-card .time {
+    color: #333333 !important;
 }
 
 .details-link {
@@ -358,6 +377,10 @@ body.light-mode .pricing-card {
     text-decoration: none;
     margin-top: auto;
     transition: var(--transition-smooth);
+}
+
+body.light-mode .details-link {
+    color: #9c6c3e !important;
 }
 
 .details-link:hover {

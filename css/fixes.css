@@ -446,3 +446,26 @@ html[dir="rtl"] .footer-extra a:hover {
     padding-left: 0;
     padding-right: 10px;
 }
+
+/* About Page Timeline RTL Overrides */
+html[dir="rtl"] .story-timeline {
+    padding-left: 0;
+    padding-right: 40px;
+    border-left: none;
+    border-right: 1px solid rgba(197, 160, 89, 0.3);
+}
+
+html[dir="rtl"] .timeline-item::before {
+    left: auto;
+    right: -45px;
+}
+
+/* About Page Mission Card RTL Overrides */
+html[dir="rtl"] .mission-card,
+html[dir="rtl"] .mission-card h3,
+html[dir="rtl"] .mission-card p,
+html[dir="rtl"] .quote-block,
+html[dir="rtl"] .quote-block p,
+html[dir="rtl"] .quote-block span {
+    text-align: right !important;
+}
