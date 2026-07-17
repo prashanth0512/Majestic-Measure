@@ -71,6 +71,11 @@ const blogData = {
             
             <p>When selecting your fabric, consider not only the season but the wear pattern. A hard-wearing worsted wool is ideal for daily business wear, while a luxurious blend of wool, silk, and linen offers the perfect texture for casual summer jackets.</p>
 
+            <h2>Weave and Texture</h2>
+            <p>Beyond weight and fiber fineness, the weave of the cloth dictates both its visual character and performance. A plain weave, such as a crisp tropical wool or fresco, features a simple over-under pattern that maximizes airflow, making it the perfect choice for warm weather. In contrast, a twill weave — recognizable by its diagonal ribbing — yields a denser, heavier cloth like gabardine or serge. Twills drape beautifully, resist wrinkling, and offer a soft, luxurious feel, making them the classic choice for business suiting.</p>
+            
+            <p>For those seeking depth and texture, a hopsack or herringbone weave offers a sophisticated alternative. Hopsack features a loose, basket-like weave that lends a matte, textured appearance, ideal for casual blazers. Herringbone, with its distinctive V-shaped patterning, catches the light subtly, adding visual interest to solid charcoal or navy suits without violating formal dress codes.</p>
+
             <div class="article-author-bio">
                 <div class="author-info">
                     <h4>Eleanor Vance</h4>
@@ -107,7 +112,6 @@ const blogData = {
             <p>Wool is a natural, living fiber with an inherent elasticity. After a day of wear, a garment needs time to recover its original shape. Hanging your suit on a contoured wooden hanger in an open area allows the fibers to relax and release wrinkles naturally. Avoid iron pressing directly, which can burn the delicate wool fibers; instead, use a high-quality garment steamer to gently refresh the cloth.</p>
             
             <p>If your suit gets wet, do not place it near direct heat sources. Let it dry slowly at room temperature, away from radiators or direct sunlight, to preserve the natural lanolin oils in the wool.</p>
-
             <div class="article-author-bio">
                 <div class="author-info">
                     <h4>Jonathan Sterling</h4>
@@ -172,6 +176,14 @@ const blogData = {
             
             <p>Every pattern is still drawn by hand with chalk, every canvas is stitched manually, and every buttonhole is cut and sewn by hand. It is this absolute refusal to compromise on quality that keeps the street at the center of the global sartorial map.</p>
 
+            <h2>The Modern Sartorial Renaissance</h2>
+            <p>While Savile Row is steeped in heritage, it is far from a museum. The street has experienced a modern renaissance, driven by a new generation of tailors who respect traditional craft while embracing contemporary styling and relaxed silhouettes. This evolution is reflected in the introduction of lighter cloths, unstructured jackets, and casual styling options that cater to the shifting lifestyle of the modern gentleman. Today's Savile Row tailors design garments that transition seamlessly from formal boardrooms to upscale casual settings.</p>
+            
+            <p>This balance between heritage and innovation is what keeps Savile Row relevant. The modern patron is looking for a suit that combines the structural discipline of traditional tailoring with the lightweight comfort of modern Italian style. By merging these philosophies, Savile Row continues to stand as the global standard for custom tailoring. Every stitch sewn along this historic row remains a link between the golden age of tailoring and the future of premium menswear.</p>
+             <p>Savile Row is more than a street in Mayfair; it is a philosophy. For over two hundred years, this narrow thoroughfare has been the global epicenter of men's tailoring, a place where cloth is transformed into character through the quiet application of mastery.<p>Your wedding attire should harmonize with the wedding venue and the bridal gown without appearing overly matched. A formal church wedding demands structured tailoring, while a beachside or garden ceremony allows for breathable fabrics like linen or lightweight wool-silk blends in softer, earthier tones.</p>
+            </p>
+
+
             <div class="article-author-bio">
                 <div class="author-info">
                     <h4>Edward Maison</h4>
@@ -190,9 +202,6 @@ const blogData = {
         content: `
             <p>The custom shirt is a canvas for personal expression, where every detail contributes to the overall aesthetic. From the crispness of the collar to the precision of the cuffs, each element plays a role in defining the wearer's style.</p>
 
-            <img src="../images/fabric-2.png" alt="Selecting shirt fabrics at Artisan Workshop">
-            <p class="article-image-caption">The foundation of every great shirt is the cloth it's cut from.</p>
-
             <h2>The Collar: Your Signature</h2>
             <p>The collar is the most important part of any shirt as it frames your face. Whether it's the classic spread, the formal wingtip, or the more casual button-down, each conveys a different message. A well-constructed collar maintains its shape throughout the day, ensuring you look sharp from your first meeting to your last.</p>
             
@@ -209,6 +218,8 @@ const blogData = {
 
             <h2>The Subtle Details of Customization</h2>
             <p>Beyond the collar and cuffs, a custom shirt offers numerous details that can be tailored to your lifestyle. The choice of placket — whether a clean French front for formal occasions or a standard placket for everyday business — dictates the shirt's casualness. Mother-of-pearl buttons, hand-stitched monograms, and split-yoke construction are subtle indicators of premium craftsmanship.</p>
+
+           
 
             <div class="article-author-bio">
                 <div class="author-info">
@@ -228,9 +239,6 @@ const blogData = {
         content: `
             <p>In a world of fast fashion and fleeting trends, the concept of a capsule wardrobe is more relevant than ever. It's about stripping back the noise and focusing on the essential. A collection of garments that are interconnected, versatile, and built to last.</p>
 
-            <img src="../images/cat-casual.png" alt="Curated selection of wardrobe essentials">
-            <p class="article-image-caption">A capsule wardrobe is built on a foundation of versatility and classic style.</p>
-
             <h2>The Core Essentials</h2>
             <p>The perfect capsule wardrobe starts with the base. Every man should own these five foundational pieces:</p>
             <ul>
@@ -249,10 +257,6 @@ const blogData = {
             <blockquote>"True elegance is the absence of clutter. It's about knowing exactly what you need and nothing more."</blockquote>
 
             <p>Investing in higher quality pieces means they will not only look better but also last longer. At Maison De Tailleur, we specialize in creating these foundational garments — pieces that will remain as stylish in twenty years as they are today.</p>
-
-            <h2>Seasonal Transitions</h2>
-            <p>A capsule wardrobe is not static; it evolves with the changing seasons. By introducing lightweight merino wool knits and cotton-linen trousers during warmer months, and layering with cashmere overcoats and flannel blazers in winter, you maintain a consistent aesthetic without needing a vast collection of garments.</p>
-
             <div class="article-author-bio">
                 <div class="author-info">
                     <h4>Julian Thorne</h4>
@@ -279,6 +283,34 @@ const blogData = {
 
 const moreArticlesGrid = [
     {
+        id: "art-of-bespoke-suit",
+        img: "../images/b.deatil1.avif",
+        cat: "Bespoke Craft",
+        date: "March 18, 2026",
+        title: "The Art of the Bespoke Suit: Why Every Stitch Tells Your Story"
+    },
+    {
+        id: "fabric-guide",
+        img: "../images/fabric-1.png",
+        cat: "Fabric",
+        date: "Feb 24, 2026",
+        title: "The Gentleman's Guide to Suiting Fabrics"
+    },
+    {
+        id: "suit-care",
+        img: "../images/bespoke-suit.png",
+        cat: "Care",
+        date: "Feb 10, 2026",
+        title: "How to Care for Your Bespoke Suit"
+    },
+    {
+        id: "wedding-suit",
+        img: "../images/wedding_suit.png",
+        cat: "Wedding",
+        date: "Jan 28, 2026",
+        title: "Choosing the Perfect Wedding Suit: A Groom's Guide"
+    },
+    {
         id: "savile-row-history",
         img: "../images/blog card.avif",
         cat: "Heritage",
@@ -287,14 +319,14 @@ const moreArticlesGrid = [
     },
     {
         id: "shirt-styling",
-        img: "../images/cat-business.png",
+        img: "../images/custom-shirt.png",
         cat: "Style",
         date: "Dec 19, 2025",
         title: "The Art of the Custom Shirt: Collars, Cuffs & Character"
     },
     {
         id: "wardrobe-capsule",
-        img: "../images/cat-casual.png",
+        img: "../images/cat-business.png",
         cat: "Lifestyle",
         date: "Dec 5, 2025",
         title: "Building the Perfect Capsule Wardrobe for the Modern Gentleman"
