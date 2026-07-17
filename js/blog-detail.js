@@ -27,15 +27,6 @@ const blogData = {
             <h2>The Silhouette of Confidence</h2>
             <p>A masterfully cut suit does more than drape over the shoulders; it works in harmony with the body's natural alignment. Through subtle manipulations of the shoulder line, collar stance, and chest fullness, a tailor can enhance posture and project a refined presence. This bespoke architecture provides comfort while creating an unmistakable silhouette of quiet confidence.</p>
             
-            <p>Beyond the physical adjustment of proportions, this silhouette is also a psychological armor. When a garment fits perfectly, the confidence it inspires comes from absolute ease of wear. This is why Savile Row suits speak of distinction without shouting, allowing the individual's presence to command the room.</p>
-            
-            <h2>A Sartorial Partnership</h2>
-            <p>The journey to a completed suit is not a single transaction, but a collaborative evolution. Over several weeks and multiple fittings, the client and the tailor develop a shared language of fit and style. The first fitting (the basted fitting) utilizes temporary white basting thread to draft the skeletal outline of the suit. This stage is where the master cutter reads the client's posture, noticing the slope of a shoulder or the turn of the hip, and refines the draft to ensure absolute freedom of movement.</p>
-            
-            <p>By the time of the forward fitting, the garment has taken structural shape. Here, details like the exact placement of pockets, the width of the lapel, and the height of the collar are finalized to balance the client’s unique physical proportions. This close collaboration ensures that the finished garment is not only tailored to the body, but also aligned with the personal character and lifestyle of the wearer.</p>
-            
-            <p>Ultimately, the bespoke process is a partnership between patron and maker. It is an investment in a garment that defies the transient nature of modern fashion trends, built to be worn, lived in, and passed down to the next generation.</p>
-
             <div class="article-author-bio">
                 <div class="author-info">
                     <h4>Jonathan Sterling</h4>
