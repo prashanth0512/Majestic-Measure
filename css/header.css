@@ -55,7 +55,8 @@ header nav.container {
 
 .logo-text span {
     font-weight: 300;
-    opacity: 0.8;
+    opacity: 1;
+    color: var(--primary-color);
 }
 
 .nav-links {
@@ -90,8 +91,8 @@ header nav.container {
     gap: 20px;
 }
 
-.mobile-auth {
-    display: none;
+.mobile-menu-actions {
+    display: none !important;
 }
 
 .theme-toggle {
@@ -269,9 +270,15 @@ body.light-mode .btn-primary {
         letter-spacing: 1.5px;
     }
 
+    .nav-actions .theme-toggle,
+    .nav-actions .rtl-toggle,
     .nav-actions .icon-btn,
     .nav-actions .btn-primary {
-        display: none;
+        display: none !important;
+    }
+    
+    .desktop-only {
+        display: none !important;
     }
     
     .nav-links.active {
@@ -290,26 +297,44 @@ body.light-mode .btn-primary {
         overflow-y: auto;
     }
 
-    .mobile-auth {
-        display: flex;
+    .mobile-menu-actions {
+        display: flex !important;
         flex-direction: row;
-        flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        gap: 15px;
+        gap: 25px;
         width: 100%;
-        padding: 0 20px;
-        margin-top: 20px;
-        padding-bottom: 40px;
+        margin-top: 30px;
+        padding-bottom: 20px;
     }
 
-    .mobile-auth .icon-btn,
-    .mobile-auth .btn-primary {
+    .mobile-menu-actions .theme-toggle,
+    .mobile-menu-actions .rtl-toggle,
+    .mobile-menu-actions .icon-btn {
         display: flex !important;
-        width: auto;
-        padding: 10px 20px;
-        justify-content: center;
-        text-align: center;
+        align-items: center !important;
+        justify-content: center !important;
+        color: var(--text-primary) !important;
+        background: transparent !important;
+        border: none !important;
+        font-size: 20px !important;
+        cursor: pointer !important;
+        transition: var(--transition-smooth);
+    }
+    
+    .mobile-menu-actions .rtl-toggle {
+        border: 1px solid var(--primary-color) !important;
+        border-radius: 50% !important;
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
+    }
+    
+    .mobile-menu-actions .theme-toggle:hover,
+    .mobile-menu-actions .rtl-toggle:hover,
+    .mobile-menu-actions .icon-btn:hover {
+        color: var(--primary-color) !important;
     }
     
     .dropdown {

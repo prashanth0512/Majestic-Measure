@@ -14,13 +14,13 @@ const SERVICES = {
             { label: 'FITTINGS', value: '3–5 Sessions' },
             { label: 'TURNAROUND', value: '10–14 Weeks' }
         ],
-        overviewH2: 'Where Every Stitch Tells Your Story',
+        overviewH2: 'Where <span class="accent">Every Stitch</span> Tells Your Story',
         overviewBody: [
             'A bespoke suit from Maison De Tailleur begins not with cloth, but with a conversation. We listen, we understand, and only then do we create a garment that is singularly yours.',
             'Unlike ready-to-wear or even made-to-measure, a true bespoke suit is built upon a unique paper pattern made from scratch to your body\'s precise measurements — over 40 of them. The result is a fit impossible to achieve by any other means.',
             'Every jacket is constructed on a floating horsehair canvas, hand-padded and hand-stitched to mould gently to your frame. This is not efficiency. This is craft.'
         ],
-        processH2: 'Your Bespoke Process',
+        processH2: 'Your <span class="accent">Bespoke Process</span>',
         processLabel: 'THE JOURNEY',
         steps: [
             { num: '01', title: 'Consultation', desc: 'We sit together for one to two hours. You tell us about your lifestyle, your occasions, your aesthetic values. We show you fabrics, discuss cut and silhouette.' },
@@ -28,7 +28,7 @@ const SERVICES = {
             { num: '03', title: 'Baste Fitting', desc: 'A rough hand-stitched version is assembled to verify the pattern\'s accuracy. Major decisions about shape are made and refined at this stage.' },
             { num: '04', title: 'Final Delivery', desc: 'After further fittings and refinements, your completed suit is delivered. Your pattern is stored in our archive for all future commissions.' }
         ],
-        includesH2: 'Every Commission Includes',
+        includesH2: 'Every <span class="accent">Commission</span> Includes',
         includes: [
             { icon: 'fa-ruler-combined', title: '40+ Measurements', desc: 'A unique pattern built entirely from scratch around your body.' },
             { icon: 'fa-scroll', title: '4,000+ Fabric Selection', desc: 'Access to our full library from the world\'s finest mills including Loro Piana and Holland & Sherry.' },
@@ -37,7 +37,7 @@ const SERVICES = {
             { icon: 'fa-shield-halved', title: 'Lifetime Care', desc: 'Your pattern is archived and we stand behind every garment with complimentary first-year adjustments.' },
             { icon: 'fa-star', title: 'Named Tailor', desc: 'You are assigned a single dedicated tailor who knows your body and your taste throughout the entire process.' }
         ],
-        ctaH2: 'Begin Your <em>Bespoke</em> Journey',
+        ctaH2: 'Begin Your Bespoke <span class="accent">Journey</span>',
         ctaP: 'Your first consultation is private, unhurried, and without obligation. Come and meet us. See the cloth. Understand what is possible.',
         ctaBtn: 'Book a Consultation'
     },
@@ -54,13 +54,13 @@ const SERVICES = {
             { label: 'FITTINGS', value: '3–4 Sessions' },
             { label: 'TURNAROUND', value: '10–12 Weeks' }
         ],
-        overviewH2: 'The Gravity of Great Occasions',
+        overviewH2: 'The Gravity of <span class="accent">Great Occasions</span>',
         overviewBody: [
             'A wedding is the highest expression of life\'s ceremonies. The suit you wear should be equal to that moment — not an afterthought, but a declaration.',
             'We work with grooms, fathers, and entire wedding parties to create a unified yet individually considered aesthetic. Whether morning dress, lounge suits, or black tie, every commission begins with the same question: who are you, and how do you want to be remembered?',
             'Each garment is made to the same standard as our finest bespoke — floating canvas, hand-stitching, 40+ measurements — with the understanding that some days must simply be extraordinary.'
         ],
-        processH2: 'Your Wedding Process',
+        processH2: 'Your <span class="accent">Wedding Process</span>',
         processLabel: 'THE JOURNEY',
         steps: [
             { num: '01', title: 'Initial Consultation', desc: 'We discuss your wedding vision, the venue, the season, and what you want your garments to say about you.' },
@@ -68,7 +68,7 @@ const SERVICES = {
             { num: '03', title: 'Fittings', desc: 'With your wedding date locked, we schedule fittings within a precise timeline, ensuring delivery with at least three weeks to spare.' },
             { num: '04', title: 'Wedding Day Support', desc: 'A member of our team is available by phone on your wedding day for any last-minute guidance.' }
         ],
-        includesH2: 'Every Wedding Commission',
+        includesH2: 'Every <span class="accent">Wedding</span> Commission',
         includes: [
             { icon: 'fa-people-group', title: 'Full Party Service', desc: 'Groom, best men, fathers, and ushers — all dressed to a unified vision with individual cuts.' },
             { icon: 'fa-scroll', title: 'Dedicated Fabric Guidance', desc: 'Seasonal-appropriate fabrics — lightweight linens for summer, warm flannels for winter.' },
@@ -77,7 +77,7 @@ const SERVICES = {
             { icon: 'fa-shirt', title: 'Shirt & Accessories', desc: 'Optional: co-ordinated bespoke shirts, ties, and pocket squares to complete the look.' },
             { icon: 'fa-shield-halved', title: 'Post-Wedding Care', desc: 'Cleaning, pressing, and storage guidance provided. Alterations available for future use.' }
         ],
-        ctaH2: 'Begin <em>Your Day\'s</em> Garment',
+        ctaH2: 'Begin Your Day\'s <span class="accent">Garment</span>',
         ctaP: 'Wedding commissions require a minimum of 12 weeks. Book your consultation early to ensure availability.',
         ctaBtn: 'Book a Consultation'
     },
@@ -94,13 +94,13 @@ const SERVICES = {
             { label: 'FITTINGS', value: '1–2 Sessions' },
             { label: 'TURNAROUND', value: '2–3 Weeks' }
         ],
-        overviewH2: 'The Foundation of Every Great Outfit',
+        overviewH2: 'The Foundation of Every <span class="accent">Great Outfit</span>',
         overviewBody: [
             'The finest suit in the world is diminished by a shirt that does not fit. Our made-to-measure shirts ensure that the most important layer of your wardrobe is exactly right — in fit, in fabric, and in detail.',
             'We stock over 500 shirting fabrics: sea-island cottons, Swiss voiles, Irish linens, and silks from the finest mills in Europe and Asia. Each shirt is cut to your body with every detail — collar style, cuff type, placket, pocket — determined by you.',
             'Most clients find that within two or three commissions, their pattern is refined to perfection. From that point, ordering new shirts is seamless and effortless.'
         ],
-        processH2: 'Your Shirt Process',
+        processH2: 'Your <span class="accent">Shirt Process</span>',
         processLabel: 'THE JOURNEY',
         steps: [
             { num: '01', title: 'Fabric Selection', desc: 'Visit our studio and select from our extensive shirting library. We guide you based on your intended use — business, formal, casual, or sporting.' },
@@ -108,7 +108,7 @@ const SERVICES = {
             { num: '03', title: 'Detail Choices', desc: 'Every detail is chosen: collar style, cuff type, front placket, pocket, monogram, and mother-of-pearl or horn buttons.' },
             { num: '04', title: 'Delivery & Refinement', desc: 'First shirts are fitted before completion. After the initial commission, reorders require no fitting and deliver in 10 days.' }
         ],
-        includesH2: 'Every Shirt Commission',
+        includesH2: 'Every <span class="accent">Shirt</span> Commission',
         includes: [
             { icon: 'fa-scroll', title: '500+ Shirting Fabrics', desc: 'Sea-island cotton, Swiss poplin, Irish linen, and silk options.' },
             { icon: 'fa-ruler', title: 'Personal Pattern', desc: 'A made-to-measure pattern stored for all future reorders.' },
@@ -117,7 +117,7 @@ const SERVICES = {
             { icon: 'fa-rotate', title: 'Effortless Reorders', desc: 'Once your pattern is perfected, new shirts ordered in minutes with 10-day delivery.' },
             { icon: 'fa-box-open', title: 'Premium Presentation', desc: 'Delivered in a Maison tissue-lined shirt box with full care instructions.' }
         ],
-        ctaH2: 'Commission Your <em>Perfect</em> Shirt',
+        ctaH2: 'Commission Your Perfect <span class="accent">Shirt</span>',
         ctaP: 'First-time clients are invited for a fabric discovery session. No commitment. Just cloth, conversation, and possibility.',
         ctaBtn: 'Book a Consultation'
     },
@@ -134,13 +134,13 @@ const SERVICES = {
             { label: 'TURNAROUND', value: '5 Days – 3 Weeks' },
             { label: 'GARMENT TYPES', value: 'Suits, Shirts, Coats' }
         ],
-        overviewH2: 'Breathing New Life Into Cherished Garments',
+        overviewH2: 'Breathing New Life Into <span class="accent">Cherished Garments</span>',
         overviewBody: [
             'A well-made garment should outlive the body\'s changes, the seasons, and the decades. Our alterations service honours that investment — adjusting, repairing, and restoring garments so they continue to serve you impeccably.',
             'Whether it is a beloved but ill-fitting inheritance, a bespoke suit that no longer quite fits after a change in weight, or a garment in need of careful repair, we approach every piece with the same attention we give a new commission.',
             'We work on garments from any maker — bringing craft and care to restoration work that most high street tailors simply cannot match.'
         ],
-        processH2: 'Your Alteration Process',
+        processH2: 'Your <span class="accent">Alteration Process</span>',
         processLabel: 'THE JOURNEY',
         steps: [
             { num: '01', title: 'Assessment', desc: 'Free assessment of your garment. Written quotation provided before any work begins.' },
@@ -148,7 +148,7 @@ const SERVICES = {
             { num: '03', title: 'Execution', desc: 'Work carried out by our senior tailors using the correct techniques for the garment\'s original construction method.' },
             { num: '04', title: 'Collection', desc: 'Final try-on and collection. Additional small refinements completed while you wait.' }
         ],
-        includesH2: 'Alteration Services',
+        includesH2: 'Alteration <span class="accent">Services</span>',
         includes: [
             { icon: 'fa-arrows-up-down-left-right', title: 'Resizing', desc: 'Taking in or letting out jackets, trousers, and waistcoats as your body changes.' },
             { icon: 'fa-ruler-vertical', title: 'Length Adjustments', desc: 'Trouser hems, jacket sleeves, shirt sleeves, and coat lengths to precision.' },
@@ -157,7 +157,7 @@ const SERVICES = {
             { icon: 'fa-circle', title: 'Button Replacement', desc: 'Horn, mother-of-pearl, or fabric-covered buttons sourced and fitted correctly.' },
             { icon: 'fa-spray-can-sparkles', title: 'Refresh & Press', desc: 'Full steam press, spot cleaning, and presentation in our signature garment bag.' }
         ],
-        ctaH2: 'Restore Your <em>Favourite</em> Pieces',
+        ctaH2: 'Restore Your Favourite <span class="accent">Pieces</span>',
         ctaP: 'Bring in any garment for a free, no-obligation assessment. We\'ll tell you honestly what can be done and what it will cost.',
         ctaBtn: 'Book an Assessment'
     },
@@ -174,13 +174,13 @@ const SERVICES = {
             { label: 'DURATION', value: '90 Minutes' },
             { label: 'FORMAT', value: 'Private Studio Session' }
         ],
-        overviewH2: 'Your Personal Image, Perfected',
+        overviewH2: 'Your <span class="accent">Personal Image</span>, Perfected',
         overviewBody: [
             'Knowing what to wear is a skill, not an instinct. Our styling consultation service provides the framework, the vocabulary, and the guidance to present yourself with permanent confidence.',
             'Each session is private, unhurried, and tailored to your lifestyle — whether you are dressing for the boardroom, social occasions, or everyday excellence. We assess your existing wardrobe, identify gaps, and create a considered plan.',
             'Many clients combine styling consultations with their bespoke commissions, using the session to define their overall aesthetic direction before investing in new garments.'
         ],
-        processH2: 'What to Expect',
+        processH2: 'What to <span class="accent">Expect</span>',
         processLabel: 'THE SESSION',
         steps: [
             { num: '01', title: 'Pre-Session Questionnaire', desc: 'You complete a brief lifestyle and preference questionnaire allowing us to prepare a focused session around your specific needs.' },
@@ -188,7 +188,7 @@ const SERVICES = {
             { num: '03', title: 'Style Definition', desc: 'Through conversation and visual reference, we articulate your personal style identity and create a lookbook of your defined aesthetic.' },
             { num: '04', title: 'Action Plan', desc: 'You leave with a written wardrobe plan — priority purchases, key combinations, and fabric/colour direction for all future commissions.' }
         ],
-        includesH2: 'Every Consultation Includes',
+        includesH2: 'Every <span class="accent">Consultation</span> Includes',
         includes: [
             { icon: 'fa-book-open', title: 'Personal Lookbook', desc: 'A curated visual document of your defined style direction, yours to keep.' },
             { icon: 'fa-list-check', title: 'Written Wardrobe Plan', desc: 'Priority purchases, colour palette, fabric direction, and cost estimates.' },
@@ -197,7 +197,7 @@ const SERVICES = {
             { icon: 'fa-palette', title: 'Colour & Fabric Guidance', desc: 'Specific recommendations on colours and fabric weights that suit your colouring and lifestyle.' },
             { icon: 'fa-rotate', title: 'Ongoing Relationship', desc: 'Quarterly check-ins available as your life and wardrobe evolve.' }
         ],
-        ctaH2: 'Define Your <em>Personal</em> Style',
+        ctaH2: 'Define Your Personal <span class="accent">Style</span>',
         ctaP: 'One session can change how you think about getting dressed forever. No sales pressure. Just clarity.',
         ctaBtn: 'Book a Session'
     }
@@ -254,7 +254,7 @@ function renderService(slug) {
         .join('');
 
     
-    document.getElementById('sd-overview-h2').textContent = data.overviewH2;
+    document.getElementById('sd-overview-h2').innerHTML = data.overviewH2;
     document.getElementById('sd-overview-body').innerHTML = data.overviewBody
         .map(p => `<p>${p}</p>`).join('');
     const ovImg = document.getElementById('sd-overview-img');
@@ -263,7 +263,7 @@ function renderService(slug) {
 
     
     document.getElementById('sd-process-label').textContent = data.processLabel;
-    document.getElementById('sd-process-h2').textContent = data.processH2;
+    document.getElementById('sd-process-h2').innerHTML = data.processH2;
     document.getElementById('sd-steps').innerHTML = data.steps
         .map(s => `<div class="process-step reveal">
             <div class="step-number">${s.num}</div>
@@ -272,7 +272,7 @@ function renderService(slug) {
         </div>`).join('');
 
     
-    document.getElementById('sd-includes-h2').textContent = data.includesH2;
+    document.getElementById('sd-includes-h2').innerHTML = data.includesH2;
     document.getElementById('sd-includes').innerHTML = data.includes
         .map(i => `<div class="include-item reveal">
             <div class="include-icon"><i class="fa-solid ${i.icon}"></i></div>

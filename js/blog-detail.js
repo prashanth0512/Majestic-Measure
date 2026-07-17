@@ -24,6 +24,11 @@ const blogData = {
             
             <p>Next time you put on a jacket, look at the way the lapel rolls down to the button. Is it a severe, flattened crease? Or does it bloom naturally, full of life and structure? That is the difference between a fused factory piece and a hand-tailored masterpiece.</p>
 
+            <h2>The Silhouette of Confidence</h2>
+            <p>A masterfully cut suit does more than drape over the shoulders; it works in harmony with the body's natural alignment. Through subtle manipulations of the shoulder line, collar stance, and chest fullness, a tailor can enhance posture and project a refined presence. This bespoke architecture provides comfort while creating an unmistakable silhouette of quiet confidence.</p>
+            
+            <p>Ultimately, the bespoke process is a partnership between patron and maker. It is an investment in a garment that defies the transient nature of modern fashion trends, built to be worn, lived in, and passed down to the next generation.</p>
+
             <div class="article-author-bio">
                 <div class="author-info">
                     <h4>Jonathan Sterling</h4>
@@ -53,6 +58,11 @@ const blogData = {
                 <li><strong>10 - 12 oz (300-360g):</strong> Mid-weight, often called "four-season." The standard for business suits in temperate climates.</li>
                 <li><strong>13 oz+ (400g+):</strong> Heavyweight. Tweeds, heavy flannels, and cavalry twills. Perfect for winter, holding a fantastic drape.</li>
             </ul>
+
+            <h2>Choosing the Right Mill</h2>
+            <p>The provenance of your cloth is as important as its composition. Historic mills in Yorkshire, England, and Biella, Italy, have spent centuries perfecting their weaving techniques. English mills are renowned for creating robust, structured cloths that hold a crisp line, whereas Italian mills favor a softer, more fluid drape that is perfect for unstructured tailoring.</p>
+            
+            <p>When selecting your fabric, consider not only the season but the wear pattern. A hard-wearing worsted wool is ideal for daily business wear, while a luxurious blend of wool, silk, and linen offers the perfect texture for casual summer jackets.</p>
 
             <div class="article-author-bio">
                 <div class="author-info">
@@ -86,6 +96,11 @@ const blogData = {
 
             <img src="../images/blog card.avif" alt="Properly hanging suits">
 
+            <h2>The Power of Steam and Resting</h2>
+            <p>Wool is a natural, living fiber with an inherent elasticity. After a day of wear, a garment needs time to recover its original shape. Hanging your suit on a contoured wooden hanger in an open area allows the fibers to relax and release wrinkles naturally. Avoid iron pressing directly, which can burn the delicate wool fibers; instead, use a high-quality garment steamer to gently refresh the cloth.</p>
+            
+            <p>If your suit gets wet, do not place it near direct heat sources. Let it dry slowly at room temperature, away from radiators or direct sunlight, to preserve the natural lanolin oils in the wool.</p>
+
             <div class="article-author-bio">
                 <div class="author-info">
                     <h4>Jonathan Sterling</h4>
@@ -115,6 +130,11 @@ const blogData = {
                 <li><strong>The Dinner Jacket:</strong> For evening ceremonies and "Black Tie" receptions. Midnight blue is often preferred over black under artificial light, as it retains a deep, rich hue.</li>
             </ul>
 
+            <h2>Coordination and Context</h2>
+            <p>Your wedding attire should harmonize with the wedding venue and the bridal gown without appearing overly matched. A formal church wedding demands structured tailoring, while a beachside or garden ceremony allows for breathable fabrics like linen or lightweight wool-silk blends in softer, earthier tones.</p>
+            
+            <p>Don't forget the finishing details: a hand-rolled silk pocket square, custom metal cufflinks, and polished leather oxfords. These personal touches complete the bespoke narrative, ensuring you feel confident as you take this historic step.</p>
+
             <div class="article-author-bio">
                 <div class="author-info">
                     <h4>William Cross</h4>
@@ -139,6 +159,11 @@ const blogData = {
             <p>By the Victorian era, the focus shifted from the battlefield to the boardroom and the ballroom. Beau Brummell, the original dandy, frequented the area, championing a new aesthetic of understated elegance that prioritized fit and cloth over flamboyant decoration.</p>
 
             <blockquote>"The best tailoring should go unnoticed by the crowd, yet be impossible for the connoisseur to ignore."</blockquote>
+
+            <h2>The Custodians of Craft</h2>
+            <p>Today, Savile Row faces the challenge of adapting to a fast-paced digital world while keeping its ancient traditions alive. The apprenticeships are still rigorous, taking up to five years of full-time training under a master cutter before one is allowed to cut a coat independently. This dedication to passing down skills ensures that the standard of Savile Row remains unchanged.</p>
+            
+            <p>Every pattern is still drawn by hand with chalk, every canvas is stitched manually, and every buttonhole is cut and sewn by hand. It is this absolute refusal to compromise on quality that keeps the street at the center of the global sartorial map.</p>
 
             <div class="article-author-bio">
                 <div class="author-info">
@@ -174,6 +199,9 @@ const blogData = {
             <blockquote>"A well-fitting shirt is the first thing a man should master before he moves on to more complex pieces of his wardrobe."</blockquote>
 
             <p>We use only the finest Egyptian and Sea Island cottons, sourced from mills like Albini and Thomas Mason. These cloths are not only soft to the touch but also durable enough to withstand the rigors of daily wear while maintaining their exquisite luster.</p>
+
+            <h2>The Subtle Details of Customization</h2>
+            <p>Beyond the collar and cuffs, a custom shirt offers numerous details that can be tailored to your lifestyle. The choice of placket — whether a clean French front for formal occasions or a standard placket for everyday business — dictates the shirt's casualness. Mother-of-pearl buttons, hand-stitched monograms, and split-yoke construction are subtle indicators of premium craftsmanship.</p>
 
             <div class="article-author-bio">
                 <div class="author-info">
@@ -214,6 +242,9 @@ const blogData = {
             <blockquote>"True elegance is the absence of clutter. It's about knowing exactly what you need and nothing more."</blockquote>
 
             <p>Investing in higher quality pieces means they will not only look better but also last longer. At Maison De Tailleur, we specialize in creating these foundational garments — pieces that will remain as stylish in twenty years as they are today.</p>
+
+            <h2>Seasonal Transitions</h2>
+            <p>A capsule wardrobe is not static; it evolves with the changing seasons. By introducing lightweight merino wool knits and cotton-linen trousers during warmer months, and layering with cashmere overcoats and flannel blazers in winter, you maintain a consistent aesthetic without needing a vast collection of garments.</p>
 
             <div class="article-author-bio">
                 <div class="author-info">
@@ -389,6 +420,29 @@ document.addEventListener('DOMContentLoaded', () => {
                     copyBtn.style.color = '';
                 }, 2000);
             });
+        });
+    }
+
+    const sidebarNewsForm = document.querySelector('.sidebar-newsletter-form');
+    if (sidebarNewsForm) {
+        sidebarNewsForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const input = sidebarNewsForm.querySelector('input');
+            const button = sidebarNewsForm.querySelector('.btn');
+            if (input && button) {
+                const originalBtnText = button.innerHTML;
+                button.innerHTML = '<i class="fa-solid fa-check"></i> Subscribed!';
+                button.style.backgroundColor = 'var(--primary-color)';
+                button.style.borderColor = 'var(--primary-color)';
+                button.style.color = 'var(--bg-dark)';
+                input.value = '';
+                setTimeout(() => {
+                    button.innerHTML = originalBtnText;
+                    button.style.backgroundColor = '';
+                    button.style.borderColor = '';
+                    button.style.color = '';
+                }, 3000);
+            }
         });
     }
 });

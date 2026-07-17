@@ -44,7 +44,6 @@ section {
     z-index: 1;
 }
 
-/* Issue 14 – Light Mode: keep dark overlay so hero text always visible over video */
 body.light-mode .services-hero-overlay {
     background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.8));
 }
@@ -65,7 +64,6 @@ body.light-mode .services-hero-overlay {
     margin-top: 20px;
 }
 
-/* Issue 14 – White text in light mode since overlay is always dark */
 body.light-mode .services-hero h1 {
     color: #FFFFFF;
     text-shadow: 0 2px 8px rgba(0,0,0,0.5);
@@ -107,7 +105,7 @@ body.light-mode .what-we-offer {
 
 .service-row {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     overflow: hidden;
@@ -127,7 +125,7 @@ body.light-mode .service-row {
 
 .service-image {
     flex: 1;
-    height: 500px;
+    height: auto;
     overflow: hidden;
 }
 
@@ -305,11 +303,88 @@ body.light-mode .pricing-card {
     box-shadow: 0 4px 20px rgba(0,0,0,0.04);
 }
 
+.pricing-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border: 1px solid var(--primary-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: scale(0.98);
+    border-radius: 8px;
+    z-index: 2;
+}
+
+.pricing-card:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.pricing-card.recommended::before {
+    display: none;
+}
+
 .pricing-card:hover {
     background: var(--bg-secondary);
-    border-color: var(--primary-color);
     transform: translateY(-8px);
     box-shadow: var(--shadow-hover);
+}
+
+.pricing-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 15px 0 5px;
+    max-width: 250px;
+    text-align: center;
+    opacity: 0.8;
+}
+
+body.light-mode .pricing-card p {
+    color: #444444 !important;
+}
+
+.pricing-card h4, 
+.pricing-card .price, 
+.pricing-card p,
+.pricing-card .pricing-features li,
+.pricing-card .time,
+.pricing-card .details-link {
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                color 0.4s ease, 
+                opacity 0.4s ease;
+}
+
+.pricing-card:hover h4 {
+    transform: translateY(-4px);
+    color: var(--primary-color);
+}
+
+.pricing-card:hover .price {
+    transform: translateY(-3px);
+}
+
+.pricing-card:hover p {
+    transform: translateY(-2px);
+    opacity: 1;
+}
+
+.pricing-card:hover .pricing-features li {
+    transform: translateY(-1px);
+}
+
+.pricing-card:hover .time {
+    transform: translateY(-2px);
+}
+
+.pricing-card:hover .details-link {
+    transform: translateY(-3px);
+    color: var(--text-primary);
+}
+
+body.light-mode .pricing-card:hover .details-link {
+    color: #111111;
 }
 
 .pricing-icon {
@@ -377,6 +452,36 @@ body.light-mode .pricing-card .time {
     text-decoration: none;
     margin-top: auto;
     transition: var(--transition-smooth);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.details-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.details-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.details-link i {
+    transition: transform 0.3s ease;
+}
+
+.details-link:hover i {
+    transform: translateX(6px);
 }
 
 body.light-mode .details-link {

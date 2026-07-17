@@ -23,11 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <a href="ROOT_PATHpages/about.html" class="nav-item-about">ABOUT</a>
                 <a href="ROOT_PATHpages/services.html" class="nav-item-services">SERVICES</a>
-                <a href="ROOT_PATHpages/blogs.html" class="nav-item-journal">JOURNAL</a>
+                <a href="ROOT_PATHpages/blogs.html" class="nav-item-journal">BLOG</a>
                 <a href="ROOT_PATHpages/contact.html" class="nav-item-contact">CONTACT</a>
-                <a href="ROOT_PATHpages/dashboard.html" class="nav-item-dashboard">DASHBOARD</a>
-                <div class="mobile-auth">
-                    <a href="ROOT_PATHpages/signup.html" class="icon-btn" aria-label="Account">
+                <a href="ROOT_PATHpages/dashboard.html" class="nav-item-dashboard desktop-only">DASHBOARD</a>
+                <div class="mobile-menu-actions">
+                    <button class="theme-toggle" aria-label="Toggle Theme"><i class="fa-regular fa-sun"></i></button>
+                    <button class="rtl-toggle">LTR</button>
+                    <a href="ROOT_PATHpages/signup.html" class="icon-btn mobile-auth-btn" aria-label="Account">
                         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>   
                             <circle cx="12" cy="7" r="4"></circle>
@@ -105,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h4>VISIT US</h4>
                 <p><i class="fa-solid fa-location-dot"></i> Jayasudha heights, <br>100feet Road, Madhapur <br>Hyderabad, Telangana - 500081</p>
                 <p><i class="fa-solid fa-phone"></i> +91 9876543210</p>
-                <p><i class="fa-solid fa-envelope"></i> [EMAIL_ADDRESS]</p>
+                <p><i class="fa-solid fa-envelope"></i> <a href="mailto:contact@majesticmeasure.com" style="color: inherit; text-decoration: none; transition: var(--transition-smooth);">contact@majesticmeasure.com</a></p>
                 <p class="hours">Mon-Fri: 9am – 7pm<br>Sat: 10am – 5pm<br>Sun: By appointment</p>
             </div>
         </div>

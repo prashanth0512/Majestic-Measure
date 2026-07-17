@@ -38,15 +38,4 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(item);
     });
 
-    window.addEventListener('scroll', () => {
-        const timelineItems = document.querySelectorAll('.timeline-item');
-        timelineItems.forEach(item => {
-            const speed = 0.1;
-            const rect = item.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-                const yPos = -(rect.top * speed);
-                item.style.transform = `translateY(${yPos}px)`;
-            }
-        });
-    });
 });

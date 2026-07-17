@@ -45,12 +45,12 @@ body.loaded .service-detail-hero__bg { transform: scale(1); }
 .service-detail-hero__overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7));
+    background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.55));
     z-index: 1;
 }
 
 body.light-mode .service-detail-hero__overlay {
-    background: linear-gradient(to bottom, rgba(255,255,255,0.88), rgba(255,255,255,0.75) 50%, rgba(255,255,255,0.92));
+    background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.55));
 }
 
 @keyframes shine-text {
@@ -70,15 +70,16 @@ body.light-mode .service-detail-hero__overlay {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: rgba(197,160,89,0.15);
-    border: 1px solid rgba(197,160,89,0.3);
-    border-radius: 2px;
+    background: rgba(17, 17, 17, 0.85);
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
     padding: 8px 20px;
     font-size: 12px;
     letter-spacing: 2px;
-    color: var(--gold);
+    color: var(--primary-color) !important;
     margin-bottom: 30px;
     font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .service-detail-hero h1 {
@@ -86,35 +87,42 @@ body.light-mode .service-detail-hero__overlay {
     line-height: 1.1;
     font-weight: 300;
     margin-bottom: 25px;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), 
+                 0 0 30px rgba(255, 255, 255, 0.25);
 }
 
 body.light-mode .service-detail-hero h1 {
-    color: #111111;
-    text-shadow: 0 0 40px rgba(255,255,255,0.8);
+    color: #FFFFFF !important;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), 
+                 0 0 30px rgba(255, 255, 255, 0.25);
     transition: all 0.4s ease;
 }
 
 body.light-mode .service-detail-hero h1:hover {
-    background: linear-gradient(90deg, #111, var(--gold), #111);
+    background: linear-gradient(90deg, #FFF, var(--gold), #FFF);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shine-text 2s linear infinite;
+     animation: shine-text 2s linear infinite;
     transform: scale(1.02);
 }
 
 .service-detail-hero .tagline {
     font-size: 22px;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.95) !important;
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     margin-bottom: 40px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 
+                 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 body.light-mode .service-detail-hero .tagline {
-    color: #444444;
+    color: rgba(255,255,255,0.95) !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 
+                 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 .hero-meta {
@@ -127,18 +135,23 @@ body.light-mode .service-detail-hero .tagline {
     display: block;
     font-size: 11px;
     letter-spacing: 2px;
-    color: var(--gold);
+    color: var(--gold) !important;
     margin-bottom: 6px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-meta-item span {
     font-size: 22px;
     font-family: 'Cormorant Garamond', serif;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 
+                 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 body.light-mode .hero-meta-item span {
-    color: #111111;
+    color: #FFFFFF !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 
+                 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 
@@ -166,7 +179,7 @@ body.light-mode .hero-meta-item span {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
-    align-items: center;
+    align-items: stretch;
 }
 .service-overview-text h2 {
     font-size: 52px;
@@ -182,7 +195,7 @@ body.light-mode .hero-meta-item span {
 }
 .service-overview-image {
     position: relative;
-    height: 600px;
+    height: 100%;
     overflow: hidden;
 }
 .service-overview-image img {
@@ -192,16 +205,6 @@ body.light-mode .hero-meta-item span {
     transition: transform 0.8s ease;
 }
 .service-overview-image:hover img { transform: scale(1.04); }
-.image-accent {
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    width: 120px;
-    height: 120px;
-    border: 2px solid var(--gold);
-    z-index: 2;
-    pointer-events: none;
-}
 
 
 .service-process {
@@ -233,7 +236,7 @@ body.light-mode .hero-meta-item span {
 
 body.light-mode .process-step {
     background: #FFFFFF;
-    border-color: rgba(212, 163, 115, 0.15);
+    border-color: rgba(212, 163, 115, 0.35);
 }
 
 body.light-mode .process-step:hover {
@@ -248,7 +251,7 @@ body.light-mode .process-step:hover {
     font-size: 40px;
     font-family: 'Cormorant Garamond', serif;
     color: var(--primary-color);
-    opacity: 0.2;
+    opacity: 0.7;
     line-height: 1;
     font-weight: 700;
     pointer-events: none;
@@ -256,13 +259,14 @@ body.light-mode .process-step:hover {
 }
 
 body.light-mode .step-number {
-    color: #111111;
-    opacity: 0.1;
+    color: var(--primary-color);
+    opacity: 0.65;
 }
 .process-step h4 {
     font-size: 20px;
     margin-bottom: 15px;
     font-weight: 500;
+    color: var(--primary-color);
 }
 .process-step p {
     font-size: 15px;
@@ -385,7 +389,7 @@ body.light-mode .include-item:hover {
 
 body.light-mode .related-card {
     background: #FFFFFF;
-    border-color: rgba(212, 163, 115, 0.15);
+    border-color: rgba(212, 163, 115, 0.35);
 }
 
 body.light-mode .related-card:hover {

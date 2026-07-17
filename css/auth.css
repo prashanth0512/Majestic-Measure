@@ -56,11 +56,11 @@
 
 .auth-logo-text span {
     font-weight: 300;
-    opacity: 0.8;
+    opacity: 1;
     display: inline;
     margin-bottom: 0;
     font-size: inherit;
-    color: inherit;
+    color: var(--primary-color);
 }
 
 .auth-actions {

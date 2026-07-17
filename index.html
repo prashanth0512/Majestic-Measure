@@ -20,16 +20,214 @@
     <div id="header-placeholder"></div>
     <main>
         <section class="hero" id="home1">
-            <video class="hero-video" autoplay muted loop playsinline>
-                <source src="./images/home main.mp4" type="video/mp4">
-            </video>
-            <div class="hero-overlay"></div>
-            <div class="container hero-content">
-                <span class="est-text">EST. 2015 </span>
-                <h1>Master Crafted<br><span class="italic">Perfectly Fitted.</span></h1>
-                <div class="hero-btns">
-                    <a href="./pages/contact.html" class="btn btn-primary">BOOK A CONSULTATION</a>
-                    <a href="./pages/services.html" class="btn btn-secondary">EXPLORE SERVICES</a>
+            <div class="atelier-backdrop"></div>
+            <div class="paper-texture"></div>
+            
+            <div class="hero-glow"></div>
+            <div class="hero-spotlight"></div>
+            
+            <canvas id="hero-particles" class="hero-particles-canvas"></canvas>
+
+            <div class="container hero-layout">
+                <div class="hero-content">
+                    <div class="luxury-badge-container">
+                        <span class="luxury-badge">BESPOKE TAILORING • SAVILE ROW</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="word">Crafted</span>
+                        <span class="word">From</span>
+                        <span class="word">Vision.</span>
+                        <br>
+                        <span class="accent-line">
+                            <span class="word">Tailored</span>
+                            <span class="word">To</span>
+                        </span>
+                        <br>
+                        <span class="word">Perfection.</span>
+                    </h1>
+                    <div class="hero-desc-group">
+                        <p class="hero-desc-line">Every cut is guided by vision. Every stitch is placed by hand.</p>
+                        <p class="hero-desc-line">Sculpting garments of absolute quality, crafted to endure.</p>
+                    </div>
+                    <div class="hero-btns">
+                        <a href="./pages/contact.html" class="btn btn-primary btn-luxury-primary btn-magnetic">
+                            <span>BOOK CONSULTATION</span>
+                            <span class="btn-arrow-wrapper">
+                                <i class="fa-solid fa-arrow-right btn-arrow"></i>
+                            </span>
+                        </a>
+                        <a href="./pages/services.html" class="btn btn-secondary btn-luxury-secondary btn-magnetic">
+                            <span>EXPLORE COLLECTION</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="suit-3d-viewport">
+                        <div class="suit-shadow"></div>
+                        
+                        <div class="suit-3d-wrapper">
+                            
+                            <div class="mannequin-stand">
+                                <div class="stand-pole"></div>
+                                <div class="stand-base"></div>
+                            </div>
+                            
+                            <div class="realistic-suit">
+                                <div class="suit-layer layer-shirt-tie" style="--layer-z: 5px;">
+                                    <svg viewBox="0 0 400 500" class="suit-svg" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <radialGradient id="wool-grad-r" cx="50%" cy="40%" r="60%">
+                                                <stop offset="0%" stop-color="#1c1c1f" />
+                                                <stop offset="100%" stop-color="#0a0a0b" />
+                                            </radialGradient>
+                                            <linearGradient id="tie-grad-r" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" stop-color="#d4af37" />
+                                                <stop offset="50%" stop-color="#f3e5ab" />
+                                                <stop offset="100%" stop-color="#aa7c11" />
+                                            </linearGradient>
+                                            <linearGradient id="shirt-grad-r" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                <stop offset="0%" stop-color="#ffffff" />
+                                                <stop offset="100%" stop-color="#e0e0e5" />
+                                            </linearGradient>
+                                            <linearGradient id="mannequin-wood" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" stop-color="#5c4033" />
+                                                <stop offset="50%" stop-color="#8b5a2b" />
+                                                <stop offset="100%" stop-color="#3d2314" />
+                                            </linearGradient>
+                                        </defs>
+                                        
+                                        <path class="part-shirt" d="M165,80 L235,80 L200,190 Z" fill="url(#shirt-grad-r)" />
+                                        
+                                        <path class="part-tie" d="M193,120 L207,120 L211,260 L200,285 L189,260 Z" fill="url(#tie-grad-r)" />
+                                    </svg>
+                                </div>
+
+                                <div class="suit-layer layer-body" style="--layer-z: 0px;">
+                                    <svg viewBox="0 0 400 500" class="suit-svg" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="mannequin-neck" d="M175,68 L225,68 L212,80 L188,80 Z" fill="url(#mannequin-wood)" stroke="#221105" stroke-width="0.5" />
+                                        
+                                        <path class="part-body" d="M110,120 L290,120 L308,430 L92,430 Z" fill="url(#wool-grad-r)" />
+                                    </svg>
+                                </div>
+
+                                <div class="suit-layer layer-sleeves" style="--layer-z: 10px;">
+                                    <svg viewBox="0 0 400 500" class="suit-svg" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="part-sleeve-left" transform="translate(-18, 0)" d="M110,120 C85,175 75,290 88,400 L115,400 C105,320 110,185 133,142 Z" fill="#121214" />
+                                        <path class="part-sleeve-right" transform="translate(18, 0)" d="M290,120 C315,175 325,290 312,400 L285,400 C295,320 290,185 267,142 Z" fill="#121214" />
+                                    </svg>
+                                </div>
+
+                                <div class="suit-layer layer-collar" style="--layer-z: 18px;">
+                                    <svg viewBox="0 0 400 500" class="suit-svg" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="part-lapel-left" d="M160,80 L110,120 L98,165 L133,185 L200,320 L200,190 Z" fill="#1e1e22" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" />
+                                        <path class="part-lapel-right" d="M240,80 L290,120 L302,165 L267,185 L200,320 L200,190 Z" fill="#1e1e22" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" />
+                                        
+                                        <path class="part-collar-left" d="M165,80 L182,120 L198,120 L180,80 Z" fill="#ffffff" />
+                                        <path class="part-collar-right" d="M235,80 L218,120 L202,120 L220,80 Z" fill="#ffffff" />
+                                    </svg>
+                                </div>
+
+                                <div class="suit-layer layer-pocket" style="--layer-z: 14px;">
+                                    <svg viewBox="0 0 400 500" class="suit-svg" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <linearGradient id="pocket-square-grad-r" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" stop-color="#ffffff" />
+                                                <stop offset="100%" stop-color="#cccccc" />
+                                            </linearGradient>
+                                        </defs>
+                                        <path class="part-pocket-square" d="M135,175 L144,158 L149,175 L156,152 L163,175 Z" fill="url(#pocket-square-grad-r)" />
+                                        <path class="part-pocket" d="M128,175 L167,175 L165,183 L130,183 Z" fill="#242429" stroke="rgba(255,255,255,0.08)" stroke-width="0.5" />
+                                    </svg>
+                                </div>
+
+                                <div class="suit-layer layer-buttons" style="--layer-z: 22px;">
+                                    <svg viewBox="0 0 400 500" class="suit-svg" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <radialGradient id="gold-btn-r" cx="35%" cy="35%" r="65%">
+                                                <stop offset="0%" stop-color="#fff6dd" />
+                                                <stop offset="45%" stop-color="#d4af37" />
+                                                <stop offset="100%" stop-color="#7c5d0f" />
+                                            </radialGradient>
+                                            <filter id="btn-glow-r" x="-30%" y="-30%" width="160%" height="160%">
+                                                <feGaussianBlur stdDeviation="1.5" result="blur" />
+                                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                            </filter>
+                                        </defs>
+                                        <circle class="part-button" cx="200" cy="330" r="5.5" fill="url(#gold-btn-r)" filter="url(#btn-glow-r)" />
+                                        <circle class="part-button" cx="200" cy="365" r="5.5" fill="url(#gold-btn-r)" filter="url(#btn-glow-r)" />
+                                    </svg>
+                                </div>
+
+                                <div class="suit-shine-overlay"></div>
+                            </div>
+
+                            <div class="suit-layer layer-sketch" style="--layer-z: 26px;">
+                                <svg viewBox="0 0 400 500" class="sketch-svg" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="gold-thread-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="#d4af37" />
+                                            <stop offset="50%" stop-color="#f9ebbe" />
+                                            <stop offset="100%" stop-color="#d4af37" />
+                                        </linearGradient>
+                                        <filter id="gold-glow" x="-20%" y="-20%" width="140%" height="140%">
+                                            <feGaussianBlur stdDeviation="3.5" result="blur" />
+                                            <feComponentTransfer in="blur" result="glow">
+                                                <feFuncA type="linear" slope="2.5"/>
+                                            </feComponentTransfer>
+                                            <feMerge>
+                                                <feMergeNode in="glow" />
+                                                <feMergeNode in="SourceGraphic" />
+                                            </feMerge>
+                                        </filter>
+                                    </defs>
+
+                                    <g class="sketch-lines" stroke="rgba(139, 106, 70, 0.45)" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path id="sketch-collar" class="sketch-path" d="M165,80 L180,105 L220,105 L235,80" />
+                                        <path id="sketch-lapel-l" class="sketch-path" d="M160,80 L110,120 L98,165 L133,185 L200,320" />
+                                        <path id="sketch-lapel-r" class="sketch-path" d="M240,80 L290,120 L302,165 L267,185 L200,320" />
+                                        <path id="sketch-sleeve-l" class="sketch-path" transform="translate(-18, 0)" d="M110,120 C85,175 75,290 88,400 L115,400 M115,400 C105,320 110,185 133,142" />
+                                        <path id="sketch-sleeve-r" class="sketch-path" transform="translate(18, 0)" d="M290,120 C315,175 325,290 312,400 L285,400 M285,400 C295,320 290,185 267,142" />
+                                        <path id="sketch-pocket" class="sketch-path" d="M128,175 L167,175 L165,183 L130,183 Z" />
+                                        <path id="sketch-buttons" class="sketch-path" d="M200,325 A5,5 0 1,1 199.9,325 M200,360 A5,5 0 1,1 199.9,360" />
+                                    </g>
+
+                                    <g class="blueprint-marks" stroke="var(--hero-accent)" stroke-width="0.8" fill="none" style="opacity: 0;">
+                                        <path d="M100,105 L300,105" stroke-dasharray="3,3" />
+                                        <path d="M100,100 L100,110" />
+                                        <path d="M300,100 L300,110" />
+                                        <text x="200" y="98" class="blueprint-text" fill="var(--hero-primary)" text-anchor="middle" font-size="8.5">SHOULERS: 18.5"</text>
+
+                                        <path d="M120,312 C150,328 250,328 280,312" stroke-dasharray="3,3" />
+                                        <text x="200" y="342" class="blueprint-text" fill="var(--hero-primary)" text-anchor="middle" font-size="8.5">WAIST: 34.0"</text>
+
+                                        <path d="M72,120 C52,250 67,350 75,385" stroke-dasharray="3,3" />
+                                        <text x="50" y="260" class="blueprint-text" fill="var(--hero-primary)" text-anchor="middle" font-size="8.5" transform="rotate(-90 50 260)">SLEEVE: 24.5"</text>
+
+                                        <path d="M355,60 L355,430" stroke-dasharray="4,4" />
+                                        <text x="367" y="245" class="blueprint-text" fill="var(--hero-primary)" text-anchor="middle" font-size="8.5" transform="rotate(90 367 245)">HEIGHT: 40R</text>
+
+                                        <circle cx="200" cy="190" r="16" stroke-dasharray="2,2" />
+                                        <line x1="200" y1="170" x2="200" y2="210" />
+                                        <line x1="180" y1="190" x2="220" y2="190" />
+                                        
+                                        <circle cx="147" cy="175" r="4.5" stroke-dasharray="2,2" />
+                                        <circle cx="253" cy="175" r="4.5" stroke-dasharray="2,2" />
+                                    </g>
+
+                                    <g class="golden-threads" stroke="url(#gold-thread-grad)" stroke-width="1.8" fill="none" stroke-linecap="round" filter="url(#gold-glow)" style="opacity: 0;">
+                                        <path class="thread-path" d="M165,80 L180,105 L220,105 L235,80" />
+                                        <path class="thread-path" d="M160,80 L110,120 L98,165 L133,185 L200,320" />
+                                        <path class="thread-path" d="M240,80 L290,120 L302,165 L267,185 L200,320" />
+                                        <path class="thread-path" transform="translate(-18, 0)" d="M110,120 C85,175 75,290 88,400 L115,400 M115,400 C105,320 110,185 133,142" />
+                                        <path class="thread-path" transform="translate(18, 0)" d="M290,120 C315,175 325,290 312,400 L285,400 M285,400 C295,320 290,185 267,142" />
+                                        <path class="thread-path" d="M128,175 L167,175 L165,183 L130,183 Z" />
+                                        <path class="thread-path" d="M200,325 A5,5 0 1,1 199.9,325 M200,360 A5,5 0 1,1 199.9,360" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -83,7 +281,7 @@
                             <span>5,000+ Clients</span>
                         </div>
                     </div>
-                    <a href="./pages/about.html" class="btn-link">OUR STORY <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="./pages/about.html" class="btn-premium-story">[ OUR STORY ]</a>
                 </div>
             </div>
         </section>
@@ -92,18 +290,19 @@
             <div class="container">
                 <div class="section-header">
                     <span class="section-subtitle">WHAT WE OFFER</span>
-                    <h2>Our Services</h2>
+                    <h2>Our <span class="accent">Services</span></h2>
                     <p>From a first consultation to the final fitting, every service reflects our dedication to craft, detail, and the individual.</p>
                 </div>
                 <div class="services-grid">
                     <a href="pages/service-detail.html?service=bespoke-suits" class="service-card-link">
                         <div class="service-card reveal">
                             <div class="card-img">
-                                <img src="images/bespoke-suit.png" alt="Bespoke Suits">
+                                <div class="card-img-wrapper">
+                                    <img src="images/bespoke-suit.png" alt="Bespoke Suits">
+                                </div>
                             </div>
                             <div class="card-content">
-                                <div class="card-icon"><i class="fa-solid fa-user-tie"></i></div>
-                                <h3>Bespoke Suits</h3>
+                                <h3><span class="accent">Bespoke</span> Suits</h3>
                                 <p>Fully hand-crafted suits built from scratch to your exact measurements, lifestyle, and aesthetic vision.</p>
                                 <div class="card-footer">
                                     <span class="price">From $1000</span>
@@ -116,11 +315,12 @@
                     <a href="pages/service-detail.html?service=wedding-suits" class="service-card-link">
                         <div class="service-card reveal">
                             <div class="card-img">
-                                <img src="images/wedding_suit.png" alt="Wedding Suits">
+                                <div class="card-img-wrapper">
+                                    <img src="images/wedding_suit.png" alt="Wedding Suits">
+                                </div>
                             </div>
                             <div class="card-content">
-                                <div class="card-icon"><i class="fa-solid fa-ring"></i></div>
-                                <h3>Wedding Suits</h3>
+                                <h3><span class="accent">Wedding</span> Suits</h3>
                                 <p>Impeccably tailored wedding suits and morning coats that honour the gravity and joy of your ceremony.</p>
                                 <div class="card-footer">
                                     <span class="price">From $1200</span>
@@ -134,11 +334,12 @@
                     <a href="pages/service-detail.html?service=custom-shirts" class="service-card-link">
                         <div class="service-card reveal">
                             <div class="card-img">
-                                <img src="images/custom-shirt.png" alt="Custom Shirts">
+                                <div class="card-img-wrapper">
+                                    <img src="images/custom-shirt.png" alt="Custom Shirts">
+                                </div>
                             </div>
                             <div class="card-content">
-                                <div class="card-icon"><i class="fa-solid fa-shirt"></i></div>
-                                <h3>Custom Shirts</h3>
+                                <h3><span class="accent">Custom</span> Shirts</h3>
                                 <p>Crafted from the finest cottons and linens, our made-to-measure shirts are tailored to your body and taste.</p>
                                 <div class="card-footer">
                                     <span class="price">From $1200</span>
@@ -152,11 +353,12 @@
                     <a href="pages/service-detail.html?service=alterations" class="service-card-link">
                         <div class="service-card reveal">
                             <div class="card-img">
-                                <img src="images/alterations.png" alt="Alterations & Restoration">
+                                <div class="card-img-wrapper">
+                                    <img src="images/alterations.png" alt="Alterations & Restoration">
+                                </div>
                             </div>
                             <div class="card-content">
-                                <div class="card-icon"><i class="fa-solid fa-scissors"></i></div>
-                                <h3>Alterations & Restoration</h3>
+                                <h3>Alterations & <span class="accent">Restoration</span></h3>
                                 <p>Expert alterations, repairs, and restorations that breathe new life into cherished garments.</p>
                                 <div class="card-footer">
                                     <span class="price">From $80</span>
@@ -170,11 +372,12 @@
                     <a href="pages/service-detail.html?service=styling-consultation" class="service-card-link">
                         <div class="service-card reveal">
                             <div class="card-img">
-                                <img src="images/consultation.png" alt="Styling Consultation">
+                                <div class="card-img-wrapper">
+                                    <img src="images/consultation.png" alt="Styling Consultation">
+                                </div>
                             </div>
                             <div class="card-content">
-                                <div class="card-icon"><i class="fa-solid fa-palette"></i></div>
-                                <h3>Styling Consultation</h3>
+                                <h3><span class="accent">Styling</span> Consultation</h3>
                                 <p>A comprehensive personal styling experience to define your wardrobe identity and elevate your everyday presence.</p>
                                 <div class="card-footer">
                                     <span class="price">From $350</span>
@@ -196,7 +399,7 @@
             <div class="container">
                 <div class="section-header white">
                     <span class="section-subtitle">THE JOURNEY</span>
-                    <h2>Your Tailoring Process</h2>
+                    <h2>Your Tailoring <span class="accent">Process</span></h2>
                     <p>Every bespoke garment follows a careful, unhurried process because excellence cannot be rushed.</p>
                 </div>
                 <div class="journey-timeline">
@@ -205,7 +408,7 @@
                         <div class="step-dot"></div>
                         <div class="step-content">
                             <div class="step-number">1</div>
-                            <h3>Consultation</h3>
+                            <h3><span class="accent">Consultation</span></h3>
                             <p>A private session to discuss your lifestyle, aesthetic, and the occasion for your garment. We listen deeply before we begin.</p>
                         </div>
                     </div>
@@ -213,7 +416,7 @@
                         <div class="step-dot"></div>
                         <div class="step-content">
                             <div class="step-number">2</div>
-                            <h3>Fabric Selection</h3>
+                            <h3>Fabric <span class="accent">Selection</span></h3>
                             <p>Browse our curated library of over 4,000 fabrics from the finest mills in Italy, England, and Scotland.</p>
                         </div>
                     </div>
@@ -221,7 +424,7 @@
                         <div class="step-dot"></div>
                         <div class="step-content">
                             <div class="step-number">3</div>
-                            <h3>Measurements</h3>
+                            <h3><span class="accent">Measurements</span></h3>
                             <p>Over 40 precise measurements are taken, recording not just dimensions but posture, movement, and proportion.</p>
                         </div>
                     </div>
@@ -229,7 +432,7 @@
                         <div class="step-dot"></div>
                         <div class="step-content">
                             <div class="step-number">4</div>
-                            <h3>Pattern & Cutting</h3>
+                            <h3>Pattern & <span class="accent">Cutting</span></h3>
                             <p>Your unique pattern is drafted and the cloth is hand-cut with surgical precision.</p>
                         </div>
                     </div>
@@ -237,7 +440,7 @@
                         <div class="step-dot"></div>
                         <div class="step-content">
                             <div class="step-number">5</div>
-                            <h3>Hand Construction</h3>
+                            <h3>Hand <span class="accent">Construction</span></h3>
                             <p>60-80 hours of skilled tailoring. Every stitch contributes to the garment's soul.</p>
                         </div>
                     </div>
@@ -245,7 +448,7 @@
                         <div class="step-dot"></div>
                         <div class="step-content">
                             <div class="step-number">6</div>
-                            <h3>Fitting & Delivery</h3>
+                            <h3>Fitting & <span class="accent">Delivery</span></h3>
                             <p>Multiple fitting appointments refine the garment until it feels like a second skin.</p>
                         </div>
                     </div>
@@ -258,7 +461,7 @@
             <div class="container">
                 <div class="section-header dark">
                     <span class="section-subtitle">FABRIC LIBRARY</span>
-                    <h2>Curated Selections</h2>
+                    <h2>Curated <span class="accent">Selections</span></h2>
                     <p>Over 4,000 cloths from the finest mills in the world. Each fabric chosen for its beauty, integrity, and suitability.</p>
                 </div>
                 <div class="fabrics-grid">
@@ -313,7 +516,7 @@
             <div class="container">
                 <div class="section-header">
                     <span class="section-subtitle">CLIENT VOICES</span>
-                    <h2>What Our Clients Say</h2>
+                    <h2>What Our <span class="accent">Clients</span> Say</h2>
                 </div>
                 <div class="testimonials-grid">
                     <div class="testimonial-card reveal">
@@ -358,7 +561,7 @@
             <div class="cta-overlay"></div>
             <div class="container cta-content">
                 <i class="fa-solid fa-scissors cta-icon"></i>
-                <h2>Begin Your Tailoring<br><span class="italic">Journey Today</span></h2>
+                <h2>Begin Your <span class="accent">Tailoring</span><br><span class="italic">Journey <span class="accent">Today</span></span></h2>
                 <p>Schedule your private consultation at our Hyderabad atelier. Over champagne and cloth, we will begin to understand who you are and create something worthy of that understanding.</p>
                 <div class="cta-btns">
                     <a href="./pages/contact.html" class="btn btn-primary">BOOK CONSULTATION</a>

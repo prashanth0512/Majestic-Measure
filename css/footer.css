@@ -1,6 +1,6 @@
 
 footer {
-    padding: 100px 0 30px;
+    padding: 60px 0 20px;
     background-color: var(--bg-primary);
     border-top: 1px solid var(--nav-border);
 }
@@ -8,8 +8,8 @@ footer {
 .footer-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
-    gap: 40px;
-    margin-bottom: 80px;
+    gap: 24px;
+    margin-bottom: 40px;
 }
 
 .footer-brand p {

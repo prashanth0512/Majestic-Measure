@@ -88,7 +88,8 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
 .logo-text span {
     font-weight: 100;
-    opacity: 0.8;
+    opacity: 1;
+    color: var(--primary-color);
 }
 
 .sidebar-header {
@@ -130,7 +131,6 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
     letter-spacing: 2px;
 }
 
-/* Issue 15 – Dark mode: sidebar brand text explicitly white against black sidebar */
 body.dark-mode .brand-main,
 body.dark-mode .logo-text {
     color: #ffffff !important;
@@ -1154,7 +1154,6 @@ body.dark-mode .brand-sub {
     .meas-form-card .meas-grid { grid-template-columns: 1fr; }
 }
 
-/* Issue 18 – Responsive Dashboard at 360px – Appointments & Pending CTA */
 @media (max-width: 400px) {
     .content-area {
         padding: 16px 12px;

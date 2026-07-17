@@ -14,7 +14,10 @@
     max-width: 900px;
     z-index: 10;
     padding: 0 40px;
-    margin-top: 0 !important; 
+    margin: 0 auto !important; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .home2-hero .section-subtitle {
@@ -53,7 +56,6 @@
     margin-top: 0;
 }
 
-/* Fix: hero always has dark overlay, so btn-secondary must stay white in both modes */
 .home2-hero .btn-secondary {
     border: 1px solid rgba(255, 255, 255, 0.85) !important;
     color: #ffffff !important;
@@ -83,7 +85,6 @@ body.light-mode .home2-hero .btn-secondary:hover {
     background-color: var(--bg-primary);
 }
 
-/* Global Light Mode: Categories section header */
 body.light-mode .categories {
     background-color: #FFFBFC;
 }
@@ -175,7 +176,6 @@ body.light-mode .tag {
     background-color: var(--bg-secondary);
 }
 
-/* Issue 13 – Maison Difference: Light mode section header contrast */
 body.light-mode .difference {
     background-color: #f5ede8;
 }
@@ -258,7 +258,6 @@ body.light-mode .diff-item p {
     padding: 120px 0;
 }
 
-/* Global Light Mode: Selected Works section */
 body.light-mode .selected-works {
     background-color: #FFFBFC;
 }
@@ -276,7 +275,7 @@ body.light-mode .selected-works .section-header h2 {
 
 .case-study-item {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     gap: 60px;
     width: 100%;
     overflow: hidden;
@@ -288,7 +287,7 @@ body.light-mode .selected-works .section-header h2 {
 
 .case-study-img {
     flex: 1;
-    height: 550px;
+    height: auto;
     overflow: hidden;
     position: relative;
     box-shadow: 0 30px 60px rgba(0,0,0,0.5);
