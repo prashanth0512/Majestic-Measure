@@ -307,3 +307,58 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.x = Math.random() * width;
                 this.y = Math.random() * height + 10;
                 this.size = Math.random() * 1.5 + 0.3; 
+                this.speedY = -(Math.random() * 0.22 + 0.05); 
+                this.speedX = (Math.random() * 0.14 - 0.07); 
+                this.alpha = 0;
+                this.maxAlpha = Math.random() * 0.3 + 0.05; 
+                this.fadeSpeed = Math.random() * 0.003 + 0.001;
+                this.wobble = Math.random() * 100;
+                this.wobbleSpeed = Math.random() * 0.015 + 0.005;
+            }
+
+            update() {
+                this.y += this.speedY;
+                this.x += this.speedX + Math.sin(this.wobble) * 0.08;
+                this.wobble += this.wobbleSpeed;
+
+                if (this.alpha < this.maxAlpha) {
+                    this.alpha += this.fadeSpeed;
+                }
+
+                if (this.y < 30 || this.x < 0 || this.x > width) {
+                    this.alpha -= 0.012;
+                    if (this.alpha <= 0) {
+                        this.reset();
+                        this.y = height - 10;
+                    }
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(212, 175, 55, ${this.alpha})`; 
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+            const p = new GoldDustParticle();
+            p.y = Math.random() * height;
+            p.alpha = Math.random() * p.maxAlpha;
+            particles.push(p);
+        }
+
+        const animateGoldDust = () => {
+            ctx.clearRect(0, 0, width, height);
+            
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            requestAnimationFrame(animateGoldDust);
+        };
+        animateGoldDust();
+    }
+});

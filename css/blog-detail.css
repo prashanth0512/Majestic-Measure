@@ -509,3 +509,83 @@
         padding: 20px;
     }
 }
+
+/* Bespoke Suit Anatomy Sidebar Widget */
+.anatomy-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.anatomy-card {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.anatomy-icon {
+    font-size: 20px;
+    color: var(--primary-color);
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.anatomy-info h5 {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.anatomy-info p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 0;
+    opacity: 0.85;
+}
+
+/* Suiting Fabrics Sidebar Widget */
+.sidebar-fabric-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-fabric-card {
+    background-color: var(--bg-secondary);
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid var(--card-border);
+}
+
+.fabric-badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 2px 8px;
+    margin-bottom: 8px;
+}
+
+.sidebar-fabric-card h5 {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.sidebar-fabric-card p {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 0;
+    opacity: 0.8;
+}
