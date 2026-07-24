@@ -12,14 +12,28 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/fixes.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23d4a373'>▲</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
 </head>
 <body>
 
 <aside class="sidebar closed" id="sidebar">
     <div class="sidebar-header">
         <a href="../index.html" class="brand">
-            <span class="brand-icon logo-icon">▲</span>
+            <span class="brand-icon logo-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="34" height="34">
+                    <rect width="100" height="100" rx="20" fill="#141414" stroke="#d4a373" stroke-width="2.5" />
+                    <g fill="#d4a373">
+                        <polygon points="50,18 56,25 50,32 44,25" />
+                        <polygon points="44,25 24,18 24,32" />
+                        <polygon points="56,25 76,18 76,32" />
+                    </g>
+                    <line x1="50" y1="36" x2="50" y2="84" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+                    <path fill="#ffffff" d="M 40,18 L 8,34 C 13,40 18,44 20,45 L 35,49 C 37,39 39,29 40,18 Z" />
+                    <path fill="#ffffff" d="M 10,46 L 36,50 C 42,65 47,80 50,92 C 34,78 18,60 10,46 Z" />
+                    <path fill="#ffffff" d="M 60,18 L 92,34 C 87,40 82,44 80,45 L 65,49 C 63,39 61,29 60,18 Z" />
+                    <path fill="#ffffff" d="M 90,46 L 64,50 C 58,65 53,80 50,92 C 66,78 82,60 90,46 Z" />
+                </svg>
+            </span>
             <div class="brand-text logo-text">MAJESTIC<span style="font-weight: 100;">MEASURE</span></div>
         </a>
         <button class="close-sidebar" id="closeSidebar"><i class="fa-solid fa-xmark"></i></button>
