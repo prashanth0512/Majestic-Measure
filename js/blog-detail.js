@@ -7,7 +7,6 @@ const blogData = {
         readTime: "8 min read",
         heroImage: "url('../images/blogs.avif')",
         content: `
-            <p>In a world driven by speed and mass production, the bespoke suit stands as a testament to everything that endures. At Maison De Tailleur, each commission begins not with cloth and needle, but with a conversation — a deep listening that shapes every decision from the first pattern cut to the final pressing.</p>
 
             <img src="../images/b.deatil1.avif" alt="Tailor working on a bespoke suit pattern">
             <p class="article-image-caption">Every cut requires immense precision and an understanding of the client's form.</p>
@@ -119,13 +118,12 @@ const blogData = {
         readTime: "6 min read",
         heroImage: "url('../images/wedding_suit.png')",
         content: `
-            <p>Your wedding is the most significant public statement of your life. It is the moment when you stand before your family, your peers, and your partner to declare a commitment. The garment you wear for this occasion should be equal to that gravity.</p>
-
             <img src="../images/blogs.avif" alt="Groom adjusting tie">
             <p class="article-image-caption">The morning of the ceremony — a moment of quiet reflection before the day begins.</p>
 
             <h2>Three Classic Paths</h2>
-            <p>At Maison De Tailleur, we guide grooms through three primary aesthetic paths, depending on the formality and location of the ceremony:</p>
+            <p>Your wedding is the most significant public statement of your life. It is the moment when you stand before your family, your peers, and your partner to declare a commitment. The garment you wear for this occasion should be equal to that gravity.</p>
+At Maison De Tailleur, we guide grooms through three primary aesthetic paths, depending on the formality and location of the ceremony:</p>
             <ul>
                 <li><strong>The Morning Coat:</strong> The pinnacle of English formal tradition. Ideal for church weddings followed by a formal reception. Charcoal or black coat paired with striped trousers.</li>
                 <li><strong>The Three-Piece Suit:</strong> Versatile, elegant, and timeless. A waistcoat adds a layer of formality and ensures you still look "dressed" when you inevitably remove your jacket during the celebration.</li>

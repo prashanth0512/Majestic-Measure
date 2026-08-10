@@ -149,35 +149,49 @@ document.addEventListener('DOMContentLoaded', () => {
     function initOverviewChart() {
         const ctx = document.getElementById('ordersChart');
         if (!ctx) return;
+        
+        const isDark = document.body.classList.contains('dark-mode');
+        const textColor = isDark ? '#ffffff' : '#111111';
+        const gridColor = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.05)';
+
         currentChart = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: ['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'],
                 datasets: [{
-                    label: 'Orders',
-                    data: [2, 4, 3, 5, 6, 8],
-                    backgroundColor: 'rgba(200,169,106,0.8)',
-                    borderRadius: 6,
+                    label: 'Monthly Spend ($)',
+                    data: [1850, 2400, 3100, 2200, 3850, 4250],
+                    backgroundColor: 'rgba(212, 163, 115, 0.85)',
+                    borderRadius: 8,
                     borderSkipped: false,
-                    hoverBackgroundColor: '#C8A96A'
+                    hoverBackgroundColor: '#d4a373'
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: { 
-                    title: { display: true, text: 'Orders Per Month', color: '#111', font: { family: 'Playfair Display', size: 16 } },
-                    legend: { display: false } 
+                    title: { display: true, text: 'Monthly Tailoring Spend ($)', color: textColor, font: { family: 'Playfair Display', size: 15, weight: '600' } },
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) { return ' Invested: $' + context.raw.toLocaleString(); }
+                        }
+                    }
                 },
                 scales: {
                     y: {
                         beginAtZero: true,
-                        grid: { color: 'rgba(0,0,0,0.04)' },
-                        ticks: { font: { family: 'Poppins' }, color: '#999' }
+                        grid: { color: gridColor },
+                        ticks: { 
+                            font: { family: 'Montserrat', size: 11 }, 
+                            color: isDark ? '#aaaaaa' : '#666666',
+                            callback: function(val) { return '$' + val; }
+                        }
                     },
                     x: {
                         grid: { display: false },
-                        ticks: { font: { family: 'Poppins' }, color: '#999' }
+                        ticks: { font: { family: 'Montserrat', size: 11 }, color: isDark ? '#aaaaaa' : '#666666' }
                     }
                 }
             }
@@ -187,30 +201,35 @@ document.addEventListener('DOMContentLoaded', () => {
     function initCategoryChart() {
         const ctx = document.getElementById('categoryChart');
         if (!ctx) return;
+        
+        const isDark = document.body.classList.contains('dark-mode');
+        const textColor = isDark ? '#ffffff' : '#111111';
+
         new Chart(ctx, {
             type: 'doughnut',
             data: {
-                labels: ['Suits', 'Shirts', 'Wedding', 'Casual'],
+                labels: ['Bespoke Suits', 'Ceremonial', 'Custom Shirts', 'Alterations'],
                 datasets: [{
-                    data: [15, 25, 10, 5],
+                    data: [65, 20, 10, 5],
                     backgroundColor: [
-                        '#C8A96A',
-                        '#111111',
-                        '#a0a0a0',
-                        '#d4bc8d'
+                        '#d4a373',
+                        '#2c241d',
+                        '#8b6914',
+                        '#f3d5b5'
                     ],
-                    borderWidth: 0,
-                    hoverOffset: 10
+                    borderWidth: 2,
+                    borderColor: isDark ? '#1a1a1a' : '#ffffff',
+                    hoverOffset: 8
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    title: { display: true, text: 'Order Categories', color: '#111', font: { family: 'Playfair Display', size: 16 } },
-                    legend: { position: 'bottom', labels: { font: { family: 'Poppins', size: 11 } } }
+                    title: { display: true, text: 'Portfolio Allocation', color: textColor, font: { family: 'Playfair Display', size: 15, weight: '600' } },
+                    legend: { position: 'bottom', labels: { font: { family: 'Montserrat', size: 11 }, color: textColor, padding: 14 } }
                 },
-                cutout: '70%'
+                cutout: '68%'
             }
         });
     }

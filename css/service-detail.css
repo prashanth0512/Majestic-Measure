@@ -10,12 +10,12 @@
 
 body.service-detail-page {
     background: var(--bg-primary);
-    opacity: 0;
-    transition: opacity 0.5s ease;
+    opacity: 1 !important;
+    visibility: visible !important;
     margin: 0;
     padding: 0;
 }
-body.service-detail-page.loaded { opacity: 1; }
+body.service-detail-page.loaded { opacity: 1 !important; }
 
 
 .service-detail-hero {
@@ -112,7 +112,7 @@ body.light-mode .service-detail-hero h1:hover {
 .service-detail-hero .tagline {
     font-size: 22px;
     color: rgba(255,255,255,0.95) !important;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-style: italic;
     margin-bottom: 40px;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 
@@ -142,7 +142,7 @@ body.light-mode .service-detail-hero .tagline {
 
 .hero-meta-item span {
     font-size: 22px;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     color: #FFFFFF !important;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 
                  0 0 15px rgba(255, 255, 255, 0.2);
@@ -173,7 +173,7 @@ body.light-mode .hero-meta-item span {
 
 
 .service-overview {
-    padding: 100px 0;
+    padding: 70px 0;
 }
 .service-overview-grid {
     display: grid;
@@ -207,200 +207,884 @@ body.light-mode .hero-meta-item span {
 .service-overview-image:hover img { transform: scale(1.04); }
 
 
+/* --- Process Section Cards --- */
 .service-process {
-    padding: 100px 0;
+    padding: 70px 0;
     background: var(--bg-secondary);
 }
+
+/* UNIFIED CARD BOTTOM HOVER LINE EFFECT */
+.process-step,
+.include-item,
+.fabric-card,
+.craft-item,
+.tier-card,
+.related-card,
+.guarantee-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.process-step::before,
+.include-item::before,
+.fabric-card::before,
+.craft-item::before,
+.tier-card::before,
+.related-card::before,
+.guarantee-box::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), #f3d5b5, var(--primary-color));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 5;
+}
+
+.process-step:hover::before,
+.include-item:hover::before,
+.fabric-card:hover::before,
+.craft-item:hover::before,
+.tier-card:hover::before,
+.related-card:hover::before,
+.guarantee-box:hover::before {
+    transform: scaleX(1);
+}
+
+.process-step:hover,
+.include-item:hover,
+.fabric-card:hover,
+.craft-item:hover,
+.tier-card:hover,
+.related-card:hover,
+.guarantee-box:hover {
+    transform: translateY(-8px) !important;
+    border-color: rgba(212, 163, 115, 0.6) !important;
+    box-shadow: 0 20px 40px rgba(212, 163, 115, 0.2) !important;
+}
+
+body.light-mode .process-step:hover,
+body.light-mode .include-item:hover,
+body.light-mode .fabric-card:hover,
+body.light-mode .craft-item:hover,
+body.light-mode .tier-card:hover,
+body.light-mode .related-card:hover,
+body.light-mode .guarantee-box:hover {
+    box-shadow: 0 20px 40px rgba(212, 163, 115, 0.25) !important;
+}
+
 .process-steps {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    margin-top: 60px;
-}
-.process-step {
-    padding: 60px 30px 40px;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    position: relative;
-    transition: all 0.4s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    gap: 28px;
+    margin-top: 50px;
 }
 
-.process-step:hover { 
-    border-color: var(--primary-color);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+.process-step {
+    padding: 36px 28px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(212, 163, 115, 0.25);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.process-step::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), transparent);
+    opacity: 0.8;
 }
 
 body.light-mode .process-step {
     background: #FFFFFF;
-    border-color: rgba(212, 163, 115, 0.35);
+    border-color: rgba(212, 163, 115, 0.3);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.04);
+}
+
+.process-step:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(212, 163, 115, 0.15);
 }
 
 body.light-mode .process-step:hover {
-    box-shadow: 0 15px 40px rgba(212, 163, 115, 0.12);
-    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(212, 163, 115, 0.2);
 }
 
-.step-number {
-    position: absolute;
-    top: 20px;
-    left: 30px;
-    font-size: 40px;
-    font-family: 'Cormorant Garamond', serif;
-    color: var(--primary-color);
-    opacity: 0.7;
-    line-height: 1;
+.step-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(212, 163, 115, 0.1);
+    border: 1px solid rgba(212, 163, 115, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+
+.step-num {
+    font-size: 15px;
     font-weight: 700;
-    pointer-events: none;
-    z-index: 1;
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
 }
 
-body.light-mode .step-number {
-    color: var(--primary-color);
-    opacity: 0.65;
-}
 .process-step h4 {
     font-size: 20px;
-    margin-bottom: 15px;
-    font-weight: 500;
-    color: var(--primary-color);
+    line-height: 1.3;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-family: 'Playfair Display', serif;
 }
+
+body.light-mode .process-step h4 {
+    color: #111111 !important;
+}
+
 .process-step p {
-    font-size: 15px;
+    font-size: 14.5px;
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: 1.65;
+    margin: 0;
 }
 
+body.light-mode .process-step p {
+    color: #444444 !important;
+}
 
+/* --- What's Included Cards --- */
 .service-includes {
-    padding: 100px 0;
+    padding: 70px 0;
 }
+
 .includes-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 60px;
+    gap: 28px;
+    margin-top: 50px;
 }
+
 .include-item {
     display: flex;
     gap: 20px;
     align-items: flex-start;
-    padding: 30px;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    transition: border-color 0.4s ease;
-}
-.include-item:hover { 
-    border-color: var(--primary-color);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    padding: 32px 28px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(212, 163, 115, 0.25);
+    border-radius: 16px;
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
 }
 
 body.light-mode .include-item {
     background: #FFFFFF;
-    border-color: rgba(212, 163, 115, 0.15);
+    border-color: rgba(212, 163, 115, 0.3);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.04);
+}
+
+.include-item:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(212, 163, 115, 0.15);
 }
 
 body.light-mode .include-item:hover {
-    box-shadow: 0 15px 40px rgba(212, 163, 115, 0.12);
-    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(212, 163, 115, 0.2);
 }
+
 .include-icon {
-    width: 44px;
-    height: 44px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     flex-shrink: 0;
-    background: rgba(197,160,89,0.1);
+    background: rgba(212, 163, 115, 0.1);
+    border: 1px solid rgba(212, 163, 115, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--gold);
+    color: var(--primary-color);
     font-size: 18px;
+    transition: var(--transition-smooth);
 }
-.include-item h4 { font-size: 18px; margin-bottom: 8px; font-weight: 500; }
-.include-item p { font-size: 15px; color: var(--text-secondary); line-height: 1.6; }
 
+.include-item:hover .include-icon {
+    background: var(--primary-color);
+    color: #0f0f0f;
+    transform: scale(1.05);
+}
 
+.include-content h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-family: 'Playfair Display', serif;
+}
+
+body.light-mode .include-content h4 {
+    color: #111111 !important;
+}
+
+.include-content p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+body.light-mode .include-content p {
+    color: #444444 !important;
+}
+
+/* --- Service Overview Image --- */
+.service-overview-image {
+    position: relative;
+    height: 100%;
+    min-height: 420px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(212, 163, 115, 0.25);
+}
+
+.service-overview-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.service-overview-image:hover img {
+    transform: scale(1.06);
+}
+
+/* --- Service CTA Banner --- */
 .service-cta {
-    padding: 120px 0;
-    text-align: center;
+    padding: 70px 0;
     background: var(--bg-primary);
-    border-top: 1px solid var(--card-border);
 }
-.service-cta h2 {
-    font-size: 56px;
-    font-weight: 300;
+
+.cta-banner-card {
+    background: linear-gradient(135deg, rgba(20, 16, 15, 0.96), rgba(48, 22, 22, 0.96));
+    border: 1px solid rgba(212, 163, 115, 0.4);
+    border-radius: 24px;
+    padding: 64px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+.cta-banner-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(212, 163, 115, 0.12) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+body.light-mode .cta-banner-card {
+    background: linear-gradient(135deg, #FFFFFF, #FFF5F7);
+    border-color: rgba(212, 163, 115, 0.4);
+    box-shadow: 0 20px 50px rgba(212, 163, 115, 0.18);
+}
+
+.cta-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: var(--primary-color);
+    background: rgba(212, 163, 115, 0.1);
+    border: 1px solid rgba(212, 163, 115, 0.3);
+    padding: 6px 16px;
+    border-radius: 30px;
     margin-bottom: 20px;
 }
-.service-cta p {
-    font-size: 18px;
-    color: var(--text-secondary);
-    margin-bottom: 50px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+
+.cta-banner-card h2 {
+    font-size: 46px;
+    font-family: 'Playfair Display', serif;
+    color: #FFFFFF !important;
+    margin-bottom: 16px;
+    line-height: 1.2;
 }
+
+body.light-mode .cta-banner-card h2 {
+    color: #111111 !important;
+}
+
+.cta-banner-card p {
+    font-size: 16.5px;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 640px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+}
+
+body.light-mode .cta-banner-card p {
+    color: #444444 !important;
+}
+
 .cta-actions {
     display: flex;
-    gap: 20px;
+    gap: 16px;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 
-
+/* --- Related Services Cards --- */
 .related-services {
     padding: 100px 0;
-    border-top: 1px solid var(--card-border);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
+
 .related-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-top: 60px;
+    gap: 24px;
+    margin-top: 50px;
 }
+
 .related-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    padding: 35px 30px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(212, 163, 115, 0.25);
+    border-radius: 16px;
+    padding: 32px 26px;
     text-decoration: none;
     color: var(--text-primary);
     display: flex;
     flex-direction: column;
     gap: 12px;
-    transition: all 0.4s ease;
+    transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
-}
-.related-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 2px;
-    background: var(--gold);
-    transform: scaleX(0);
-    transition: transform 0.4s ease;
-}
-.related-card:hover { 
-    border-color: rgba(197,160,89,0.3); 
-    transform: translateY(-4px); 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 body.light-mode .related-card {
     background: #FFFFFF;
-    border-color: rgba(212, 163, 115, 0.35);
+    border-color: rgba(212, 163, 115, 0.3);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.04);
+}
+
+.related-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(212, 163, 115, 0.18);
 }
 
 body.light-mode .related-card:hover {
-    box-shadow: 0 15px 40px rgba(212, 163, 115, 0.12);
-    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(212, 163, 115, 0.22);
 }
-.related-card:hover::after { transform: scaleX(1); }
-.related-card .icon { font-size: 28px; color: var(--gold); }
-.related-card h4 { font-size: 20px; font-weight: 400; }
-.related-card p { font-size: 14px; color: var(--text-secondary); }
-.related-card .from { font-size: 18px; color: var(--gold); margin-top: auto; }
+
+.related-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(212, 163, 115, 0.1);
+    border: 1px solid rgba(212, 163, 115, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 18px;
+    transition: var(--transition-smooth);
+}
+
+.related-card:hover .related-badge {
+    background: var(--primary-color);
+    color: #0f0f0f;
+}
+
+.related-content h4 {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+body.light-mode .related-content h4 {
+    color: #111111 !important;
+}
+
+.related-content p {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+body.light-mode .related-content p {
+    color: #444444 !important;
+}
+
+.related-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.light-mode .related-footer {
+    border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+.related-footer .from {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+}
+
+.related-arrow {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(212, 163, 115, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 12px;
+    transition: var(--transition-smooth);
+}
+
+.related-card:hover .related-arrow {
+    background: var(--primary-color);
+    color: #0f0f0f;
+    transform: translateX(3px);
+}
+
+/* --- SECTION 1: FABRICS & CLOTH ARCHIVE --- */
+.service-fabrics {
+    padding: 70px 0;
+    background: var(--bg-primary);
+}
+
+.fabrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.fabric-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 360px;
+    background: #0f0f0f;
+    border: 1px solid rgba(212, 163, 115, 0.25);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: var(--transition-smooth);
+}
+
+body.light-mode .fabric-card {
+    border-color: rgba(212, 163, 115, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.fabric-img-wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.fabric-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+    filter: brightness(80%);
+}
+
+.fabric-card:hover .fabric-img-wrap img {
+    transform: scale(1.08);
+    filter: brightness(90%);
+}
+
+.fabric-info {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.5) 60%, transparent 100%);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    z-index: 2;
+}
+
+.fabric-origin {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    background: rgba(13, 13, 13, 0.85);
+    border: 1px solid rgba(212, 163, 115, 0.35);
+    backdrop-filter: blur(6px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    align-self: flex-start;
+    margin-bottom: 12px;
+}
+
+.fabric-info h4 {
+    font-size: 22px;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 8px;
+    color: #FFFFFF !important;
+    line-height: 1.25;
+}
+
+body.light-mode .fabric-info h4 {
+    color: #FFFFFF !important;
+}
+
+.fabric-info p {
+    font-size: 13.5px;
+    color: rgba(255, 255, 255, 0.85) !important;
+    line-height: 1.55;
+    margin: 0;
+}
+
+body.light-mode .fabric-info p {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+
+/* --- SECTION 2: CRAFTSMANSHIP ARCHITECTURE --- */
+.service-craftsmanship {
+    padding: 100px 0;
+    background: var(--bg-secondary);
+}
+
+.craftsmanship-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 50px;
+}
+
+.craft-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(212, 163, 115, 0.22);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    transition: var(--transition-smooth);
+}
+
+body.light-mode .craft-item {
+    background: #FFFFFF;
+    border-color: rgba(212, 163, 115, 0.3);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.04);
+}
+
+.craft-item:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(212, 163, 115, 0.15);
+}
+
+.craft-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(212, 163, 115, 0.1);
+    border: 1px solid rgba(212, 163, 115, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+.craft-item h4 {
+    font-size: 18px;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+body.light-mode .craft-item h4 { color: #111111 !important; }
+
+.craft-item p {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+body.light-mode .craft-item p { color: #444444 !important; }
+
+
+/* --- SECTION 3: INVESTMENT TIERS --- */
+.service-tiers {
+    padding: 100px 0;
+    background: var(--bg-primary);
+}
+
+.tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+    align-items: center;
+}
+
+.tier-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(212, 163, 115, 0.25);
+    border-radius: 16px;
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+body.light-mode .tier-card {
+    background: #FFFFFF;
+    border-color: rgba(212, 163, 115, 0.3);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.04);
+}
+
+.tier-card.featured {
+    border: 2px solid var(--primary-color);
+    background: rgba(212, 163, 115, 0.04);
+    box-shadow: 0 20px 40px rgba(212, 163, 115, 0.18);
+    transform: scale(1.03);
+}
+
+.tier-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.tier-tag.gold {
+    background: var(--primary-color);
+    color: #0f0f0f;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    align-self: flex-start;
+}
+
+.tier-card h3 {
+    font-size: 26px;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+body.light-mode .tier-card h3 { color: #111111 !important; }
+
+.tier-price {
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    margin-bottom: 24px;
+}
+
+.tier-price span {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tier-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tier-features li {
+    font-size: 14px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+body.light-mode .tier-features li { color: #444444 !important; }
+
+.tier-features li i {
+    color: var(--primary-color);
+    font-size: 13px;
+}
+
+.tier-btn {
+    text-align: center;
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: 1px solid rgba(212, 163, 115, 0.4);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: var(--transition-smooth);
+    margin-top: auto;
+}
+
+.tier-btn:hover,
+.tier-btn.gold-btn {
+    background: var(--primary-color);
+    color: #0f0f0f;
+    border-color: var(--primary-color);
+    box-shadow: 0 6px 20px rgba(212, 163, 115, 0.3);
+}
+
+
+/* --- SECTION 4: TESTIMONIAL BANNER --- */
+.service-testimonial {
+    padding: 80px 0;
+    background: var(--bg-secondary);
+}
+
+.testimonial-card-banner {
+    background: rgba(212, 163, 115, 0.04);
+    border: 1px solid rgba(212, 163, 115, 0.25);
+    border-radius: 16px;
+    padding: 50px 40px;
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+body.light-mode .testimonial-card-banner {
+    background: #FFFFFF;
+    border-color: rgba(212, 163, 115, 0.3);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+.testimonial-card-banner .stars {
+    color: #ffc107;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    font-size: 18px;
+}
+
+.testimonial-quote {
+    font-size: 22px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+}
+
+body.light-mode .testimonial-quote { color: #111111 !important; }
+
+.client-info strong {
+    display: block;
+    font-size: 16px;
+    color: var(--primary-color);
+    margin-bottom: 4px;
+}
+
+.client-info span {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+
+/* --- SECTION 5: LIFETIME PROMISE --- */
+.service-guarantee {
+    padding: 70px 0;
+    background: var(--bg-primary);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.guarantee-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.guarantee-box {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(212, 163, 115, 0.2);
+    border-radius: 12px;
+    padding: 24px 20px;
+}
+
+body.light-mode .guarantee-box {
+    background: #FFFFFF;
+    border-color: rgba(212, 163, 115, 0.25);
+}
+
+.guarantee-box i {
+    font-size: 28px;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.guarantee-box h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+}
+
+body.light-mode .guarantee-box h4 { color: #111111 !important; }
+
+.guarantee-box p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.4;
+}
+
+body.light-mode .guarantee-box p { color: #444444 !important; }
 
 
 @media (max-width: 1280px) {
@@ -412,11 +1096,14 @@ body.light-mode .related-card:hover {
     .service-overview-grid { grid-template-columns: 1fr; gap: 50px; }
     .service-overview-image { height: 400px; }
     .includes-grid { grid-template-columns: repeat(2, 1fr); }
+    .fabrics-grid, .tiers-grid, .guarantee-wrapper { grid-template-columns: 1fr; }
+    .craftsmanship-grid { grid-template-columns: repeat(2, 1fr); }
+    .tier-card.featured { transform: none; }
 }
 @media (max-width: 640px) {
     .service-detail-hero { height: 70vh; padding-bottom: 50px; }
     .service-detail-hero h1 { font-size: 38px; }
     .hero-meta { flex-direction: column; gap: 20px; }
-    .process-steps, .includes-grid, .related-grid { grid-template-columns: 1fr; }
+    .process-steps, .includes-grid, .related-grid, .craftsmanship-grid { grid-template-columns: 1fr; }
     .service-cta h2 { font-size: 34px; }
 }

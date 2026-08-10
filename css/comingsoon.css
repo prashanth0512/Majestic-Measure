@@ -7,7 +7,7 @@ body {
             justify-content: center;
             background-color: var(--bg-primary);
             overflow: hidden;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             position: relative;
             transition: background-color 0.5s ease;
         }
@@ -31,7 +31,7 @@ body {
         }
 
         h2 {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', serif;
             font-size: 64px;
             margin-bottom: 20px;
             font-weight: 300;
@@ -64,7 +64,7 @@ body {
         }
 
         .countdown-number {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', serif;
             font-size: 64px;
             font-weight: 400;
             color: var(--primary-color);

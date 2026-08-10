@@ -49,10 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const passwordToggles = document.querySelectorAll('.password-toggle');
-    
+
     passwordToggles.forEach(toggle => {
         toggle.addEventListener('click', function() {
-            const input = this.previousElementSibling;
+            // Input is a sibling inside .auth-field
+            const field = this.closest('.auth-field') || this.parentElement;
+            const input = field ? field.querySelector('input[type="password"], input[type="text"]') : this.previousElementSibling;
             if (input && input.tagName === 'INPUT') {
                 if (input.type === 'password') {
                     input.type = 'text';
@@ -66,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
 
     const loginForm = document.getElementById('login-form');
     const signupForm = document.getElementById('signup-form');

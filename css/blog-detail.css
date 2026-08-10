@@ -162,7 +162,7 @@
     padding: 30px 40px;
     margin: 50px 0;
     background-color: var(--bg-secondary);
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 28px;
     font-style: italic;
     color: var(--primary-color);
@@ -200,7 +200,7 @@
 .author-info h4 {
     font-size: 18px;
     margin-bottom: 10px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .author-desc {
@@ -231,7 +231,7 @@
     color: var(--primary-color);
     margin-bottom: 30px;
     text-transform: uppercase;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
 }
 
@@ -281,7 +281,7 @@
 }
 
 .related-item-text h5 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: 500;
     color: var(--text-primary);
@@ -336,7 +336,7 @@
     border: 1px solid var(--card-border);
     padding: 12px 15px;
     color: var(--text-primary);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     outline: none;
     transition: var(--transition-smooth);
@@ -369,24 +369,47 @@
 }
 
 .blog-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    background: #111111;
+    border: 1px solid rgba(255, 255, 255, 0.07);
     transition: all 0.4s ease;
-    color: var(--text-primary);
+    color: #ffffff;
+    overflow: hidden;
 }
 
 .blog-card h3 {
-    color: var(--text-primary);
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.35;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
 }
 
 .blog-card p,
 .blog-card .card-meta {
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* Ensure meta/date/time always visible regardless of mode */
+.blog-card .card-meta {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.blog-card .card-meta i {
+    color: var(--primary-color);
+    margin-right: 5px;
 }
 
 .blog-card-image {
     height: 200px;
     overflow: hidden;
+    position: relative;
 }
 
 .blog-card-image img {
@@ -397,13 +420,28 @@
 }
 
 .blog-card-content {
-    padding: 25px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
 }
 
 .blog-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
     border-color: var(--primary-color);
+}
+
+.blog-card:hover h3 {
+    color: var(--primary-color);
+}
+
+/* Keep meta text fully visible on hover */
+.blog-card:hover .card-meta {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.blog-card:hover p {
+    color: rgba(255, 255, 255, 0.85) !important;
 }
 
 .blog-card:hover .blog-card-image img {
@@ -533,7 +571,7 @@
 }
 
 .anatomy-info h5 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: 600;
     color: var(--text-primary);
@@ -575,7 +613,7 @@
 }
 
 .sidebar-fabric-card h5 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 13px;
     font-weight: 600;
     color: var(--text-primary);

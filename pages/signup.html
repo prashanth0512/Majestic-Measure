@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up | Majestic Measure</title>
+    <title>Create Account | Majestic Measure</title>
+    <meta name="description" content="Create your Majestic Measure account to access bespoke tailoring services, manage consultations, and track your commissions.">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/auth.css">
     <link rel="stylesheet" href="../css/fixes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
 </head>
 <body class="auth-page">
-    
 
-
+    <!-- Top Utility Bar -->
     <div class="auth-actions">
         <button class="rtl-toggle auth-rtl-toggle">LTR</button>
         <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
@@ -22,48 +22,144 @@
         </button>
     </div>
 
-    <div class="auth-container">
-        <form action="#" id="signup-form">
-            <a href="../index.html" class="auth-card-logo">
+    <!-- ═══════════════════════════════════════════
+         LEFT: BRAND PANEL
+    ════════════════════════════════════════════ -->
+    <div class="auth-left">
+        <div class="auth-left-bg"></div>
+        <div class="auth-left-overlay"></div>
+        <div class="auth-left-inner">
+
+            <!-- Logo -->
+            <a href="../index.html" class="auth-brand-link">
                 <div class="auth-logo-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="38" height="38">
-                        <rect width="100" height="100" rx="20" fill="#141414" stroke="#d4a373" stroke-width="2.5" />
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="36" height="36">
+                        <rect width="100" height="100" rx="20" fill="#141414" stroke="#d4a373" stroke-width="2.5"/>
                         <g fill="#d4a373">
-                            <polygon points="50,18 56,25 50,32 44,25" />
-                            <polygon points="44,25 24,18 24,32" />
-                            <polygon points="56,25 76,18 76,32" />
+                            <polygon points="50,18 56,25 50,32 44,25"/>
+                            <polygon points="44,25 24,18 24,32"/>
+                            <polygon points="56,25 76,18 76,32"/>
                         </g>
-                        <line x1="50" y1="36" x2="50" y2="84" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
-                        <path fill="#ffffff" d="M 40,18 L 8,34 C 13,40 18,44 20,45 L 35,49 C 37,39 39,29 40,18 Z" />
-                        <path fill="#ffffff" d="M 10,46 L 36,50 C 42,65 47,80 50,92 C 34,78 18,60 10,46 Z" />
-                        <path fill="#ffffff" d="M 60,18 L 92,34 C 87,40 82,44 80,45 L 65,49 C 63,39 61,29 60,18 Z" />
-                        <path fill="#ffffff" d="M 90,46 L 64,50 C 58,65 53,80 50,92 C 66,78 82,60 90,46 Z" />
+                        <line x1="50" y1="36" x2="50" y2="84" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                        <path fill="#ffffff" d="M 40,18 L 8,34 C 13,40 18,44 20,45 L 35,49 C 37,39 39,29 40,18 Z"/>
+                        <path fill="#ffffff" d="M 10,46 L 36,50 C 42,65 47,80 50,92 C 34,78 18,60 10,46 Z"/>
+                        <path fill="#ffffff" d="M 60,18 L 92,34 C 87,40 82,44 80,45 L 65,49 C 63,39 61,29 60,18 Z"/>
+                        <path fill="#ffffff" d="M 90,46 L 64,50 C 58,65 53,80 50,92 C 66,78 82,60 90,46 Z"/>
                     </svg>
                 </div>
                 <div class="auth-logo-text">MAJESTIC<span>MEASURE</span></div>
             </a>
-            <h1>Create <span class="accent">Account</span></h1>
+
+            <!-- Centre Content -->
+            <div class="auth-left-content">
+                <span class="auth-left-badge"><i class="fa-solid fa-crown"></i> SAVILE ROW ATELIER</span>
+                <h2>Begin Your<br><em>Bespoke Journey</em></h2>
+                <p>Join an exclusive circle of discerning clients who trust Majestic Measure for handcrafted garments built around your exact body and story.</p>
+                <div class="auth-left-features">
+                    <div class="auth-feature-item">
+                        <i class="fa-solid fa-scissors"></i>
+                        <span>Hand-cut patterns unique to your physique</span>
+                    </div>
+                    <div class="auth-feature-item">
+                        <i class="fa-solid fa-gem"></i>
+                        <span>Access to world-class fabric mills</span>
+                    </div>
+                    <div class="auth-feature-item">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Lifetime fit guarantee on every commission</span>
+                    </div>
+                    <div class="auth-feature-item">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <span>Priority booking for private consultations</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Quote -->
+            <div class="auth-left-quote">
+                <blockquote>"Style is a way to say who you are without having to speak."</blockquote>
+                <cite>— Rachel Zoe</cite>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         RIGHT: FORM PANEL
+    ════════════════════════════════════════════ -->
+    <div class="auth-right">
+        <div class="auth-form-card">
+
+            <!-- Mobile Logo (hidden on desktop) -->
+            <a href="../index.html" class="auth-card-logo">
+                <div class="auth-logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="34" height="34">
+                        <rect width="100" height="100" rx="20" fill="#141414" stroke="#d4a373" stroke-width="2.5"/>
+                        <g fill="#d4a373">
+                            <polygon points="50,18 56,25 50,32 44,25"/>
+                            <polygon points="44,25 24,18 24,32"/>
+                            <polygon points="56,25 76,18 76,32"/>
+                        </g>
+                        <line x1="50" y1="36" x2="50" y2="84" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                        <path fill="#ffffff" d="M 40,18 L 8,34 C 13,40 18,44 20,45 L 35,49 C 37,39 39,29 40,18 Z"/>
+                        <path fill="#ffffff" d="M 10,46 L 36,50 C 42,65 47,80 50,92 C 34,78 18,60 10,46 Z"/>
+                        <path fill="#ffffff" d="M 60,18 L 92,34 C 87,40 82,44 80,45 L 65,49 C 63,39 61,29 60,18 Z"/>
+                        <path fill="#ffffff" d="M 90,46 L 64,50 C 58,65 53,80 50,92 C 66,78 82,60 90,46 Z"/>
+                    </svg>
+                </div>
+                <div class="auth-logo-text">MAJESTIC<span>MEASURE</span></div>
+            </a>
+
+            <!-- Heading -->
+            <div class="auth-form-heading">
+                <h1>Create <span class="accent">Account</span></h1>
+                <p>Join the Majestic Measure atelier</p>
+            </div>
+
+            <!-- Form -->
+            <form class="auth-form" id="signup-form" action="#">
+                <div class="auth-field">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" placeholder="e.g. James Sterling" required>
+                </div>
+
+                <div class="auth-field">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="your@email.com" required>
+                </div>
+
+                <div class="auth-field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Create a strong password" required>
+                    <i class="fa-regular fa-eye password-toggle" id="pw-toggle"></i>
+                </div>
+
+                <div class="auth-field">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" placeholder="Repeat your password" required>
+                    <i class="fa-regular fa-eye password-toggle" id="cpw-toggle"></i>
+                </div>
+
+                <button type="submit" class="auth-submit-btn">Create My Account</button>
+            </form>
+
+            <!-- Divider -->
+            <div class="auth-divider"><span>or register with</span></div>
+
+            <!-- Social Buttons (Placed AFTER placeholders & submit button) -->
             <div class="social-container">
-                <a href="#" class="social" aria-label="Sign up with Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social" aria-label="Sign up with Google"><i class="fab fa-google"></i></a>
-                <a href="#" class="social" aria-label="Sign up with Apple"><i class="fab fa-apple"></i></a>
+                <a href="#" class="social-btn google" aria-label="Continue with Google">
+                    <i class="fab fa-google"></i>
+                    Continue with Google
+                </a>
+                <a href="#" class="social-btn apple" aria-label="Continue with Apple">
+                    <i class="fab fa-apple"></i>
+                    Continue with Apple
+                </a>
             </div>
-            <span>or use your email for registration</span>
-            <div class="input-group">
-                <input type="text" id="fullname" placeholder="Full Name" required />
-                <input type="email" id="email" placeholder="Email" required />
-                <div class="input-wrapper">
-                    <input type="password" id="password" placeholder="Password" required />
-                    <i class="fa-regular fa-eye password-toggle"></i>
-                </div>
-                <div class="input-wrapper">
-                    <input type="password" id="confirm-password" placeholder="Confirm Password" required />
-                    <i class="fa-regular fa-eye password-toggle"></i>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Sign Up</button>
-            <p class="auth-link">Already have an account? <a href="login.html">Login</a></p>
-        </form>
+
+            <p class="auth-link">Already have an account? <a href="login.html">Sign In</a></p>
+        </div>
     </div>
 
     <script src="../js/auth.js"></script>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -65,8 +65,30 @@
 
                 <div class="hero-visual">
                     <div class="suit-3d-viewport">
-                        <div class="suit-shadow"></div>
+                        <!-- Thin Circle Background in Animation Area -->
+                        <div class="hero-anim-circle-bg" id="hero-anim-circle">
+                            <div class="hero-thin-circle circle-outer"></div>
+                            <div class="hero-thin-circle circle-middle"></div>
+                            <div class="hero-thin-circle circle-inner"></div>
+                            <svg class="hero-circle-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="250" cy="250" r="238" class="svg-thin-circle svg-circle-1" />
+                                <circle cx="250" cy="250" r="198" class="svg-thin-circle svg-circle-2" stroke-dasharray="3 7" />
+                                <circle cx="250" cy="250" r="158" class="svg-thin-circle svg-circle-3" />
+                                <circle cx="250" cy="250" r="118" class="svg-thin-circle svg-circle-4" stroke-dasharray="1 5" />
+                                <g class="svg-circle-ticks">
+                                    <line x1="250" y1="8" x2="250" y2="20" class="tick-line" />
+                                    <line x1="250" y1="480" x2="250" y2="492" class="tick-line" />
+                                    <line x1="8" y1="250" x2="20" y2="250" class="tick-line" />
+                                    <line x1="480" y1="250" x2="492" y2="250" class="tick-line" />
+                                    <line x1="79" y1="79" x2="88" y2="88" class="tick-line" />
+                                    <line x1="421" y1="421" x2="412" y2="412" class="tick-line" />
+                                    <line x1="421" y1="79" x2="412" y2="88" class="tick-line" />
+                                    <line x1="79" y1="421" x2="88" y2="412" class="tick-line" />
+                                </g>
+                            </svg>
+                        </div>
                         
+                        <div class="suit-shadow"></div>
                         <div class="suit-3d-wrapper">
                             
                             <div class="mannequin-stand">
@@ -234,7 +256,7 @@
         </section>
 
         <section>
-        <div class="hero-stats container">
+            <div class="hero-stats container">
                 <div class="stat-item">
                     <span class="stat-number" data-target="10">10+</span>
                     <span class="stat-label">YEARS CRAFTING</span>
@@ -247,6 +269,14 @@
                     <span class="stat-number" data-target="5000">5,000+</span>
                     <span class="stat-label">GARMENTS MADE</span>
                 </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="35">35+</span>
+                    <span class="stat-label">MASTER TAILORS</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="99" data-suffix="%">99%</span>
+                    <span class="stat-label">CLIENT SATISFACTION</span>
+                </div>
             </div>
             <div class="scroll-down">
                 <i class="fa-solid fa-chevron-down"></i>
@@ -254,35 +284,48 @@
         </section>
         
         <section class="atelier">
-            <div class="container atelier-grid">
-                <div class="atelier-image">
-                    <img src="images/atelier-workshop.png" alt="Tailoring Atelier">
-                    <div class="excellence-badge">
-                        <span class="number">10+</span>
-                        <span class="text">YEARS OF EXCELLENCE</span>
+            <div class="container atelier-container">
+                <div class="atelier-grid">
+                    <div class="atelier-image">
+                        <img src="images/atelier-workshop.png" alt="Tailoring Atelier">
+                        <div class="excellence-badge">
+                            <span class="number">10+</span>
+                            <span class="text">YEARS OF EXCELLENCE</span>
+                        </div>
                     </div>
-                </div>
-                <div class="atelier-text">
-                    <span class="section-subtitle">OUR TAILORING STUDIO</span>
-                    <h2>Where Cloth Becomes<br><span class="accent">Character</span></h2>
-                    <p>Founded in 2015 on Savile Row, Majestic Measure has built its reputation on a singular commitment: to produce garments of absolute quality for clients who understand the difference. Every suit that leaves our tailoring studio carries the signature of its maker a human touch no machine can replicate.</p>
-                    <p>Our team of master tailors trained across London, Naples, and Milan. Together, they combine English tradition with continental elegance, creating a style that is unmistakably modern yet rooted in timeless craft.</p>
                     
-                    <div class="atelier-mini-stats">
-                        <div class="mini-stat">
-                            <i class="fa-solid fa-award"></i>
-                            <span>Award Winning</span>
+                    <div class="atelier-text-content">
+                        <span class="section-subtitle">OUR TAILORING STUDIO</span>
+                        <h2>Where Cloth Becomes<br><span class="accent">Character</span></h2>
+                        <p>Founded in 2015 on Savile Row, Majestic Measure has built its reputation on a singular commitment: to produce garments of absolute quality for clients who understand the difference. Every suit that leaves our tailoring studio carries the signature of its maker a human touch no machine can replicate.</p>
+                        <p>Our team of master tailors trained across London, Naples, and Milan. Together, they combine English tradition with continental elegance, creating a style that is unmistakably modern yet rooted in timeless craft.</p>
+                        <p class="atelier-extra-desc">From initial hand-drawn paper patterns to final hand-sewn buttonholes, every detail is measured to enhance your natural silhouette and posture.</p>
+                        
+                        <div class="atelier-features">
+                            <span class="feature-tag"><i class="fa-solid fa-scissors"></i> Hand-Cut Patterns</span>
+                            <span class="feature-tag"><i class="fa-solid fa-layer-group"></i> Full Floating Canvas</span>
+                            <span class="feature-tag"><i class="fa-solid fa-gem"></i> Premium Natural Fibers</span>
                         </div>
-                        <div class="mini-stat">
-                            <i class="fa-solid fa-clock"></i>
-                            <span>60-80 hrs / Suit</span>
+
+                        <div class="atelier-mini-stats">
+                            <div class="mini-stat">
+                                <i class="fa-solid fa-award"></i>
+                                <span>Award Winning</span>
+                            </div>
+                            <div class="mini-stat">
+                                <i class="fa-solid fa-clock"></i>
+                                <span>60-80 hrs / Suit</span>
+                            </div>
+                            <div class="mini-stat">
+                                <i class="fa-solid fa-users"></i>
+                                <span>5,000+ Clients</span>
+                            </div>
                         </div>
-                        <div class="mini-stat">
-                            <i class="fa-solid fa-users"></i>
-                            <span>5,000+ Clients</span>
+
+                        <div class="atelier-action">
+                            <a href="./pages/about.html" class="btn-premium-story">[ OUR STORY ]</a>
                         </div>
                     </div>
-                    <a href="./pages/about.html" class="btn-premium-story">[ OUR STORY ]</a>
                 </div>
             </div>
         </section>
@@ -307,7 +350,7 @@
                                 <p>Fully hand-crafted suits built from scratch to your exact measurements, lifestyle, and aesthetic vision.</p>
                                 <div class="card-footer">
                                     <span class="price">From $1000</span>
-                                    <div class="arrow-btn"><i class="fa-solid fa-arrow-right"></i></div>
+                                    <div class="arrow-btn"><span>READ MORE</span> <i class="fa-solid fa-arrow-right"></i></div>
                                 </div>
                             </div>
                         </div>
@@ -325,7 +368,7 @@
                                 <p>Impeccably tailored wedding suits and morning coats that honour the gravity and joy of your ceremony.</p>
                                 <div class="card-footer">
                                     <span class="price">From $1200</span>
-                                    <div class="arrow-btn"><i class="fa-solid fa-arrow-right"></i></div>
+                                    <div class="arrow-btn"><span>READ MORE</span> <i class="fa-solid fa-arrow-right"></i></div>
                                 </div>
                             </div>
                         </div>
@@ -344,7 +387,7 @@
                                 <p>Crafted from the finest cottons and linens, our made-to-measure shirts are tailored to your body and taste.</p>
                                 <div class="card-footer">
                                     <span class="price">From $1200</span>
-                                    <div class="arrow-btn"><i class="fa-solid fa-arrow-right"></i></div>
+                                    <div class="arrow-btn"><span>READ MORE</span> <i class="fa-solid fa-arrow-right"></i></div>
                                 </div>
                             </div>
                         </div>
@@ -363,7 +406,7 @@
                                 <p>Expert alterations, repairs, and restorations that breathe new life into cherished garments.</p>
                                 <div class="card-footer">
                                     <span class="price">From $80</span>
-                                    <div class="arrow-btn"><i class="fa-solid fa-arrow-right"></i></div>
+                                    <div class="arrow-btn"><span>READ MORE</span> <i class="fa-solid fa-arrow-right"></i></div>
                                 </div>
                             </div>
                         </div>
@@ -382,7 +425,26 @@
                                 <p>A comprehensive personal styling experience to define your wardrobe identity and elevate your everyday presence.</p>
                                 <div class="card-footer">
                                     <span class="price">From $350</span>
-                                    <div class="arrow-btn"><i class="fa-solid fa-arrow-right"></i></div>
+                                    <div class="arrow-btn"><span>READ MORE</span> <i class="fa-solid fa-arrow-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 6th Service Card: Full Suit Ensembles -->
+                    <a href="pages/service-detail.html?service=bespoke-suits" class="service-card-link">
+                        <div class="service-card reveal">
+                            <div class="card-img">
+                                <div class="card-img-wrapper">
+                                    <img src="images/navy-bespoke-suit.png" alt="Formal & Full Suit Ensembles">
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h3><span class="accent">Formal</span> & Full Suits</h3>
+                                <p>Complete hand-crafted full suit ensembles engineered for black-tie galas, formal ceremonies, and high-profile affairs.</p>
+                                <div class="card-footer">
+                                    <span class="price">From $1400</span>
+                                    <div class="arrow-btn"><span>READ MORE</span> <i class="fa-solid fa-arrow-right"></i></div>
                                 </div>
                             </div>
                         </div>
@@ -521,6 +583,13 @@
                 </div>
                 <div class="testimonials-grid">
                     <div class="testimonial-card reveal">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
                         <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
                         <p>"My bespoke suit from Majestic Measure was without question the most significant piece of clothing I have ever worn. The attention to every detail was extraordinary."</p>
                         <div class="client-box">
@@ -532,6 +601,13 @@
                         </div>
                     </div>
                     <div class="testimonial-card reveal">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
                         <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
                         <p>"I had my wedding suit made here and it was a flawless experience from consultation to collection. My guests could not stop commenting on the cut."</p>
                         <div class="client-box">
@@ -543,6 +619,13 @@
                         </div>
                     </div>
                     <div class="testimonial-card reveal">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
                         <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
                         <p>"There is a quiet confidence that comes with wearing something made specifically for you. Majestic Measure understands this completely."</p>
                         <div class="client-box">
@@ -562,7 +645,7 @@
             <div class="cta-overlay"></div>
             <div class="container cta-content">
                 <i class="fa-solid fa-scissors cta-icon"></i>
-                <h2>Begin Your <span class="accent">Tailoring</span><br><span class="italic">Journey <span class="accent">Today</span></span></h2>
+                <h2>Begin Your <span class="accent">Tailoring</span> <span class="italic">Journey <span class="accent">Today</span></span></h2>
                 <p>Schedule your private consultation at our Hyderabad atelier. Over champagne and cloth, we will begin to understand who you are and create something worthy of that understanding.</p>
                 <div class="cta-btns">
                     <a href="./pages/contact.html" class="btn btn-primary">BOOK CONSULTATION</a>

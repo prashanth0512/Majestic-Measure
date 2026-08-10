@@ -594,85 +594,77 @@ body.light-mode .btn-premium-story:hover {
 }
 
 @media (max-width: 1024px) {
-    #main-footer,
-    #main-footer .footer-grid,
+    #main-footer .footer-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 36px !important;
+    }
+
+    #main-footer .social-links {
+        justify-content: flex-start !important;
+    }
+}
+
+@media (max-width: 640px) {
+    #main-footer .footer-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+        gap: 32px !important;
+    }
+
     #main-footer .footer-brand,
     #main-footer .footer-nav,
     #main-footer .footer-services,
-    #main-footer .footer-extra,
     #main-footer .footer-visit {
-        display: flex !important;
-        flex-direction: column !important;
         align-items: center !important;
         text-align: center !important;
-        width: 100% !important;
     }
 
-    #main-footer .footer-grid {
-        gap: 40px !important;
-    }
-
-    #main-footer .footer-nav ul,
-    #main-footer .footer-services ul,
-    #main-footer .footer-extra ul {
-        padding: 0 !important;
-        margin: 0 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
+    #main-footer .footer-grid h4::after {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
     }
 
     #main-footer .social-links {
         justify-content: center !important;
-        width: 100% !important;
     }
 
-    #main-footer .footer-visit p {
+    #main-footer .heritage-seal {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    #main-footer .contact-item {
         justify-content: center !important;
-        align-items: center !important;
+    }
+
+    #main-footer .atelier-hours-card {
         text-align: center !important;
     }
 
-    #main-footer .footer-visit p i {
-        margin-right: 8px !important;
-        margin-top: 0 !important;
-        display: inline-block !important;
-    }
-
-    #main-footer .bottom-flex {
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        gap: 15px !important;
-    }
-
-    #main-footer .legal-links {
+    #main-footer .hours-header {
         justify-content: center !important;
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-        gap: 20px !important;
     }
+}
 
-    #main-footer .footer-nav a:hover,
-    #main-footer .footer-services a:hover,
-    #main-footer .footer-extra a:hover {
-        padding-left: 0 !important;
-        letter-spacing: 1px !important;
-    }
+html[dir="rtl"] #main-footer {
+    text-align: right;
+}
 
-    html[dir="rtl"] #main-footer .footer-visit p,
-    html[dir="rtl"] #main-footer .footer-brand p,
-    html[dir="rtl"] #main-footer .footer-nav ul,
-    html[dir="rtl"] #main-footer .footer-services ul,
-    html[dir="rtl"] #main-footer .footer-extra ul {
-        text-align: center !important;
-    }
+html[dir="rtl"] #main-footer .footer-grid h4::after {
+    left: auto;
+    right: 0;
+}
 
-    html[dir="rtl"] #main-footer .footer-visit i {
-        margin-left: 0 !important;
-        margin-right: 8px !important;
-    }
+html[dir="rtl"] #main-footer .footer-nav a::before,
+html[dir="rtl"] #main-footer .footer-services a::before {
+    content: '‹';
+    margin-right: 0;
+    margin-left: 0;
+}
+
+html[dir="rtl"] #main-footer .footer-nav a:hover,
+html[dir="rtl"] #main-footer .footer-services a:hover {
+    transform: translateX(-6px);
 }
 
 html, body {
@@ -681,13 +673,81 @@ html, body {
     width: 100% !important;
 }
 
+/* Perfectly Centered Subtitles with Symmetrical Dual Lines */
+.home2-hero .section-subtitle,
+.section-header .section-subtitle,
+.hero-content .section-subtitle,
+.section-subtitle.centered {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    align-self: center !important;
+}
+
+.home2-hero .section-subtitle::before,
+.section-header .section-subtitle::before,
+.hero-content .section-subtitle::before,
+.section-subtitle.centered::before {
+    content: '' !important;
+    position: static !important;
+    display: inline-block !important;
+    width: 25px !important;
+    height: 1px !important;
+    background-color: var(--primary-color) !important;
+    left: auto !important;
+    top: auto !important;
+}
+
+.home2-hero .section-subtitle::after,
+.section-header .section-subtitle::after,
+.hero-content .section-subtitle::after,
+.section-subtitle.centered::after {
+    content: '' !important;
+    display: inline-block !important;
+    width: 25px !important;
+    height: 1px !important;
+    background-color: var(--primary-color) !important;
+}
+
+/* Contact Hero Left-Aligned Subtitle */
+.contact-hero .section-subtitle,
+.contact-page .hero-content .section-subtitle {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    align-self: flex-start !important;
+    text-align: left !important;
+    padding-left: 35px !important;
+    position: relative !important;
+}
+
+.contact-hero .section-subtitle::before,
+.contact-page .hero-content .section-subtitle::before {
+    content: '' !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 25px !important;
+    height: 1px !important;
+    background-color: var(--primary-color) !important;
+}
+
+.contact-hero .section-subtitle::after,
+.contact-page .hero-content .section-subtitle::after {
+    display: none !important;
+}
+
 @media (max-width: 1024px) {
-    .section-subtitle::before {
-        display: none !important;
-    }
     .section-subtitle {
-        margin-left: 0 !important;
-        padding-left: 0 !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 }
 
@@ -813,9 +873,18 @@ body.light-mode .about-hero p {
 }
 
 .testimonial-card .stars {
-    text-align: center !important;
-    display: block !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 6px !important;
+    margin-bottom: 16px !important;
     width: 100% !important;
+}
+
+.testimonial-card .stars i,
+.stars i {
+    color: #ffc107 !important;
+    font-size: 16px !important;
 }
 
 .team-img {

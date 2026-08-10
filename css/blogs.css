@@ -92,7 +92,7 @@ body.light-mode .blog-hero-text h1 {
 }
 
 .hero-img-badge span {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-weight: 700;
     letter-spacing: 2px;
 }
@@ -364,7 +364,7 @@ body.light-mode .blog-hero-text h1 {
 }
 
 .faq-question h4 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: 500;
     margin: 0;

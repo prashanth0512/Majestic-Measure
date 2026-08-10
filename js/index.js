@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         stats.forEach(stat => {
             const target = +stat.getAttribute('data-target');
+            const suffix = stat.getAttribute('data-suffix') || (stat.innerText.includes('%') ? '%' : (stat.innerText.includes('+') || stat.getAttribute('data-target').includes('+') ? '+' : ''));
             let current = 0;
             const duration = 2000; 
             const increment = target / (duration / 20); 
@@ -29,10 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const updateCount = () => {
                 current += increment;
                 if (current < target) {
-                    stat.innerText = Math.ceil(current).toLocaleString() + (stat.getAttribute('data-target').includes('+') || stat.innerText.includes('+') ? '+' : '');
+                    stat.innerText = Math.ceil(current).toLocaleString() + suffix;
                     setTimeout(updateCount, 20);
                 } else {
-                    stat.innerText = target.toLocaleString() + (stat.getAttribute('data-target').includes('+') || stat.innerText.includes('+') ? '+' : '');
+                    stat.innerText = target.toLocaleString() + suffix;
                 }
             };
             updateCount();
@@ -101,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const resetToSketch = () => {
-            hero.classList.remove('state-blueprint', 'state-atelier', 'state-suit', 'state-zoom', 'state-wobble');
+            hero.classList.remove('state-blueprint', 'state-atelier', 'state-suit', 'state-zoom', 'state-wobble', 'state-highlight');
             
             titleWords.forEach(word => word.classList.remove('revealed'));
             if (descGroup) descGroup.classList.remove('revealed');
@@ -200,6 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 hero.classList.add('state-atelier');
                 hero.classList.add('state-suit');
+                hero.classList.add('state-highlight');
             }, 4800);
             timelineTimeouts.push(tThreads);
 
@@ -224,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
             timelineTimeouts.push(tWobble);
 
             const tLoopReset = setTimeout(() => {
-                hero.classList.remove('state-suit', 'state-atelier', 'state-zoom', 'state-wobble', 'state-blueprint');
+                hero.classList.remove('state-suit', 'state-atelier', 'state-zoom', 'state-wobble', 'state-blueprint', 'state-highlight');
                 
                 const tLoopRestart = setTimeout(() => {
                     startTimeline();
@@ -235,6 +237,16 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         startTimeline();
+
+        const heroVisual = document.querySelector('.hero-visual');
+        if (heroVisual) {
+            heroVisual.addEventListener('mouseenter', () => {
+                hero.classList.add('is-hover-highlight');
+            });
+            heroVisual.addEventListener('mouseleave', () => {
+                hero.classList.remove('is-hover-highlight');
+            });
+        }
 
         hero.addEventListener('mousemove', (e) => {
             if (!isTimelineActive || !suitWrapper) return;
@@ -251,6 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
             targetRotY = 0;
         });
 
+        const animCircleBg = document.getElementById('hero-anim-circle');
         const updateSuitParallax = () => {
             if (suitWrapper) {
                 const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
@@ -261,6 +274,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 suitWrapper.style.setProperty('--rot-x', `${currentRotX.toFixed(2)}deg`);
                 suitWrapper.style.setProperty('--rot-y', `${currentRotY.toFixed(2)}deg`);
+
+                if (animCircleBg) {
+                    const isHighlight = hero.classList.contains('state-highlight') || 
+                                        hero.classList.contains('state-zoom') || 
+                                        hero.classList.contains('state-suit') || 
+                                        hero.classList.contains('is-hover-highlight');
+                    const baseScale = isHighlight ? 1.08 : 0.92;
+                    animCircleBg.style.transform = `translate(calc(-50% + ${currentRotY * 1.5}px), calc(-50% + ${-currentRotX * 1.5}px)) scale(${baseScale})`;
+                }
             }
             requestAnimationFrame(updateSuitParallax);
         };

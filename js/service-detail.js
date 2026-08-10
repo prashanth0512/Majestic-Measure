@@ -266,88 +266,72 @@ function renderService(slug) {
     document.getElementById('sd-process-h2').innerHTML = data.processH2;
     document.getElementById('sd-steps').innerHTML = data.steps
         .map(s => `<div class="process-step reveal">
-            <div class="step-number">${s.num}</div>
+            <div class="step-badge">
+                <span class="step-num">${s.num}</span>
+            </div>
             <h4>${s.title}</h4>
             <p>${s.desc}</p>
         </div>`).join('');
 
-    
+    // Render What's Included Items
     document.getElementById('sd-includes-h2').innerHTML = data.includesH2;
     document.getElementById('sd-includes').innerHTML = data.includes
         .map(i => `<div class="include-item reveal">
             <div class="include-icon"><i class="fa-solid ${i.icon}"></i></div>
-            <div><h4>${i.title}</h4><p>${i.desc}</p></div>
+            <div class="include-content">
+                <h4>${i.title}</h4>
+                <p>${i.desc}</p>
+            </div>
         </div>`).join('');
 
-    
+    // Render CTA
     document.getElementById('sd-cta-h2').innerHTML = data.ctaH2;
     document.getElementById('sd-cta-p').textContent = data.ctaP;
     document.getElementById('sd-cta-btn').textContent = data.ctaBtn;
 
-    
+    // Render Related Services Cards
     const related = Object.entries(ALL_SERVICES_META)
         .filter(([key]) => key !== slug)
         .slice(0, 4);
 
     document.getElementById('sd-related').innerHTML = related
-        .map(([key, s]) => `<a href="service-detail.html?service=${key}" class="related-card">
-            <div class="icon"><i class="fa-solid ${s.icon}"></i></div>
-            <h4>${s.name}</h4>
-            <p>${s.tagline}</p>
-            <span class="from">${s.price}</span>
+        .map(([key, s]) => `<a href="service-detail.html?service=${key}" class="related-card reveal">
+            <div class="related-badge"><i class="fa-solid ${s.icon}"></i></div>
+            <div class="related-content">
+                <h4>${s.name}</h4>
+                <p>${s.tagline}</p>
+                <div class="related-footer">
+                    <span class="from">${s.price}</span>
+                    <span class="related-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
         </a>`).join('');
 }
 
 
 function initReveal() {
     const targets = document.querySelectorAll('.reveal, .process-step, .include-item, .related-card');
-    const obs = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                obs.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.12 });
-
+    
+    // Instantly reveal all elements for flawless visibility
     targets.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
-        obs.observe(el);
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        el.classList.add('active');
     });
 }
 
 
 function initTransitions() {
-    document.querySelectorAll('a[href]').forEach(link => {
-        const href = link.getAttribute('href');
-        if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto')) return;
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            document.body.style.opacity = '0';
-            document.body.style.transition = 'opacity 0.3s ease';
-            setTimeout(() => { window.location.href = link.href; }, 320);
-        });
-    });
+    // Smooth navigation without hiding document body
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('loaded');
+    document.body.style.opacity = '1';
     
     const params = new URLSearchParams(window.location.search);
     const slug = params.get('service') || 'bespoke-suits';
 
-    
     renderService(slug);
-
-    
-    setTimeout(() => {
-        initReveal();
-        initTransitions();
-    }, 50);
-
-    
-    document.body.classList.add('loaded');
+    initReveal();
 });
