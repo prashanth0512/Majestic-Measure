@@ -15,7 +15,6 @@
     <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
 </head>
 <body>
-
 <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
         <a href="../index.html" class="brand">
@@ -38,7 +37,6 @@
         </a>
         <button class="close-sidebar" id="closeSidebar"><i class="fa-solid fa-xmark"></i></button>
     </div>
-
     <nav class="sidebar-nav">
         <a href="#" class="nav-item active" data-section="overview">
             <i class="fa-solid fa-house-chimney"></i>
@@ -79,7 +77,6 @@
             <span>Profile</span>
         </a>
     </nav>
-
     <div class="sidebar-bottom">
         <a href="../index.html" class="sidebar-logout">
             <i class="fa-solid fa-arrow-right-from-bracket"></i>
@@ -87,9 +84,7 @@
         </a>
     </div>
 </aside>
-
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
 <div class="main-wrapper" id="mainWrapper">
     <header class="top-bar">
         <div class="top-bar-left">
@@ -114,7 +109,6 @@
                 <span class="profile-name">Yash</span>
                 <i class="fa-solid fa-chevron-down profile-chevron"></i>
             </div>
-
             <div class="profile-dropdown" id="profileDropdown">
                 <div class="dropdown-header">
                     <img src="https://ui-avatars.com/api/?name=Yash&background=C8A96A&color=111&size=80" alt="Profile">
@@ -131,11 +125,9 @@
             </div>
         </div>
     </header>
-
     <div class="content-area" id="contentArea">
     </div>
 </div>
-
 <template id="tpl-overview">
 <div class="section">
     <div class="section-title">
@@ -147,9 +139,7 @@
             <button class="btn-gold" onclick="document.querySelector('[data-section=\'appointments\']').click()"><i class="fa-solid fa-calendar-plus"></i> Book Fitting</button>
         </div>
     </div>
-
-    <!-- 4 KPI Stat Cards -->
-    <div class="kpi-grid">
+<div class="kpi-grid">
         <div class="kpi-card">
             <div class="kpi-icon"><i class="fa-solid fa-user-tie"></i></div>
             <div class="kpi-info">
@@ -179,9 +169,7 @@
             </div>
         </div>
     </div>
-
-    <!-- Active Commission Progress Pipeline -->
-    <div class="featured-stat card" style="margin-bottom: 28px;">
+<div class="featured-stat card" style="margin-bottom: 28px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
             <div>
                 <span class="badge in-progress" style="margin-bottom: 6px; display: inline-block;">IN CRAFTSMANSHIP</span>
@@ -191,9 +179,7 @@
                 <span class="gold-tier" style="font-weight: 700; font-size: 14px;">Est. Delivery: April 12, 2026</span>
             </div>
         </div>
-        
-        <!-- 4 Stage Pipeline Steps -->
-        <div class="pipeline-steps">
+<div class="pipeline-steps">
             <div class="pipeline-step completed">
                 <div class="step-icon"><i class="fa-solid fa-check"></i></div>
                 <span>1. Measurements</span>
@@ -215,15 +201,12 @@
                 <small>Scheduled Apr 05</small>
             </div>
         </div>
-
         <div class="progress-bar-wrap" style="margin-top: 24px;">
             <div class="progress-bar-fill" style="width: 72%"></div>
             <span class="progress-pct">72% Completed</span>
         </div>
     </div>
-
-    <!-- Saved Cloth Favorites Swatches -->
-    <div class="card" style="margin-bottom: 28px;">
+<div class="card" style="margin-bottom: 28px;">
         <div class="card-head" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
             <h3>Saved Cloth Archive <span class="gold">Swatches</span></h3>
             <a href="#" onclick="document.querySelector('[data-section=\'fabrics\']').click()" style="color: var(--gold); font-size: 13px; text-decoration: none; font-weight: 600;">View All Swatches →</a>
@@ -255,9 +238,7 @@
             </div>
         </div>
     </div>
-
-    <!-- SEPARATE DEDICATED SECTION 1: Monthly Tailoring Spendings Bar Chart -->
-    <div class="card monthly-spendings-card" style="margin-bottom: 28px;">
+<div class="card monthly-spendings-card" style="margin-bottom: 28px;">
         <div class="card-head" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; flex-wrap: wrap; gap: 14px;">
             <div>
                 <span class="swatch-mill" style="margin-bottom: 4px;">FINANCIAL TRACKER</span>
@@ -278,9 +259,7 @@
             <canvas id="ordersChart"></canvas>
         </div>
     </div>
-
-    <!-- SEPARATE DEDICATED SECTION 2: Category Allocation Doughnut Chart -->
-    <div class="card category-allocation-card" style="margin-bottom: 28px;">
+<div class="card category-allocation-card" style="margin-bottom: 28px;">
         <div class="card-head" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; flex-wrap: wrap; gap: 14px;">
             <div>
                 <span class="swatch-mill" style="margin-bottom: 4px;">CATEGORY BREAKDOWN</span>
@@ -296,45 +275,107 @@
             <canvas id="categoryChart"></canvas>
         </div>
     </div>
-
-    <!-- Overview Grid Layout: Recent Commissions + Activity & Concierge -->
-    <div class="overview-bottom">
+<div class="overview-bottom">
         <div class="chart-box card">
-            <div class="card-head">
-                <h3>Recent Commissions & <span class="gold">Invoices</span></h3>
+            <div class="card-head" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
+                <div>
+                    <h3 style="font-size: 18px; margin-bottom: 2px;">Recent Commissions & <span class="gold">Invoices</span></h3>
+                    <span style="font-size: 12px; color: var(--gray);">Active Bespoke Orders & Historical Records</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                    <span class="badge in-progress" style="font-size: 11px; padding: 4px 10px;">2 Active</span>
+                    <span class="badge confirmed" style="font-size: 11px; padding: 4px 10px;">4 Delivered</span>
+                </div>
             </div>
-            <!-- Recent Orders Table -->
-            <div style="margin-top: 10px;">
+<div style="margin-top: 10px; overflow-x: auto;">
                 <table class="orders-table" style="width: 100%; border-collapse: collapse;">
                     <thead>
-                        <tr style="text-align: left; border-bottom: 1px solid var(--border); font-size: 12px; color: var(--gray);">
+                        <tr style="text-align: left; border-bottom: 1px solid var(--border); font-size: 11.5px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px;">
                             <th style="padding: 10px 0;">ORDER ID</th>
-                            <th>SERVICE</th>
-                            <th>TAILOR</th>
+                            <th>GARMENT & SERVICE</th>
+                            <th>MASTER TAILOR</th>
+                            <th>AMOUNT</th>
                             <th>STATUS</th>
                             <th style="text-align: right;">ACTION</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style="border-bottom: 1px solid var(--border); font-size: 13.5px;">
-                            <td style="padding: 14px 0; font-weight: 600;">#MM-2026-091</td>
-                            <td>Bespoke Tuxedo</td>
+                        <tr style="border-bottom: 1px solid var(--border); font-size: 13px;">
+                            <td style="padding: 14px 0; font-weight: 600; color: var(--gold);">#MM-2026-091</td>
+                            <td>
+                                <strong style="display: block; font-weight: 600;">Bespoke Midnight Tuxedo</strong>
+                                <span style="font-size: 11px; color: var(--gray);">Super 150s Wool • Hand Canvas</span>
+                            </td>
                             <td>Master Charles</td>
-                            <td><span class="badge in-progress">In Craft</span></td>
-                            <td style="text-align: right;"><a href="#" style="color: var(--gold); text-decoration: none;">Track</a></td>
+                            <td style="font-weight: 600;">$3,450</td>
+                            <td><span class="badge in-progress">In Craft (72%)</span></td>
+                            <td style="text-align: right;"><a href="#" style="color: var(--gold); text-decoration: none; font-weight: 600; font-size: 12.5px;"><i class="fa-solid fa-location-crosshairs"></i> Track</a></td>
                         </tr>
-                        <tr style="border-bottom: 1px solid var(--border); font-size: 13.5px;">
+                        <tr style="border-bottom: 1px solid var(--border); font-size: 13px;">
+                            <td style="padding: 14px 0; font-weight: 600; color: var(--gold);">#MM-2026-078</td>
+                            <td>
+                                <strong style="display: block; font-weight: 600;">Double-Breasted Suit</strong>
+                                <span style="font-size: 11px; color: var(--gray);">Loro Piana Cashmere • Charcoal</span>
+                            </td>
+                            <td>Master Antoine</td>
+                            <td style="font-weight: 600;">$4,200</td>
+                            <td><span class="badge pending" style="background: rgba(212, 163, 115, 0.15); color: var(--gold); border: 1px solid rgba(212, 163, 115, 0.3);">Pattern Cutting</span></td>
+                            <td style="text-align: right;"><a href="#" style="color: var(--gold); text-decoration: none; font-weight: 600; font-size: 12.5px;"><i class="fa-solid fa-calendar-days"></i> Fitting</a></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border); font-size: 13px;">
                             <td style="padding: 14px 0; font-weight: 600;">#MM-2026-044</td>
-                            <td>Custom Linen Shirts (3x)</td>
+                            <td>
+                                <strong style="display: block; font-weight: 600;">Custom Linen Shirts (3x)</strong>
+                                <span style="font-size: 11px; color: var(--gray);">Italian Linen • Pearl Buttons</span>
+                            </td>
                             <td>Tailor David</td>
+                            <td style="font-weight: 600;">$1,150</td>
                             <td><span class="badge confirmed">Delivered</span></td>
-                            <td style="text-align: right;"><a href="#" style="color: var(--gold); text-decoration: none;">Invoice</a></td>
+                            <td style="text-align: right;"><a href="#" style="color: var(--gold); text-decoration: none; font-weight: 600; font-size: 12.5px;"><i class="fa-solid fa-file-invoice"></i> Invoice</a></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border); font-size: 13px;">
+                            <td style="padding: 14px 0; font-weight: 600;">#MM-2025-112</td>
+                            <td>
+                                <strong style="display: block; font-weight: 600;">Charcoal Cashmere Overcoat</strong>
+                                <span style="font-size: 11px; color: var(--gray);">Scabal Wool • Silk Lining</span>
+                            </td>
+                            <td>Master Charles</td>
+                            <td style="font-weight: 600;">$3,850</td>
+                            <td><span class="badge confirmed">Delivered</span></td>
+                            <td style="text-align: right;"><a href="#" style="color: var(--gold); text-decoration: none; font-weight: 600; font-size: 12.5px;"><i class="fa-solid fa-file-invoice"></i> Invoice</a></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border); font-size: 13px;">
+                            <td style="padding: 14px 0; font-weight: 600;">#MM-2025-089</td>
+                            <td>
+                                <strong style="display: block; font-weight: 600;">Silk-Wool Dinner Jacket</strong>
+                                <span style="font-size: 11px; color: var(--gray);">Zegna Cloth • Satin Lapel</span>
+                            </td>
+                            <td>Master Antoine</td>
+                            <td style="font-weight: 600;">$2,950</td>
+                            <td><span class="badge confirmed">Delivered</span></td>
+                            <td style="text-align: right;"><a href="#" style="color: var(--gold); text-decoration: none; font-weight: 600; font-size: 12.5px;"><i class="fa-solid fa-file-invoice"></i> Invoice</a></td>
+                        </tr>
+                        <tr style="font-size: 13px;">
+                            <td style="padding: 14px 0; font-weight: 600;">#MM-2025-034</td>
+                            <td>
+                                <strong style="display: block; font-weight: 600;">Velvet Smoking Jacket</strong>
+                                <span style="font-size: 11px; color: var(--gray);">Deep Crimson • Frog Closures</span>
+                            </td>
+                            <td>Tailor David</td>
+                            <td style="font-weight: 600;">$2,850</td>
+                            <td><span class="badge confirmed">Delivered</span></td>
+                            <td style="text-align: right;"><a href="#" style="color: var(--gold); text-decoration: none; font-weight: 600; font-size: 12.5px;"><i class="fa-solid fa-file-invoice"></i> Invoice</a></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); flex-wrap: wrap; gap: 10px;">
+                <span style="font-size: 12px; color: var(--gray);">Showing 6 of 14 Total Commissions</span>
+                <a href="#" onclick="document.querySelector('[data-section=\'orders\']').click()" style="color: var(--gold); font-size: 13px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                    View Complete Order Vault <i class="fa-solid fa-arrow-right" style="font-size: 11px;"></i>
+                </a>
+            </div>
         </div>
-
         <div class="activity-box">
             <div class="card activity-card">
                 <h3 class="card-head-inline">Recent <span class="gold">Activity</span></h3>
@@ -367,9 +408,7 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Concierge Contact Card -->
-            <div class="card" style="padding: 20px; background: linear-gradient(135deg, rgba(212,163,115,0.08), rgba(20,16,15,0.04)); border: 1px solid var(--border);">
+<div class="card" style="padding: 20px; background: linear-gradient(135deg, rgba(212,163,115,0.08), rgba(20,16,15,0.04)); border: 1px solid var(--border);">
                 <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
                     <img src="../images/about_team_sophia.png" alt="Concierge" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 1px solid var(--gold);">
                     <div>
@@ -382,7 +421,6 @@
                     <button class="btn-gold" onclick="document.querySelector('[data-section=\'messages\']').click()" style="flex: 1; padding: 8px 12px; font-size: 12px;"><i class="fa-solid fa-message"></i> Direct Chat</button>
                 </div>
             </div>
-
             <div class="card loyalty-card">
                 <h3 class="card-head-inline">Loyalty <span class="gold">Status</span></h3>
                 <div class="loyalty-wrap">
@@ -446,7 +484,6 @@
     </div>
 </div>
 </template>
-
 <template id="tpl-measurements">
 <div class="section">
     <div class="section-title">
@@ -481,7 +518,6 @@
     <div class="section-title">
         <h1>Fabric <span class="gold">Selection</span></h1>
     </div>
-
     <div class="fabric-filters">
         <button class="filter-btn active">All</button>
         <button class="filter-btn">Wedding</button>
@@ -489,7 +525,6 @@
         <button class="filter-btn">Casual</button>
         <button class="filter-btn">Premium</button>
     </div>
-
     <div class="fabric-grid">
         <div class="fabric-card card">
             <div class="fabric-img-wrap"><img src="../images/fabric-1.png" alt="Navy Wool" onerror="this.src='https://placehold.co/280x200/111/C8A96A?text=Navy+Wool'"></div>
@@ -574,7 +609,6 @@
     <div class="section-title">
         <h1>Garment <span class="gold">Progress</span></h1>
     </div>
-
     <div class="garment-block card">
         <div class="garment-top">
             <div>
@@ -583,7 +617,6 @@
             </div>
             <span class="badge in-progress">In Progress</span>
         </div>
-
         <div class="progress-track">
             <div class="track-step done">
                 <div class="track-dot"><i class="fa-solid fa-check"></i></div>
@@ -610,23 +643,19 @@
                 <div class="track-label">Delivery</div>
             </div>
         </div>
-
         <div class="progress-bar-wrap">
             <div class="progress-bar-fill" style="width:52%"></div>
             <span class="progress-pct">52% Complete</span>
         </div>
-
         <p class="garment-note"><i class="fa-solid fa-info-circle"></i> Master tailors are currently hand-stitching the interior lining and lapels. Estimated delivery: <strong>April 15, 2026</strong></p>
     </div>
 </div>
 </template>
-
 <template id="tpl-orders">
 <div class="section">
     <div class="section-title">
         <h1>My <span class="gold">Orders</span></h1>
     </div>
-
     <div class="card table-card">
         <div class="table-scroll">
             <table class="orders-table">
@@ -671,7 +700,6 @@
     </div>
 </div>
 </template>
-
 <template id="tpl-messages">
 <div class="section msgs-section">
     <div class="section-title">
@@ -736,7 +764,6 @@
     </div>
 </div>
 </template>
-
 <template id="tpl-notifications">
 <div class="section">
     <div class="section-title">
@@ -776,20 +803,17 @@
 </template>
 <template id="tpl-profile">
 <div class="section">
-    <div class="section-title" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+    <div class="section-title profile-header-title" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
         <div>
             <h1>Patron <span class="gold">Profile & VIP Preferences</span></h1>
             <p>Manage your account identity, bespoke measurements profile, and studio preferences.</p>
         </div>
         <button class="btn-gold"><i class="fa-solid fa-pen-to-square"></i> Edit Profile</button>
     </div>
-
-    <!-- 1. TOP HERO CARD: Patron Passport Header -->
-    <div class="card profile-hero-card" style="margin-bottom: 28px; padding: 32px; background: linear-gradient(135deg, rgba(20,16,15,0.92), rgba(35,24,18,0.96)); border: 1px solid rgba(212,163,115,0.35); position: relative; overflow: hidden;">
+<div class="card profile-hero-card" style="margin-bottom: 28px; padding: 32px; background: linear-gradient(135deg, rgba(20,16,15,0.92), rgba(35,24,18,0.96)); border: 1px solid rgba(212,163,115,0.35); position: relative; overflow: hidden;">
         <div style="position: absolute; top: 0; right: 0; width: 300px; height: 100%; background: radial-gradient(circle at right, rgba(212,163,115,0.12), transparent 70%); pointer-events: none;"></div>
-        
         <div class="profile-hero-inner" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;">
-            <div style="display: flex; align-items: center; gap: 24px;">
+            <div class="profile-user-info" style="display: flex; align-items: center; gap: 24px;">
                 <div style="position: relative;">
                     <img src="https://ui-avatars.com/api/?name=Yash&background=C8A96A&color=111&size=200" alt="Profile" style="width: 96px; height: 96px; border-radius: 50%; border: 3px solid var(--gold); object-fit: cover; box-shadow: 0 8px 24px rgba(0,0,0,0.4);">
                     <span style="position: absolute; bottom: 0; right: 0; background: var(--gold); color: #0f0f0f; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; border: 2px solid #14100f;" title="Verified VIP Patron"><i class="fa-solid fa-check"></i></span>
@@ -800,35 +824,28 @@
                         <span class="loyalty-badge" style="background: rgba(212,163,115,0.2); color: var(--gold); border: 1px solid rgba(212,163,115,0.4); font-size: 11px; padding: 4px 12px; border-radius: 20px;"><i class="fa-solid fa-crown"></i> SAVILE ROW GOLD VIP</span>
                     </div>
                     <p style="font-size: 13.5px; color: rgba(255,255,255,0.7); margin-bottom: 12px;">Patron ID: <strong style="color: var(--gold);">#PATRON-2024-889</strong> • Client Since October 2024</p>
-                    
-                    <div style="display: flex; gap: 20px; flex-wrap: wrap; font-size: 13px; color: rgba(255,255,255,0.85);">
+                    <div class="profile-contacts-row" style="display: flex; gap: 20px; flex-wrap: wrap; font-size: 13px; color: rgba(255,255,255,0.85);">
                         <span><i class="fa-solid fa-envelope" style="color: var(--gold); margin-right: 6px;"></i>[EMAIL_ADDRESS]</span>
                         <span><i class="fa-solid fa-phone" style="color: var(--gold); margin-right: 6px;"></i>+91 98765 43210</span>
                         <span><i class="fa-solid fa-location-dot" style="color: var(--gold); margin-right: 6px;"></i>Hyderabad, Atelier Studio</span>
                     </div>
                 </div>
             </div>
-
-            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
+            <div class="profile-rewards-box" style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
                 <span style="font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); font-weight: 700;">ATELIER REWARDS BALANCE</span>
                 <span style="font-family: 'Playfair Display', serif; font-size: 32px; color: #ffffff; font-weight: 600;">4,250 <small style="font-size: 14px; color: var(--gold);">PTS</small></span>
                 <span style="font-size: 11.5px; color: rgba(255,255,255,0.6);">750 pts to Platinum Level</span>
             </div>
         </div>
     </div>
-
-    <!-- 2. GRID: 2 COLUMNS (Style & Fitting Preferences + Account & Address) -->
-    <div class="profile-layout" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px;">
-        
-        <!-- LEFT COLUMN: Bespoke Fit & Style Specifications -->
-        <div style="display: flex; flex-direction: column; gap: 28px;">
-            <!-- Bespoke Style Preferences Card -->
+<div class="profile-layout" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px;">
+<div style="display: flex; flex-direction: column; gap: 28px;">
             <div class="card" style="padding: 28px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                     <h3>Bespoke Style <span class="gold">Signature</span></h3>
                     <span style="font-size: 12px; color: var(--gold); cursor: pointer;"><i class="fa-solid fa-sliders"></i> Adjust Specs</span>
                 </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
+                <div class="profile-specs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
                     <div style="background: rgba(212,163,115,0.05); border: 1px solid var(--border); padding: 14px 16px; border-radius: 12px;">
                         <span style="font-size: 10px; letter-spacing: 1.5px; color: var(--gray); text-transform: uppercase; display: block; font-weight: 700; margin-bottom: 4px;">LAPEL STYLE</span>
                         <strong style="font-size: 14px;">Peak Lapel (10cm Width)</strong>
@@ -847,16 +864,13 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Pattern & Measurement Record Card -->
-            <div class="card" style="padding: 28px;">
+<div class="card" style="padding: 28px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                     <h3>Pattern & <span class="gold">Body Draft Vault</span></h3>
                     <span class="badge confirmed"><i class="fa-solid fa-shield-check"></i> Master Verified</span>
                 </div>
                 <p style="font-size: 13px; color: var(--gray); margin-bottom: 20px;">Your 3D laser body scan and physical paper pattern are archived safely at the flagship Savile Row studio.</p>
-                
-                <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                <div class="profile-vault-grid" style="display: flex; gap: 16px; flex-wrap: wrap;">
                     <div style="flex: 1; min-width: 130px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 12px 14px; border-radius: 10px; text-align: center;">
                         <span style="font-size: 11px; color: var(--gray); display: block;">Chest Diameter</span>
                         <strong style="font-size: 18px; color: var(--gold); font-family: 'Playfair Display', serif;">42.5 in</strong>
@@ -872,10 +886,7 @@
                 </div>
             </div>
         </div>
-
-        <!-- RIGHT COLUMN: Account Lifetime Summary & Studio Addresses -->
-        <div style="display: flex; flex-direction: column; gap: 28px;">
-            <!-- Lifetime Account Summary Card -->
+<div style="display: flex; flex-direction: column; gap: 28px;">
             <div class="card" style="padding: 28px;">
                 <h3 style="margin-bottom: 20px;">Patron Lifetime <span class="gold">Summary</span></h3>
                 <div class="account-stats" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
@@ -897,9 +908,7 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Primary Fitting Studio & Delivery Address Card -->
-            <div class="card" style="padding: 28px;">
+<div class="card" style="padding: 28px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                     <h3>Atelier Fitting <span class="gold">Address</span></h3>
                     <span class="badge in-progress">DEFAULT</span>
@@ -915,7 +924,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 </template>

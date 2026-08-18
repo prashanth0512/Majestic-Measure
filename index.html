@@ -23,12 +23,9 @@
         <section class="hero" id="home1">
             <div class="atelier-backdrop"></div>
             <div class="paper-texture"></div>
-            
             <div class="hero-glow"></div>
             <div class="hero-spotlight"></div>
-            
             <canvas id="hero-particles" class="hero-particles-canvas"></canvas>
-
             <div class="container hero-layout">
                 <div class="hero-content">
                     <div class="luxury-badge-container">
@@ -62,10 +59,8 @@
                         </a>
                     </div>
                 </div>
-
                 <div class="hero-visual">
                     <div class="suit-3d-viewport">
-                        <!-- Thin Circle Background in Animation Area -->
                         <div class="hero-anim-circle-bg" id="hero-anim-circle">
                             <div class="hero-thin-circle circle-outer"></div>
                             <div class="hero-thin-circle circle-middle"></div>
@@ -87,15 +82,12 @@
                                 </g>
                             </svg>
                         </div>
-                        
                         <div class="suit-shadow"></div>
                         <div class="suit-3d-wrapper">
-                            
                             <div class="mannequin-stand">
                                 <div class="stand-pole"></div>
                                 <div class="stand-base"></div>
                             </div>
-                            
                             <div class="realistic-suit">
                                 <div class="suit-layer layer-shirt-tie" style="--layer-z: 5px;">
                                     <svg viewBox="0 0 400 500" class="suit-svg" xmlns="http://www.w3.org/2000/svg">
@@ -119,38 +111,30 @@
                                                 <stop offset="100%" stop-color="#3d2314" />
                                             </linearGradient>
                                         </defs>
-                                        
                                         <path class="part-shirt" d="M165,80 L235,80 L200,190 Z" fill="url(#shirt-grad-r)" />
-                                        
                                         <path class="part-tie" d="M193,120 L207,120 L211,260 L200,285 L189,260 Z" fill="url(#tie-grad-r)" />
                                     </svg>
                                 </div>
-
                                 <div class="suit-layer layer-body" style="--layer-z: 0px;">
                                     <svg viewBox="0 0 400 500" class="suit-svg" xmlns="http://www.w3.org/2000/svg">
                                         <path class="mannequin-neck" d="M175,68 L225,68 L212,80 L188,80 Z" fill="url(#mannequin-wood)" stroke="#221105" stroke-width="0.5" />
-                                        
                                         <path class="part-body" d="M110,120 L290,120 L308,430 L92,430 Z" fill="url(#wool-grad-r)" />
                                     </svg>
                                 </div>
-
                                 <div class="suit-layer layer-sleeves" style="--layer-z: 10px;">
                                     <svg viewBox="0 0 400 500" class="suit-svg" xmlns="http://www.w3.org/2000/svg">
                                         <path class="part-sleeve-left" transform="translate(-18, 0)" d="M110,120 C85,175 75,290 88,400 L115,400 C105,320 110,185 133,142 Z" fill="#121214" />
                                         <path class="part-sleeve-right" transform="translate(18, 0)" d="M290,120 C315,175 325,290 312,400 L285,400 C295,320 290,185 267,142 Z" fill="#121214" />
                                     </svg>
                                 </div>
-
                                 <div class="suit-layer layer-collar" style="--layer-z: 18px;">
                                     <svg viewBox="0 0 400 500" class="suit-svg" xmlns="http://www.w3.org/2000/svg">
                                         <path class="part-lapel-left" d="M160,80 L110,120 L98,165 L133,185 L200,320 L200,190 Z" fill="#1e1e22" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" />
                                         <path class="part-lapel-right" d="M240,80 L290,120 L302,165 L267,185 L200,320 L200,190 Z" fill="#1e1e22" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" />
-                                        
                                         <path class="part-collar-left" d="M165,80 L182,120 L198,120 L180,80 Z" fill="#ffffff" />
                                         <path class="part-collar-right" d="M235,80 L218,120 L202,120 L220,80 Z" fill="#ffffff" />
                                     </svg>
                                 </div>
-
                                 <div class="suit-layer layer-pocket" style="--layer-z: 14px;">
                                     <svg viewBox="0 0 400 500" class="suit-svg" xmlns="http://www.w3.org/2000/svg">
                                         <defs>
@@ -163,7 +147,6 @@
                                         <path class="part-pocket" d="M128,175 L167,175 L165,183 L130,183 Z" fill="#242429" stroke="rgba(255,255,255,0.08)" stroke-width="0.5" />
                                     </svg>
                                 </div>
-
                                 <div class="suit-layer layer-buttons" style="--layer-z: 22px;">
                                     <svg viewBox="0 0 400 500" class="suit-svg" xmlns="http://www.w3.org/2000/svg">
                                         <defs>
@@ -181,10 +164,8 @@
                                         <circle class="part-button" cx="200" cy="365" r="5.5" fill="url(#gold-btn-r)" filter="url(#btn-glow-r)" />
                                     </svg>
                                 </div>
-
                                 <div class="suit-shine-overlay"></div>
                             </div>
-
                             <div class="suit-layer layer-sketch" style="--layer-z: 26px;">
                                 <svg viewBox="0 0 400 500" class="sketch-svg" xmlns="http://www.w3.org/2000/svg">
                                     <defs>
@@ -204,7 +185,6 @@
                                             </feMerge>
                                         </filter>
                                     </defs>
-
                                     <g class="sketch-lines" stroke="rgba(139, 106, 70, 0.45)" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                         <path id="sketch-collar" class="sketch-path" d="M165,80 L180,105 L220,105 L235,80" />
                                         <path id="sketch-lapel-l" class="sketch-path" d="M160,80 L110,120 L98,165 L133,185 L200,320" />
@@ -214,30 +194,23 @@
                                         <path id="sketch-pocket" class="sketch-path" d="M128,175 L167,175 L165,183 L130,183 Z" />
                                         <path id="sketch-buttons" class="sketch-path" d="M200,325 A5,5 0 1,1 199.9,325 M200,360 A5,5 0 1,1 199.9,360" />
                                     </g>
-
                                     <g class="blueprint-marks" stroke="var(--hero-accent)" stroke-width="0.8" fill="none" style="opacity: 0;">
                                         <path d="M100,105 L300,105" stroke-dasharray="3,3" />
                                         <path d="M100,100 L100,110" />
                                         <path d="M300,100 L300,110" />
                                         <text x="200" y="98" class="blueprint-text" fill="var(--hero-primary)" text-anchor="middle" font-size="8.5">SHOULERS: 18.5"</text>
-
                                         <path d="M120,312 C150,328 250,328 280,312" stroke-dasharray="3,3" />
                                         <text x="200" y="342" class="blueprint-text" fill="var(--hero-primary)" text-anchor="middle" font-size="8.5">WAIST: 34.0"</text>
-
                                         <path d="M72,120 C52,250 67,350 75,385" stroke-dasharray="3,3" />
                                         <text x="50" y="260" class="blueprint-text" fill="var(--hero-primary)" text-anchor="middle" font-size="8.5" transform="rotate(-90 50 260)">SLEEVE: 24.5"</text>
-
                                         <path d="M355,60 L355,430" stroke-dasharray="4,4" />
                                         <text x="367" y="245" class="blueprint-text" fill="var(--hero-primary)" text-anchor="middle" font-size="8.5" transform="rotate(90 367 245)">HEIGHT: 40R</text>
-
                                         <circle cx="200" cy="190" r="16" stroke-dasharray="2,2" />
                                         <line x1="200" y1="170" x2="200" y2="210" />
                                         <line x1="180" y1="190" x2="220" y2="190" />
-                                        
                                         <circle cx="147" cy="175" r="4.5" stroke-dasharray="2,2" />
                                         <circle cx="253" cy="175" r="4.5" stroke-dasharray="2,2" />
                                     </g>
-
                                     <g class="golden-threads" stroke="url(#gold-thread-grad)" stroke-width="1.8" fill="none" stroke-linecap="round" filter="url(#gold-glow)" style="opacity: 0;">
                                         <path class="thread-path" d="M165,80 L180,105 L220,105 L235,80" />
                                         <path class="thread-path" d="M160,80 L110,120 L98,165 L133,185 L200,320" />
@@ -254,7 +227,6 @@
                 </div>
             </div>
         </section>
-
         <section>
             <div class="hero-stats container">
                 <div class="stat-item">
@@ -282,54 +254,112 @@
                 <i class="fa-solid fa-chevron-down"></i>
             </div>
         </section>
-        
-        <section class="atelier">
+        <section class="atelier" id="tailoring-studio">
+            <div class="atelier-ambient-glow"></div>
             <div class="container atelier-container">
-                <div class="atelier-grid">
-                    <div class="atelier-image">
-                        <img src="images/atelier-workshop.png" alt="Tailoring Atelier">
-                        <div class="excellence-badge">
-                            <span class="number">10+</span>
-                            <span class="text">YEARS OF EXCELLENCE</span>
+                <div class="atelier-layout">
+                    <div class="atelier-badge-cell reveal">
+                        <span class="section-subtitle atelier-section-subtitle">OUR TAILORING STUDIO</span>
+                    </div>
+<div class="atelier-visual-wrap reveal">
+                        <div class="atelier-image-card">
+                            <div class="atelier-img-frame">
+                                <img src="images/atelier-workshop.png" alt="Majestic Measure Tailoring Atelier" class="atelier-main-img">
+                                <div class="atelier-img-overlay"></div>
+                            </div>
+<div class="atelier-heritage-seal">
+                                <svg class="seal-svg" viewBox="0 0 160 160">
+                                    <path id="seal-text-path" d="M 80, 80 m -60, 0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0" fill="none" />
+                                    <text class="seal-text">
+                                        <textPath href="#seal-text-path" xlink:href="#seal-text-path" startOffset="0%">
+                                            SAVILE ROW • ATELIER EST. 2015 • HAND CRAFTED •
+                                        </textPath>
+                                    </text>
+                                </svg>
+                                <div class="seal-center">
+                                    <i class="fa-solid fa-scissors"></i>
+                                </div>
+                            </div>
+<div class="atelier-floating-pill">
+                                <div class="pill-dot"></div>
+                                <div class="pill-info">
+                                    <span class="pill-tag">SAVILE ROW STANDARDS</span>
+                                    <span class="pill-val">Full Floating Horsehair Canvas</span>
+                                </div>
+                            </div>
+<div class="atelier-experience-badge">
+                                <span class="exp-num">10+</span>
+                                <span class="exp-label">Years of Master Tailoring</span>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="atelier-text-content">
-                        <span class="section-subtitle">OUR TAILORING STUDIO</span>
-                        <h2>Where Cloth Becomes<br><span class="accent">Character</span></h2>
-                        <p>Founded in 2015 on Savile Row, Majestic Measure has built its reputation on a singular commitment: to produce garments of absolute quality for clients who understand the difference. Every suit that leaves our tailoring studio carries the signature of its maker a human touch no machine can replicate.</p>
-                        <p>Our team of master tailors trained across London, Naples, and Milan. Together, they combine English tradition with continental elegance, creating a style that is unmistakably modern yet rooted in timeless craft.</p>
-                        <p class="atelier-extra-desc">From initial hand-drawn paper patterns to final hand-sewn buttonholes, every detail is measured to enhance your natural silhouette and posture.</p>
-                        
-                        <div class="atelier-features">
-                            <span class="feature-tag"><i class="fa-solid fa-scissors"></i> Hand-Cut Patterns</span>
-                            <span class="feature-tag"><i class="fa-solid fa-layer-group"></i> Full Floating Canvas</span>
-                            <span class="feature-tag"><i class="fa-solid fa-gem"></i> Premium Natural Fibers</span>
-                        </div>
-
-                        <div class="atelier-mini-stats">
-                            <div class="mini-stat">
-                                <i class="fa-solid fa-award"></i>
-                                <span>Award Winning</span>
+<div class="atelier-content-wrap reveal">
+                        <h2 class="atelier-heading">
+                            The Architecture of Elegance,<br>
+                            <span class="accent">Crafted By Hand</span>
+                        </h2>
+                        <p class="atelier-lead-text">
+                            Within our London atelier, sartorial art meets anatomical precision. We do not mass-produce; we sculpt an individualized second skin that commands effortless poise, structure, and timeless comfort.
+                        </p>
+<div class="atelier-pillars-grid">
+                            <div class="pillar-item">
+                                <div class="pillar-number">01</div>
+                                <div class="pillar-body">
+                                    <h4>Individual Paper Blueprints</h4>
+                                    <p>Every suit begins with a dedicated hand-drawn paper pattern drafted to your unique silhouette and posture.</p>
+                                </div>
                             </div>
-                            <div class="mini-stat">
-                                <i class="fa-solid fa-clock"></i>
-                                <span>60-80 hrs / Suit</span>
+                            <div class="pillar-item">
+                                <div class="pillar-number">02</div>
+                                <div class="pillar-body">
+                                    <h4>Full Floating Horsehair Canvas</h4>
+                                    <p>Hand-padded natural chest canvas breathes and naturally molds to your physique over years of wear.</p>
+                                </div>
                             </div>
-                            <div class="mini-stat">
-                                <i class="fa-solid fa-users"></i>
-                                <span>5,000+ Clients</span>
+                            <div class="pillar-item">
+                                <div class="pillar-number">03</div>
+                                <div class="pillar-body">
+                                    <h4>Hand-Stitched Milanese Details</h4>
+                                    <p>Over 80 hours of meticulous hand-stitching with pure silk threads on pick-stitched lapels and buttonholes.</p>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="atelier-action">
-                            <a href="./pages/about.html" class="btn-premium-story">[ OUR STORY ]</a>
+<div class="atelier-metrics-strip">
+                            <div class="metric-block">
+                                <span class="metric-val">50+</span>
+                                <span class="metric-txt">Measures</span>
+                            </div>
+                            <div class="metric-divider"></div>
+                            <div class="metric-block">
+                                <span class="metric-val">80+</span>
+                                <span class="metric-txt">Hours / Suit</span>
+                            </div>
+                            <div class="metric-divider"></div>
+                            <div class="metric-block">
+                                <span class="metric-val">3</span>
+                                <span class="metric-txt">Fittings</span>
+                            </div>
+                            <div class="metric-divider"></div>
+                            <div class="metric-block">
+                                <span class="metric-val">6,000+</span>
+                                <span class="metric-txt">Hand Stitches</span>
+                            </div>
+                            <div class="metric-divider"></div>
+                            <div class="metric-block">
+                                <span class="metric-val">100%</span>
+                                <span class="metric-txt">Floating Canvas</span>
+                            </div>
                         </div>
+                    </div>
+<div class="atelier-action-cell reveal">
+                        <a href="./pages/about.html" class="btn btn-atelier-action">
+                            <span>EXPLORE OUR HERITAGE</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-
         <section class="services">
             <div class="container">
                 <div class="section-header">
@@ -355,7 +385,6 @@
                             </div>
                         </div>
                     </a>
-                    
                     <a href="pages/service-detail.html?service=wedding-suits" class="service-card-link">
                         <div class="service-card reveal">
                             <div class="card-img">
@@ -373,9 +402,7 @@
                             </div>
                         </div>
                     </a>
-
-                    
-                    <a href="pages/service-detail.html?service=custom-shirts" class="service-card-link">
+<a href="pages/service-detail.html?service=custom-shirts" class="service-card-link">
                         <div class="service-card reveal">
                             <div class="card-img">
                                 <div class="card-img-wrapper">
@@ -392,9 +419,7 @@
                             </div>
                         </div>
                     </a>
-
-                    
-                    <a href="pages/service-detail.html?service=alterations" class="service-card-link">
+<a href="pages/service-detail.html?service=alterations" class="service-card-link">
                         <div class="service-card reveal">
                             <div class="card-img">
                                 <div class="card-img-wrapper">
@@ -411,9 +436,7 @@
                             </div>
                         </div>
                     </a>
-
-                    
-                    <a href="pages/service-detail.html?service=styling-consultation" class="service-card-link">
+<a href="pages/service-detail.html?service=styling-consultation" class="service-card-link">
                         <div class="service-card reveal">
                             <div class="card-img">
                                 <div class="card-img-wrapper">
@@ -430,9 +453,7 @@
                             </div>
                         </div>
                     </a>
-
-                    <!-- 6th Service Card: Full Suit Ensembles -->
-                    <a href="pages/service-detail.html?service=bespoke-suits" class="service-card-link">
+<a href="pages/service-detail.html?service=bespoke-suits" class="service-card-link">
                         <div class="service-card reveal">
                             <div class="card-img">
                                 <div class="card-img-wrapper">
@@ -450,15 +471,12 @@
                         </div>
                     </a>
                 </div>
-
                 <div class="view-all">
                     <a href="./pages/services.html" class="btn btn-outline">VIEW ALL SERVICES <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
-
-        
-        <section class="journey">
+<section class="journey">
             <div class="container">
                 <div class="section-header white">
                     <span class="section-subtitle">THE JOURNEY</span>
@@ -518,9 +536,7 @@
                 </div>
             </div>
         </section>
-
-        
-        <section class="fabrics">
+<section class="fabrics">
             <div class="container">
                 <div class="section-header dark">
                     <span class="section-subtitle">FABRIC LIBRARY</span>
@@ -573,9 +589,7 @@
                 </div>
             </div>
         </section>
-
-        
-        <section class="testimonials">
+<section class="testimonials">
             <div class="container">
                 <div class="section-header">
                     <span class="section-subtitle">CLIENT VOICES</span>
@@ -639,9 +653,7 @@
                 </div>
             </div>
         </section>
-
-        
-        <section class="final-cta">
+<section class="final-cta">
             <div class="cta-overlay"></div>
             <div class="container cta-content">
                 <i class="fa-solid fa-scissors cta-icon"></i>
@@ -654,11 +666,8 @@
             </div>
         </section>
     </main>
-
     <div id="footer-placeholder"></div>
-
     <script src="js/navigation.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>
-

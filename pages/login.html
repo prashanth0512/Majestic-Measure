@@ -13,25 +13,17 @@
     <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
 </head>
 <body class="auth-page">
-
-    <!-- Top Utility Bar -->
-    <div class="auth-actions">
+<div class="auth-actions">
         <button class="rtl-toggle auth-rtl-toggle">LTR</button>
         <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
             <i class="fa-solid fa-moon"></i>
         </button>
     </div>
-
-    <!-- ═══════════════════════════════════════════
-         LEFT: BRAND PANEL
-    ════════════════════════════════════════════ -->
-    <div class="auth-left">
+<div class="auth-left">
         <div class="auth-left-bg"></div>
         <div class="auth-left-overlay"></div>
         <div class="auth-left-inner">
-
-            <!-- Logo -->
-            <a href="../index.html" class="auth-brand-link">
+<a href="../index.html" class="auth-brand-link">
                 <div class="auth-logo-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="36" height="36">
                         <rect width="100" height="100" rx="20" fill="#141414" stroke="#d4a373" stroke-width="2.5"/>
@@ -49,9 +41,7 @@
                 </div>
                 <div class="auth-logo-text">MAJESTIC<span>MEASURE</span></div>
             </a>
-
-            <!-- Centre Content -->
-            <div class="auth-left-content">
+<div class="auth-left-content">
                 <span class="auth-left-badge"><i class="fa-solid fa-crown"></i> EXCLUSIVE CLIENT PORTAL</span>
                 <h2>Welcome<br><em>Back, Patron</em></h2>
                 <p>Your bespoke commissions, fitting history, and pattern vault are waiting. Sign in to continue your journey with the atelier.</p>
@@ -74,24 +64,15 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Bottom Quote -->
-            <div class="auth-left-quote">
+<div class="auth-left-quote">
                 <blockquote>"Elegance is not about being noticed, it's about being remembered."</blockquote>
                 <cite>— Giorgio Armani</cite>
             </div>
-
         </div>
     </div>
-
-    <!-- ═══════════════════════════════════════════
-         RIGHT: FORM PANEL
-    ════════════════════════════════════════════ -->
-    <div class="auth-right">
+<div class="auth-right">
         <div class="auth-form-card">
-
-            <!-- Mobile Logo (hidden on desktop) -->
-            <a href="../index.html" class="auth-card-logo">
+<a href="../index.html" class="auth-card-logo">
                 <div class="auth-logo-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="34" height="34">
                         <rect width="100" height="100" rx="20" fill="#141414" stroke="#d4a373" stroke-width="2.5"/>
@@ -109,55 +90,40 @@
                 </div>
                 <div class="auth-logo-text">MAJESTIC<span>MEASURE</span></div>
             </a>
-
-            <!-- Heading -->
-            <div class="auth-form-heading">
+<div class="auth-form-heading">
                 <h1>Welcome <span class="accent">Back</span></h1>
                 <p>Sign in to your Majestic Measure account</p>
             </div>
-
-            <!-- Form -->
-            <form class="auth-form" id="login-form" action="#">
+<form class="auth-form" id="login-form" action="#">
                 <div class="auth-field">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" placeholder="your@email.com" required>
                 </div>
-
                 <div class="auth-field">
                     <label for="password">Password</label>
                     <input type="password" id="password" placeholder="Enter your password" required>
                     <i class="fa-regular fa-eye password-toggle" id="pw-toggle"></i>
                 </div>
-
                 <div class="form-footer">
                     <label class="remember-me">
                         <input type="checkbox"> Remember Me
                     </label>
                     <a href="#">Forgot password?</a>
                 </div>
-
                 <button type="submit" class="auth-submit-btn">Sign In to Portal</button>
             </form>
-
-            <!-- Divider -->
-            <div class="auth-divider"><span>or sign in with</span></div>
-
-            <!-- Social Buttons (Placed AFTER placeholders & submit button) -->
-            <div class="social-container">
-                <a href="#" class="social-btn google" aria-label="Continue with Google">
+<div class="auth-divider"><span>or sign in with</span></div>
+<div class="social-container">
+                <a href="#" class="social-btn google" aria-label="Sign in with Google">
                     <i class="fab fa-google"></i>
-                    Continue with Google
                 </a>
-                <a href="#" class="social-btn apple" aria-label="Continue with Apple">
+                <a href="#" class="social-btn apple" aria-label="Sign in with Apple">
                     <i class="fab fa-apple"></i>
-                    Continue with Apple
                 </a>
             </div>
-
             <p class="auth-link">New to Majestic Measure? <a href="signup.html">Create Account</a></p>
         </div>
     </div>
-
     <script src="../js/auth.js"></script>
 </body>
 </html>

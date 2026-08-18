@@ -1,10 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const isInsidePages = window.location.pathname.includes('/pages/');
     const rootPath = isInsidePages ? '../' : '';
-
-
-    
-    const headerHTML = `
+const headerHTML = `
     <header id="main-header">
         <nav class="container">
             <div class="logo">
@@ -39,19 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 <a href="ROOT_PATHpages/services.html" class="nav-item-services">SERVICES</a>
                 <a href="ROOT_PATHpages/blogs.html" class="nav-item-journal">BLOG</a>
                 <a href="ROOT_PATHpages/contact.html" class="nav-item-contact">CONTACT</a>
-                <a href="ROOT_PATHpages/dashboard.html" class="nav-item-dashboard desktop-only">DASHBOARD</a>
+                <a href="ROOT_PATHpages/dashboard.html" class="nav-item-dashboard">DASHBOARD</a>
                 <div class="mobile-menu-actions">
-                    <button class="theme-toggle" aria-label="Toggle Theme"><i class="fa-regular fa-sun"></i></button>
-                    <button class="rtl-toggle">LTR</button>
-                    <a href="ROOT_PATHpages/signup.html" class="icon-btn mobile-auth-btn" aria-label="Account">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>   
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                    </a>
+                    <button class="theme-toggle mobile-cta-btn" aria-label="Toggle Theme"><i class="fa-regular fa-sun"></i> <span>Theme</span></button>
+                    <button class="rtl-toggle mobile-cta-btn">LTR</button>
+                    <a href="ROOT_PATHpages/signup.html" class="mobile-cta-btn mobile-auth-btn" aria-label="Account"><i class="fa-regular fa-user"></i> <span>Login</span></a>
                 </div>
             </nav>
-
             <div class="nav-actions">
                 <button class="theme-toggle"><i class="fa-regular fa-sun"></i></button>
                 <a href="ROOT_PATHpages/signup.html" class="icon-btn" aria-label="Account">
@@ -70,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
         </nav>
     </header>
     `;
-
     const footerHTML = `
     <footer id="main-footer">
         <!-- VIP Newsletter Section -->
@@ -95,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
         </div>
-
         <!-- Main Footer Grid -->
         <div class="container footer-grid">
             <!-- Brand Column -->
@@ -121,12 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     </a>
                 </div>
                 <p class="brand-desc">Bespoke sartorial excellence since 2015. Where master craftsmanship meets modern elegance, and every stitch tells a distinguished story.</p>
-                
                 <div class="heritage-seal">
                     <i class="fa-solid fa-certificate"></i>
                     <span>Savile Row Craftsmanship Standard</span>
                 </div>
-
                 <div class="social-links">
                     <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
@@ -134,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
             </div>
-
             <!-- Navigation Column -->
             <div class="footer-nav">
                 <h4>EXPLORE ATELIER</h4>
@@ -148,7 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li><a href="ROOT_PATHpages/dashboard.html">Client Portal</a></li>
                 </ul>
             </div>
-
             <!-- Services Column -->
             <div class="footer-services">
                 <h4>SARTORIAL SERVICES</h4>
@@ -161,7 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li><a href="ROOT_PATHpages/coming-soon.html">Private Fittings</a></li>
                 </ul>
             </div>
-
             <!-- Visit Column -->
             <div class="footer-visit">
                 <h4>FLAGSHIP ATELIER</h4>
@@ -177,7 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <i class="fa-solid fa-envelope"></i>
                     <a href="mailto:contact@majesticmeasure.com">contact@majesticmeasure.com</a>
                 </div>
-                
                 <div class="atelier-hours-card">
                     <div class="hours-header">
                         <span class="status-dot"></span>
@@ -190,7 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
         </div>
-
         <!-- Footer Bottom -->
         <div class="footer-bottom">
             <div class="container bottom-flex">
@@ -209,17 +191,14 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
     </footer>
     `;
-
     const injectComponent = (containerId, content) => {
         const container = document.getElementById(containerId);
         if (container) {
             container.innerHTML = content.replaceAll('ROOT_PATH', rootPath);
         }
     };
-
     injectComponent('header-placeholder', headerHTML);
     injectComponent('footer-placeholder', footerHTML);
-
     const setFavicon = () => {
         let favicon = document.querySelector("link[rel*='icon']");
         if (!favicon) {
@@ -231,26 +210,20 @@ document.addEventListener('DOMContentLoaded', () => {
         favicon.href = rootPath + 'images/favicon.svg';
     };
     setFavicon();
-
     initHeaderLogic();
     setActiveLink();
-
     function initHeaderLogic() {
         const mobileToggle = document.getElementById('mobile-toggle');
         const navLinks = document.querySelector('.nav-links');
         const header = document.getElementById('main-header');
-
         if (!header) return;
-
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
-                
             }
         });
-
         if (mobileToggle && navLinks) {
             mobileToggle.addEventListener('click', () => {
                 mobileToggle.classList.toggle('active');
@@ -263,49 +236,49 @@ document.addEventListener('DOMContentLoaded', () => {
             item.addEventListener('click', (e) => {
                 const parentDropdown = item.parentElement;
                 const isDropdownToggle = parentDropdown.classList.contains('dropdown') && item === parentDropdown.children[0];
-                
                 if (window.innerWidth <= 1024 && isDropdownToggle) {
                     e.preventDefault();
                     parentDropdown.classList.toggle('active');
                     return; 
                 }
-                
                 if (mobileToggle) mobileToggle.classList.remove('active');
                 if (navLinks) navLinks.classList.remove('active');
                 document.body.classList.remove('overflow-hidden');
             });
         });
-
         const themeToggles = document.querySelectorAll('.theme-toggle');
         const savedTheme = localStorage.getItem('maison_theme') || 'dark';
-
         const applyTheme = (theme) => {
             if (theme === 'light') {
                 document.body.classList.add('light-mode');
                 themeToggles.forEach(btn => {
-                    btn.innerHTML = '<i class="fa-regular fa-moon"></i>';
+                    if (btn.classList.contains('mobile-cta-btn')) {
+                        btn.innerHTML = '<i class="fa-regular fa-moon"></i> <span>Dark</span>';
+                    } else {
+                        btn.innerHTML = '<i class="fa-regular fa-moon"></i>';
+                    }
                 });
             } else {
                 document.body.classList.remove('light-mode');
                 themeToggles.forEach(btn => {
-                    btn.innerHTML = '<i class="fa-regular fa-sun"></i>';
+                    if (btn.classList.contains('mobile-cta-btn')) {
+                        btn.innerHTML = '<i class="fa-regular fa-sun"></i> <span>Light</span>';
+                    } else {
+                        btn.innerHTML = '<i class="fa-regular fa-sun"></i>';
+                    }
                 });
             }
             localStorage.setItem('maison_theme', theme);
         };
-
         applyTheme(savedTheme);
-
         themeToggles.forEach(toggle => {
             toggle.addEventListener('click', () => {
                 const isLight = document.body.classList.contains('light-mode');
                 applyTheme(isLight ? 'dark' : 'light');
             });
         });
-
         const rtlToggles = document.querySelectorAll('.rtl-toggle');
         const savedDir = localStorage.getItem('maison_dir') || 'ltr';
-
         const applyDir = (dir) => {
             document.documentElement.setAttribute('dir', dir);
             localStorage.setItem('maison_dir', dir);
@@ -313,9 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.textContent = dir === 'ltr' ? 'RTL' : 'LTR';
             });
         };
-
         applyDir(savedDir);
-
         rtlToggles.forEach(toggle => {
             toggle.addEventListener('click', () => {
                 const currentDir = document.documentElement.getAttribute('dir');
@@ -323,20 +294,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-
-
-
-    function setActiveLink() {
+function setActiveLink() {
         const path = window.location.pathname;
         const page = path.split("/").pop() || 'index.html';
-        
         let activeClass = '';
         if (page === 'index.html' || page === '') activeClass = '.nav-item-home';
         else if (page === 'about.html') activeClass = '.nav-item-about';
         else if (page === 'services.html' || page === 'service-detail.html') activeClass = '.nav-item-services';
         else if (page === 'blogs.html' || page === 'blog-detail.html') activeClass = '.nav-item-journal';
         else if (page === 'contact.html') activeClass = '.nav-item-contact';
-
         if (activeClass) {
             const link = document.querySelector(activeClass);
             if (link) link.classList.add('active');

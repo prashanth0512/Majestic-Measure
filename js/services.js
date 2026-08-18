@@ -1,10 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     const slideItems = document.querySelectorAll('.slide-in-left');
     slideItems.forEach(item => {
         item.classList.add('active');
     });
-
     const slideObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -14,45 +12,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }, {
         threshold: 0.01
     });
-
     slideItems.forEach(item => {
         slideObserver.observe(item);
     });
-
     if (window.innerWidth < 640) {
         const buttons = document.querySelectorAll('.explore-btn, .btn');
         buttons.forEach(btn => {
             btn.style.minHeight = '44px';
         });
     }
-
-    const faqItems = document.querySelectorAll('.faq-item');
-    
+const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-            const isActive = item.classList.contains('open');
-
-            faqItems.forEach(otherItem => {
-                otherItem.classList.remove('open');
+        if (question) {
+            question.addEventListener('click', (e) => {
+                e.preventDefault();
+                const isOpen = item.classList.contains('open');
+faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('open');
+                });
+if (!isOpen) {
+                    item.classList.add('open');
+                }
             });
-
-            if (!isActive) {
-                item.classList.add('open');
-            }
-        });
-    // Gallery Filter Tab Logic
-    const filterBtns = document.querySelectorAll('.gallery-filters .filter-btn');
+        }
+    });
+const filterBtns = document.querySelectorAll('.gallery-filters .filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-grid .gallery-item');
-
     if (filterBtns.length && galleryItems.length) {
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-
                 const filter = btn.getAttribute('data-filter');
-
                 galleryItems.forEach(item => {
                     const category = item.getAttribute('data-category');
                     if (filter === 'all' || category === filter) {

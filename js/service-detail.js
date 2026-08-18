@@ -1,5 +1,3 @@
-
-
 const SERVICES = {
     'bespoke-suits': {
         name: 'Bespoke Suits',
@@ -202,17 +200,13 @@ const SERVICES = {
         ctaBtn: 'Book a Session'
     }
 };
-
-
 const ALL_SERVICES_META = {
     'bespoke-suits':        { icon: 'fa-user-tie', name: 'Bespoke Suits', tagline: 'The pinnacle of personal style', price: 'From $2,500' },
     'wedding-suits':        { icon: 'fa-ring',     name: 'Wedding Suits', tagline: 'Dressed for the most important day', price: 'From $2,800' },
     'custom-shirts':        { icon: 'fa-shirt',    name: 'Custom Shirts', tagline: 'The foundation of every great outfit', price: 'From $290' },
-    'alterations':          { icon: 'fa-scissors', name: 'Alterations & Restoration', tagline: 'Precision adjustments, renewed elegance', price: 'From $80' },
+    'alterations':          { icon: 'fa-scissors', name: 'Garment Alterations', tagline: 'Precision adjustments & care', price: 'From $80' },
     'styling-consultation': { icon: 'fa-palette',  name: 'Styling Consultation', tagline: 'Your personal image, perfected', price: 'From $350' }
 };
-
-
 function renderService(slug) {
     const data = SERVICES[slug];
     if (!data) {
@@ -223,46 +217,46 @@ function renderService(slug) {
             </div>`;
         return;
     }
-
-    
-    document.title = `${data.name} | Maison De Tailleur`;
-
-    
-    document.querySelectorAll('.dropdown-menu a').forEach(a => {
+document.title = `${data.name} | Maison De Tailleur`;
+document.querySelectorAll('.dropdown-menu a').forEach(a => {
         a.classList.remove('active');
         if (a.href.includes(slug)) a.classList.add('active');
     });
-
-    
-    const heroImg = document.getElementById('sd-hero-img');
+const heroImg = document.getElementById('sd-hero-img');
     heroImg.src = data.heroImg;
     heroImg.alt = data.name;
-    
-    
-    const heroSection = document.querySelector('.service-detail-hero');
+const heroSection = document.querySelector('.service-detail-hero');
     if (heroSection) {
         heroSection.style.backgroundImage = 'none'; 
     }
-
     document.getElementById('sd-badge').innerHTML = `<i class="fa-solid ${data.badgeIcon}"></i> ${data.badgeText}`;
     document.getElementById('sd-title').innerHTML = data.title;
     document.getElementById('sd-tagline').textContent = data.tagline;
     document.getElementById('sd-breadcrumb').textContent = data.name;
-
     document.getElementById('sd-meta').innerHTML = data.meta
         .map(m => `<div class="hero-meta-item"><label>${m.label}</label><span>${m.value}</span></div>`)
         .join('');
-
-    
-    document.getElementById('sd-overview-h2').innerHTML = data.overviewH2;
+document.getElementById('sd-overview-h2').innerHTML = data.overviewH2;
     document.getElementById('sd-overview-body').innerHTML = data.overviewBody
         .map(p => `<p>${p}</p>`).join('');
     const ovImg = document.getElementById('sd-overview-img');
-    ovImg.src = data.overviewImg;
-    ovImg.alt = data.name;
-
-    
-    document.getElementById('sd-process-label').textContent = data.processLabel;
+    if (ovImg) {
+        ovImg.src = data.overviewImg;
+        ovImg.alt = data.name;
+    }
+    const ovImg2Map = {
+        'bespoke-suits': '../images/fabric-1.png',
+        'wedding-suits': '../images/fabric-2.png',
+        'custom-shirts': '../images/fabric-3.png',
+        'alterations': '../images/atelier-workshop.png',
+        'styling-consultation': '../images/case-study-3.png'
+    };
+    const ovImg2 = document.getElementById('sd-overview-img-2');
+    if (ovImg2) {
+        ovImg2.src = ovImg2Map[slug] || '../images/fabric-1.png';
+        ovImg2.alt = `${data.name} Detail`;
+    }
+document.getElementById('sd-process-label').textContent = data.processLabel;
     document.getElementById('sd-process-h2').innerHTML = data.processH2;
     document.getElementById('sd-steps').innerHTML = data.steps
         .map(s => `<div class="process-step reveal">
@@ -272,9 +266,7 @@ function renderService(slug) {
             <h4>${s.title}</h4>
             <p>${s.desc}</p>
         </div>`).join('');
-
-    // Render What's Included Items
-    document.getElementById('sd-includes-h2').innerHTML = data.includesH2;
+document.getElementById('sd-includes-h2').innerHTML = data.includesH2;
     document.getElementById('sd-includes').innerHTML = data.includes
         .map(i => `<div class="include-item reveal">
             <div class="include-icon"><i class="fa-solid ${i.icon}"></i></div>
@@ -283,17 +275,12 @@ function renderService(slug) {
                 <p>${i.desc}</p>
             </div>
         </div>`).join('');
-
-    // Render CTA
-    document.getElementById('sd-cta-h2').innerHTML = data.ctaH2;
+document.getElementById('sd-cta-h2').innerHTML = data.ctaH2;
     document.getElementById('sd-cta-p').textContent = data.ctaP;
     document.getElementById('sd-cta-btn').textContent = data.ctaBtn;
-
-    // Render Related Services Cards
-    const related = Object.entries(ALL_SERVICES_META)
+const related = Object.entries(ALL_SERVICES_META)
         .filter(([key]) => key !== slug)
         .slice(0, 4);
-
     document.getElementById('sd-related').innerHTML = related
         .map(([key, s]) => `<a href="service-detail.html?service=${key}" class="related-card reveal">
             <div class="related-badge"><i class="fa-solid ${s.icon}"></i></div>
@@ -307,31 +294,21 @@ function renderService(slug) {
             </div>
         </a>`).join('');
 }
-
-
 function initReveal() {
     const targets = document.querySelectorAll('.reveal, .process-step, .include-item, .related-card');
-    
-    // Instantly reveal all elements for flawless visibility
-    targets.forEach(el => {
+targets.forEach(el => {
         el.style.opacity = '1';
         el.style.transform = 'none';
         el.classList.add('active');
     });
 }
-
-
 function initTransitions() {
-    // Smooth navigation without hiding document body
 }
-
 document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('loaded');
     document.body.style.opacity = '1';
-    
     const params = new URLSearchParams(window.location.search);
     const slug = params.get('service') || 'bespoke-suits';
-
     renderService(slug);
     initReveal();
 });

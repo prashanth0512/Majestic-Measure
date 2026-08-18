@@ -1,9 +1,6 @@
-
 document.addEventListener('DOMContentLoaded', () => {
-
     const rtlToggles = document.querySelectorAll('.rtl-toggle');
     const savedDir = localStorage.getItem('maison_dir') || 'ltr';
-    
     const applyDir = (dir) => {
         document.documentElement.setAttribute('dir', dir);
         localStorage.setItem('maison_dir', dir);
@@ -12,17 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
     applyDir(savedDir);
-
     rtlToggles.forEach(toggle => {
         toggle.addEventListener('click', () => {
             const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
             applyDir(currentDir === 'ltr' ? 'rtl' : 'ltr');
         });
     });
-
     const themeToggles = document.querySelectorAll('.theme-toggle');
     const savedTheme = localStorage.getItem('maison_theme') || 'light';
-
     const applyTheme = (theme) => {
         if (theme === 'dark') {
             document.body.classList.add('dark-mode');
@@ -34,14 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('maison_theme', theme);
     };
     applyTheme(savedTheme);
-
     themeToggles.forEach(toggle => {
         toggle.addEventListener('click', () => {
             const isDark = document.body.classList.contains('dark-mode');
             applyTheme(isDark ? 'light' : 'dark');
         });
     });
-
     const sidebar        = document.getElementById('sidebar');
     const mainWrapper    = document.getElementById('mainWrapper');
     const hamburger      = document.getElementById('hamburger');
@@ -51,9 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const profileDrop    = document.getElementById('profileDropdown');
     const contentArea    = document.getElementById('contentArea');
     const navItems       = document.querySelectorAll('.nav-item');
-
     const isMobile = () => window.innerWidth <= 1024;
-
     hamburger.addEventListener('click', () => {
         if (isMobile()) {
             sidebar.classList.toggle('mobile-open');
@@ -63,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
             mainWrapper.classList.toggle('expanded');
         }
     });
-
     closeSidebar.addEventListener('click', () => {
         if (isMobile()) {
             sidebar.classList.remove('mobile-open');
@@ -73,20 +62,16 @@ document.addEventListener('DOMContentLoaded', () => {
             mainWrapper.classList.add('expanded');
         }
     });
-
     overlay.addEventListener('click', () => {
         sidebar.classList.remove('mobile-open');
         overlay.classList.remove('active');
     });
-
     profileBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         profileDrop.classList.toggle('open');
     });
-
     document.addEventListener('click', () => profileDrop.classList.remove('open'));
     profileDrop.addEventListener('click', (e) => e.stopPropagation());
-
     document.querySelectorAll('.dropdown-item[data-section]').forEach(item => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
@@ -95,9 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
             switchSection(s);
         });
     });
-
     let currentChart = null;
-
     const templateMap = {
         overview:      'tpl-overview',
         appointments:  'tpl-appointments',
@@ -109,20 +92,15 @@ document.addEventListener('DOMContentLoaded', () => {
         notifications: 'tpl-notifications',
         profile:       'tpl-profile',
     };
-
     function switchSection(sectionId) {
         const tplId = templateMap[sectionId];
         if (!tplId) return;
-
         if (currentChart) { currentChart.destroy(); currentChart = null; }
-
         const tpl = document.getElementById(tplId);
         if (!tpl) return;
-
         contentArea.innerHTML = '';
         contentArea.appendChild(tpl.content.cloneNode(true));
         contentArea.scrollTo(0, 0);
-
         navItems.forEach(n => n.classList.remove('active'));
         const activeNav = document.querySelector(`.nav-item[data-section="${sectionId}"]`);
         if (activeNav) activeNav.classList.add('active');
@@ -132,28 +110,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (sectionId === 'measurements')  initMeasurements();
         if (sectionId === 'fabrics')       initFabrics();
-
         if (isMobile()) {
             sidebar.classList.remove('mobile-open');
             overlay.classList.remove('active');
         }
     }
-
     navItems.forEach(item => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
             switchSection(item.dataset.section);
         });
     });
-
     function initOverviewChart() {
         const ctx = document.getElementById('ordersChart');
         if (!ctx) return;
-        
         const isDark = document.body.classList.contains('dark-mode');
         const textColor = isDark ? '#ffffff' : '#111111';
         const gridColor = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.05)';
-
         currentChart = new Chart(ctx, {
             type: 'bar',
             data: {
@@ -197,14 +170,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
     function initCategoryChart() {
         const ctx = document.getElementById('categoryChart');
         if (!ctx) return;
-        
         const isDark = document.body.classList.contains('dark-mode');
         const textColor = isDark ? '#ffffff' : '#111111';
-
         new Chart(ctx, {
             type: 'doughnut',
             data: {
@@ -233,7 +203,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
     function initMeasurements() {
         const btn = document.getElementById('saveMeasurementsBtn');
         if (!btn) return;
@@ -246,16 +215,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 2000);
         });
     }
-
     function initFabrics() {
         const filters = document.querySelectorAll('.filter-btn');
         const cards   = document.querySelectorAll('.fabric-card');
-
         filters.forEach(btn => {
             btn.addEventListener('click', () => {
                 filters.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-
                 const cat = btn.textContent.trim();
                 cards.forEach(card => {
                     const catEl = card.querySelector('.fabric-cat');
@@ -267,7 +233,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
         });
-
         document.querySelectorAll('.btn-select').forEach(btn => {
             btn.addEventListener('click', () => {
                 btn.textContent = btn.textContent === 'Select' ? '✔ Selected' : 'Select';
@@ -275,6 +240,5 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-
     switchSection('overview');
 });
